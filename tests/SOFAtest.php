@@ -17,6 +17,19 @@ class SOFAtest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(9706, $idmsf[3]);
   }
 
+  public function test_iauA2tf() {
+    $ihmsf = [];
+    $s     = '';
+
+    SOFA::iauA2tf(4, -3.01234, $s, $ihmsf);
+
+    $this->assertEquals('-', $s);
+    $this->assertEquals(11, $ihmsf[0]);
+    $this->assertEquals(30, $ihmsf[1]);
+    $this->assertEquals(22, $ihmsf[2]);
+    $this->assertEquals(6484, $ihmsf[3]);
+  }
+
   public function test_iauD2tf() {
     $ihmsf = [];
     $s     = '';
