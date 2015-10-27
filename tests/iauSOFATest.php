@@ -302,4 +302,33 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(-0.1280368005936998991e-2, $dtdb, null, 1e-15);
   }
 
+  public function test_iauEpj() {
+    $epj;
+
+    $epj = SOFA::iauEpj(2451545, -7392.5);
+    $this->assertEquals(1979.760438056125941, $epj, 1e-12);
+  }
+
+  public function test_iauEpj2jd() {
+    $epj;
+    $djm0;
+    $djm;
+
+    $epj = 1996.8;
+
+    SOFA::iauEpj2jd($epj, $djm0, $djm);
+
+    $this->assertEquals(2400000.5, $djm0, "djm0", 1e-9);
+    $this->assertEquals(50375.7, $djm, "mjd", 1e-9);
+  }
+
+  public function test_iauFal03() {
+    $this->assertEquals(5.132369751108684150, SOFA::iauFal03(0.80), 1e-12);
+  }
+
+  public function test_iauFaf03() {
+    $this->assertEquals(0.2597711366745499518, SOFA::iauFaf03(0.80), 1e-12);
+
+  }
+
 }

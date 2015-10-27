@@ -20,7 +20,7 @@ class SOFA {
   /**
    * Astronomical unit (m)
    */
-  const DAU  = 149597870e3;
+  const DAU = 149597870e3;
 
   /**
    * Degrees to radians
@@ -68,6 +68,21 @@ class SOFA {
    */
   const SRS = 1.97412574336e-08;
 
+  /**
+   * Julian Date of Modified Julian Date zero
+   */
+  const DJM0 = 2400000.5;
+
+  /**
+   * Reference epoch (J2000.0), Modified Julian Date
+   */
+  const DJM00 = 51544.5;
+
+  /**
+   * Arcseconds in a full circle
+   */
+  const TURNAS = 1296000.0;
+
   //----------------------------------------------------------------------------
   // Traits - To avoid a large file each SOFA routine is included as a trait
   //----------------------------------------------------------------------------
@@ -91,7 +106,11 @@ class SOFA {
       iauObl06,
       iauObl80,
       iauTdbtt,
-      iauDtdb;
+      iauDtdb,
+      iauEpj,
+      iauEpj2jd,
+      iauFal03,
+      iauFaf03;
 }
 
 /**

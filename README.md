@@ -76,16 +76,16 @@ Porting Status
         | Eors    | Equation of the origins, given NPB matrix and s
         | Epb     | Julian Date to Besselian Epoch
         | Epb2jd  | Besselian Epoch to Julian Date
-        | Epj     | Julian Date to Julian Epoch
-        | Epj2jd  | Julian Epoch to Julian Date
+ done   | Epj     | Julian Date to Julian Epoch
+ done   | Epj2jd  | Julian Epoch to Julian Date
         | Epv00   | Earth position and velocity
         | Eqeq94  | Equation of the equinoxes, IAU 1994
         | Era00   | Earth Rotation Angle, IAU 2000
         | Fad03   | Mean elongation of the Moon from the Sun
         | Fae03   | Mean longitude of Earth
-        | Faf03   | Mean longitude of the Moon minus mean longitude of the ascending node
+ done   | Faf03   | Mean longitude of the Moon minus mean longitude of the ascending node
         | Faju03  | Mean longitude of Jupiter
-        | Fal03   | Mean anomaly of the Moon
+ done   | Fal03   | Mean anomaly of the Moon
         | Falp03  | Mean anomaly of the Sun
         | Fama03  | Mean longitude of Mars
         | Fame03  | Mean longitude of Mercury
