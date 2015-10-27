@@ -20,7 +20,12 @@ class SOFA {
   /**
    * Astronomical unit (m)
    */
-  const DAU = 149597870e3;
+  const DAU  = 149597870e3;
+
+  /**
+   * Degrees to radians
+   */
+  const DD2R = 1.745329251994329576923691e-2;
 
   /**
    * Reference epoch (J2000.0), JD
@@ -31,6 +36,11 @@ class SOFA {
    * Days per Julian century
    */
   const DJC = 36525;
+
+  /**
+   * Days per Julian millennium
+   */
+  const DJM = 365250;
 
   /**
    *  Days per Julian year
@@ -79,7 +89,9 @@ class SOFA {
       iauIr,
       iauApcs,
       iauObl06,
-      iauObl80;
+      iauObl80,
+      iauTdbtt,
+      iauDtdb;
 }
 
 /**

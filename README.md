@@ -64,7 +64,7 @@ Porting Status
         | D2dtf   | Julian Date to Civil Date
  done   | D2tf    | Decompose days into hms
         | Dat     | Delta(AT) (=TAI-UTC) for a given UTC date
-        | Dtdb    | TDB-TT
+ done   | Dtdb    | TDB-TT
         | Dtf2d   | Civil Date to Julian Date
         | Ee00    | Equation of the equinoxes, IAU 2000
         | Ee00a   | Equation of the equinoxes, IAU 2000A
@@ -207,7 +207,7 @@ Porting Status
         | Tcbtdb  | Convert TCB to TDB
         | Tcgtt   | Convert TCG to TT
         | Tdbtcb  | Convert TDB to TCB
-        | Tdbtt   | Convert TDB to TT
+ done   | Tdbtt   | Convert TDB to TT
         | Tf2a    | Decompose hms into radians
         | Tf2d    | Decompose hms into days
         | Tr      | Transpose r-matrix

@@ -283,4 +283,23 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
             SOFA::iauObl80(2400000.5, 54388.0), null, 1e-14);
   }
 
+  public function test_iauTdbtt() {
+    $t1;
+    $t2;
+    $j;
+
+    $j = SOFA::iauTdbtt(2453750.5, 0.892855137, -0.000201, $t1, $t2);
+
+    $this->assertEquals(2453750.5, $t1, "t1", 1e-6);
+    $this->assertEquals($t2, 0.8928551393263888889, "t2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauDtdb() {
+    $dtdb;
+
+    $dtdb = SOFA::iauDtdb(2448939.5, 0.123, 0.76543, 5.0123, 5525.242, 3190.0);
+    $this->assertEquals(-0.1280368005936998991e-2, $dtdb, null, 1e-15);
+  }
+
 }
