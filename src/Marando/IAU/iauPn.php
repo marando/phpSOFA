@@ -46,16 +46,16 @@ trait iauPn {
     $w;
 
     /* Obtain the modulus and test for zero. */
-    $w = SOFA::iauPm($p);
+    $w = static::iauPm($p);
     if ($w == 0.0) {
 
       /* Null vector. */
-      SOFA::iauZp($u);
+      static::iauZp($u);
     }
     else {
 
       /* Unit vector. */
-      SOFA::iauSxp(1.0 / $w, $p, $u);
+      static::iauSxp(1.0 / $w, $p, $u);
     }
 
     /* Return the modulus. */

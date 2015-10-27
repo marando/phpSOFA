@@ -71,9 +71,9 @@ trait iauAb {
     $p = [];
     $r;
 
-    $pdv = SOFA::iauPdp($pnat, $v);
+    $pdv = static::iauPdp($pnat, $v);
     $w1  = 1.0 + $pdv / (1.0 + $bm1);
-    $w2  = SOFA::SRS / $s;
+    $w2  = static::SRS / $s;
     $r2  = 0.0;
     for ($i = 0; $i < 3; $i++) {
       $w     = $pnat[$i] * $bm1 + $w1 * $v[$i] + $w2 * ($v[$i] -

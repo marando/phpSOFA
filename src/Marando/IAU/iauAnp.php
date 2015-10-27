@@ -31,9 +31,9 @@ trait iauAnp {
   public static function iauAnp($a) {
     $w;
 
-    $w = fmod($a, SOFA::D2PI);
+    $w = fmod($a, static::D2PI);
     if ($w < 0)
-      $w += SOFA::D2PI;
+      $w += static::D2PI;
 
     return $w;
   }
