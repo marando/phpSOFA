@@ -83,6 +83,84 @@ class SOFAtest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(2.283185307179586477, SOFA::iauAnpm(-4.0), null, 1e-12);
   }
 
+  public function test_iauCp() {
+    $p = [];
+    $c = [];
+
+    $p[0] = 0.3;
+    $p[1] = 1.2;
+    $p[2] = -2.5;
+
+    SOFA::iauCp($p, $c);
+
+    $this->assertEquals(0.3, $c[0], null, 0.0);
+    $this->assertEquals(1.2, $c[1], null, 0.0);
+    $this->assertEquals(-2.5, $c[2], null, 0.0);
+  }
+
+  public function test_iauPm() {
+    $p = [];
+    $r;
+
+    $p[0] = 0.3;
+    $p[1] = 1.2;
+    $p[2] = -2.5;
+
+    $r = SOFA::iauPm($p);
+
+    $this->assertEquals(2.789265136196270604, $r, null, 1e-12);
+  }
+
+  public function test_iauZp() {
+    $p = [];
+
+    $p[0] = 0.3;
+    $p[1] = 1.2;
+    $p[2] = -2.5;
+
+    SOFA::iauZp($p);
+
+    $this->assertEquals(0.0, $p[0], null, 0.0);
+    $this->assertEquals(0.0, $p[1], null, 0.0);
+    $this->assertEquals(0.0, $p[2], null, 0.0);
+  }
+
+  public function test_iauSxp() {
+    $s;
+    $p  = [];
+    $sp = [];
+
+    $s = 2.0;
+
+    $p[0] = 0.3;
+    $p[1] = 1.2;
+    $p[2] = -2.5;
+
+    SOFA::iauSxp($s, $p, $sp);
+
+    $this->assertEquals(0.6, $sp[0], null, 0.0);
+    $this->assertEquals(2.4, $sp[1], null, 0.0);
+    $this->assertEquals(-5.0, $sp[2], null, 0.0);
+  }
+
+  public function test_iauPn() {
+    $p = [];
+    $r;
+    $u = [];
+
+    $p[0] = 0.3;
+    $p[1] = 1.2;
+    $p[2] = -2.5;
+
+    SOFA::iauPn($p, $r, $u);
+
+    $this->assertEquals(2.789265136196270604, $r, null, 1e-12);
+
+    $this->assertEquals(0.1075552109073112058, $u[0], null, 1e-12);
+    $this->assertEquals(0.4302208436292448232, $u[1], null, 1e-12);
+    $this->assertEquals(-0.8962934242275933816, $u[2], null, 1e-12);
+  }
+
   public function test_iauPdp() {
     $a   = [];
     $b   = [];

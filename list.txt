@@ -48,7 +48,7 @@
 [ ]  C2tpe   Celestial-to-terrestrial matrix given nutation
 [ ]  C2txy   Celestial-to-terrestrial matrix given CIP
 [ ]  Cal2jd  Gregorian Calendar to Julian Day Number
-[ ]  Cp      Copy p-vector
+[X]  Cp      Copy p-vector
 [ ]  Cpv     Copy pv-vector
 [ ]  Cr      Copy r-matrix
 [ ]  D2dtf   Julian Date to Civil Date
@@ -132,14 +132,14 @@
 [X]  Pdp     Inner (=scalar=dot) product of two p-vectors
 [ ]  Pfw06   bias-precession Fukushima-Williams angles IAU 2006
 [ ]  Plan94  Major-planet position and velocity
-[ ]  Pm      Modulus of p-vector
+[X]  Pm      Modulus of p-vector
 [ ]  Pmat00  Precession matrix (including frame bias), IAU 2000
 [ ]  Pmat06  Precession bias matrix, IAU 2006
 [ ]  Pmat76  Precession matrix, IAU 1976
 [ ]  Pmp     p-vector minus p-vector
 [ ]  Pmpx    Apply proper motion and parallax
 [ ]  Pmsafe  Apply proper motion, with zero-parallax precautions
-[ ]  Pn      Normalize p-vector returning modulus
+[X]  Pn      Normalize p-vector returning modulus
 [ ]  Pn00    b,p,n matrices, IAU 2000, given nutation
 [ ]  Pn00a   b,p,n matrices, IAU 2000A
 [ ]  Pn00b   b,p,n matrices, IAU 2000B
@@ -189,7 +189,7 @@
 [ ]  Sp00    The quantity s', IERS 2003
 [ ]  Starpm  Proper motion between two epochs
 [ ]  Starpv  Star catalog coordinates to position+velocity vector
-[ ]  Sxp     Multiply p-vector by scalar
+[X]  Sxp     Multiply p-vector by scalar
 [ ]  Sxpv    Multiply pv-vector by scalar
 [ ]  Taitt   Convert TAI to TT
 [ ]  Taiut1  Convert TAI to UT1
@@ -216,6 +216,6 @@
 [ ]  Xys00a  CIP and s, IAU 2000A
 [ ]  Xys00b  CIP and s, IAU 2000B
 [ ]  Xys06a  CIP and s, IAU 2006/2000A
-[ ]  Zp      Zero p-vector
+[X]  Zp      Zero p-vector
 [ ]  Zpv     Zero pv-vector
 [ ]  Zr      Initialize r-matrix to null

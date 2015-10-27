@@ -43,11 +43,21 @@ class SOFA {
       iauAf2a,
       iauAnp,
       iauAnpm,
-///
+      iauCp,
+      iauPm,
       iauD2tf,
-      iauPdp;
+      iauPdp,
+      iauZp,
+      iauSxp,
+      iauPn;
 }
 
+/**
+ * Returns A with the sign of B
+ * @param type $a
+ * @param type $b
+ * @return type
+ */
 function sign($a, $b) {
   if ($b > 0)
     return $a > 0 ? $a : -$a;
