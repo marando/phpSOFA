@@ -110,7 +110,11 @@ class SOFA {
       iauEpj,
       iauEpj2jd,
       iauFal03,
-      iauFaf03;
+      iauFaf03,
+      iauFaom03,
+      iauFame03,
+      iauFave03,
+      iauFae03;
 }
 
 /**

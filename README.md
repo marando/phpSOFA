@@ -82,19 +82,19 @@ Porting Status
         | Eqeq94  | Equation of the equinoxes, IAU 1994
         | Era00   | Earth Rotation Angle, IAU 2000
         | Fad03   | Mean elongation of the Moon from the Sun
-        | Fae03   | Mean longitude of Earth
+ done   | Fae03   | Mean longitude of Earth
  done   | Faf03   | Mean longitude of the Moon minus mean longitude of the ascending node
         | Faju03  | Mean longitude of Jupiter
  done   | Fal03   | Mean anomaly of the Moon
         | Falp03  | Mean anomaly of the Sun
         | Fama03  | Mean longitude of Mars
-        | Fame03  | Mean longitude of Mercury
+ done   | Fame03  | Mean longitude of Mercury
         | Fane03  | Mean longitude of Neptune
-        | Faom03  | Mean longitude of the Moon's ascending node
+ done   | Faom03  | Mean longitude of the Moon's ascending node
         | Fapa03  | General accumulated precession in longitude
         | Fasa03  | Mean longitude of Saturn
         | Faur03  | Mean longitude of Uranus
-        | Fave03  | Mean longitude of Venus
+ done   | Fave03  | Mean longitude of Venus
         | Fk52h   | Transform FK5 star data into the Hipparcos frame
         | Fk5hip  | FK5 orientation and spin with respect to Hipparcos
         | Fk5hz   | FK5 to Hipparcos assuming zero Hipparcos proper motion
