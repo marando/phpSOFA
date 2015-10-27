@@ -128,7 +128,7 @@ Porting Status
         | Numat   | Nutation matrix, generic
  done   | Nut00a  | Nutation, IAU 2000A
         | Nut00b  | Nutation, IAU 2000B
-        | Nut06a  | Nutation, IAU 2006/2000A
+ done   | Nut06a  | Nutation, IAU 2006/2000A
         | Nut80   | Nutation, IAU 1980
         | Nutm80  | Nutation matrix, IAU 1980
  done   | Obl06   | Mean obliquity, IAU 2006
