@@ -43,4 +43,43 @@ class SOFAtest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(3333, $ihmsf[3]);
   }
 
+  public function test_iauAb() {
+    $pnat = [];
+    $v    = [];
+    $ppr  = [];
+
+    $pnat[0] = -0.76321968546737951;
+    $pnat[1] = -0.60869453983060384;
+    $pnat[2] = -0.21676408580639883;
+    $v[0]    = 2.1044018893653786e-5;
+    $v[1]    = -8.9108923304429319e-5;
+    $v[2]    = -3.8633714797716569e-5;
+    $s       = 0.99980921395708788;
+    $bm1     = 0.99999999506209258;
+
+    SOFA::iauAb($pnat, $v, $s, $bm1, $ppr);
+
+    $this->assertEquals(-0.7631631094219556269, $ppr[0], null, 1e-12);
+    $this->assertEquals(-0.6087553082505590832, $ppr[1], null, 1e-12);
+    $this->assertEquals(-0.2167926269368471279, $ppr[2], null, 1e-12);
+  }
+
+  public function test_iauPdp() {
+    $a   = [];
+    $b   = [];
+    $adb = 0;
+
+    $a[0] = 2.0;
+    $a[1] = 2.0;
+    $a[2] = 3.0;
+
+    $b[0] = 1.0;
+    $b[1] = 3.0;
+    $b[2] = 4.0;
+
+    $adb = SOFA::iauPdp($a, $b);
+
+    $this->assertEquals(20, $adb, null, 1e-12);
+  }
+
 }
