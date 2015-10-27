@@ -346,4 +346,12 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(1.744713738913081846, SOFA::iauFae03(0.80), 1e-12);
   }
 
+  public function test_iauFama03() {
+    $this->assertEquals(3.275506840277781492, SOFA::iauFama03(0.80), 1e-12);
+  }
+
+  public function test_iauFaju03() {
+    $this->assertEquals(5.275711665202481138, SOFA::iauFaju03(0.80), 1e-12);
+  }
+
 }

@@ -84,10 +84,10 @@ Porting Status
         | Fad03   | Mean elongation of the Moon from the Sun
  done   | Fae03   | Mean longitude of Earth
  done   | Faf03   | Mean longitude of the Moon minus mean longitude of the ascending node
-        | Faju03  | Mean longitude of Jupiter
+ done   | Faju03  | Mean longitude of Jupiter
  done   | Fal03   | Mean anomaly of the Moon
         | Falp03  | Mean anomaly of the Sun
-        | Fama03  | Mean longitude of Mars
+ done   | Fama03  | Mean longitude of Mars
  done   | Fame03  | Mean longitude of Mercury
         | Fane03  | Mean longitude of Neptune
  done   | Faom03  | Mean longitude of the Moon's ascending node
