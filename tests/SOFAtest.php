@@ -64,6 +64,17 @@ class SOFAtest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(-0.2167926269368471279, $ppr[2], null, 1e-12);
   }
 
+  public function test_iauAf2a() {
+    $a;
+    $j;
+
+
+    $j = SOFA::iauAf2a('-', 45, 13, 27.2, $a);
+
+    $this->assertEquals(-0.7893115794313644842, $a, null, 1e-12);
+    $this->assertEquals(0, $j);
+  }
+
   public function test_iauPdp() {
     $a   = [];
     $b   = [];

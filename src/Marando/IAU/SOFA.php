@@ -10,7 +10,12 @@ class SOFA {
   /**
    * 2π
    */
-  const D2PI = 6.283185307179586476925287;
+  const D2PI  = 6.283185307179586476925287;
+
+  /**
+   * Arcseconds to radians
+   */
+  const DAS2R = 4.848136811095359935899141e-6;
 
   /**
    * Days to seconds
@@ -30,6 +35,7 @@ class SOFA {
   use iauA2af,
       iauA2tf,
       iauAb,
+      iauAf2a,
       iauD2tf,
       iauPdp;
 }
