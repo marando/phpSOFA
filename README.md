@@ -131,8 +131,8 @@ Porting Status
         | Nut06a  | Nutation, IAU 2006/2000A
         | Nut80   | Nutation, IAU 1980
         | Nutm80  | Nutation matrix, IAU 1980
-        | Obl06   | Mean obliquity, IAU 2006
-        | Obl80   | Mean obliquity, IAU 1980
+ done   | Obl06   | Mean obliquity, IAU 2006
+ done   | Obl80   | Mean obliquity, IAU 1980
         | P06e    | Precession angles, IAU 2006, equinox based
         | P2pv    | Append zero velocity to p-vector
         | P2s     | p-vector to spherical
@@ -228,5 +228,5 @@ Porting Status
         | Xys06a  | CIP and s, IAU 2006/2000A
  done   | Zp      | Zero p-vector
         | Zpv     | Zero pv-vector
-        | Zr      | Initialize r-matrix to null 
-   
+        | Zr      | Initialize r-matrix to null
+
