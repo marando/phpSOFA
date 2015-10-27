@@ -75,6 +75,14 @@ class SOFAtest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(0, $j);
   }
 
+  public function test_iauAnp() {
+    $this->assertEquals(6.183185307179586477, SOFA::iauAnp(-0.1), null, 1e-12);
+  }
+
+  public function test_iauAnpm() {
+    $this->assertEquals(2.283185307179586477, SOFA::iauAnpm(-4.0), null, 1e-12);
+  }
+
   public function test_iauPdp() {
     $a   = [];
     $b   = [];

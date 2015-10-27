@@ -10,7 +10,12 @@ class SOFA {
   /**
    * 2π
    */
-  const D2PI  = 6.283185307179586476925287;
+  const D2PI = 6.283185307179586476925287;
+
+  /**
+   * π
+   */
+  const DPI = 3.141592653589793238462643;
 
   /**
    * Arcseconds to radians
@@ -36,6 +41,16 @@ class SOFA {
       iauA2tf,
       iauAb,
       iauAf2a,
+      iauAnp,
+      iauAnpm,
+///
       iauD2tf,
       iauPdp;
+}
+
+function sign($a, $b) {
+  if ($b > 0)
+    return $a > 0 ? $a : -$a;
+  else
+    return $a < 0 ? $a : -$a;
 }

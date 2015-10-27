@@ -1,9 +1,9 @@
-[X]  A2af    Decompose radians into ° ' " 
+[X]  A2af    Decompose radians into ° ' "
 [X]  A2tf    Decompose radians into hms
 [X]  Ab      Apply stellar aberration
 [X]  Af2a    Decompose ° ' " into radians
-[ ]  Anp     Normalize radians to range 0 to 2pi
-[ ]  Anpm    Normalize radians to range -pi to +pi
+[X]  Anp     Normalize radians to range 0 to 2pi
+[X]  Anpm    Normalize radians to range -pi to +pi
 [ ]  Apcg    Prepare for ICRS <-> GCRS, geocentric, special
 [ ]  Apcg13  Prepare for ICRS <-> GCRS, geocentric
 [ ]  Apci    Prepare for ICRS <-> CIRS, terrestrial, special
