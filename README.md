@@ -91,9 +91,9 @@ Porting Status
  done   | Fame03  | Mean longitude of Mercury
         | Fane03  | Mean longitude of Neptune
  done   | Faom03  | Mean longitude of the Moon's ascending node
-        | Fapa03  | General accumulated precession in longitude
-        | Fasa03  | Mean longitude of Saturn
-        | Faur03  | Mean longitude of Uranus
+ done   | Fapa03  | General accumulated precession in longitude
+ done   | Fasa03  | Mean longitude of Saturn
+ done   | Faur03  | Mean longitude of Uranus
  done   | Fave03  | Mean longitude of Venus
         | Fk52h   | Transform FK5 star data into the Hipparcos frame
         | Fk5hip  | FK5 orientation and spin with respect to Hipparcos
@@ -126,7 +126,7 @@ Porting Status
         | Num00b  | Nutation matrix, IAU 2000B
         | Num06a  | Nutation matrix, IAU 2006/2000A
         | Numat   | Nutation matrix, generic
-        | Nut00a  | Nutation, IAU 2000A
+ done   | Nut00a  | Nutation, IAU 2000A
         | Nut00b  | Nutation, IAU 2000B
         | Nut06a  | Nutation, IAU 2006/2000A
         | Nut80   | Nutation, IAU 1980
