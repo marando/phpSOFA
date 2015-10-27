@@ -144,8 +144,8 @@ trait iauApcs {
     $CR = SOFA::AULT / SOFA::DAYSEC;
 
     $i;
-    $$dp;
-    $$dv;
+    $dp;
+    $dv;
     $pb = [];
     $vb = [];
     $ph = [];
@@ -153,36 +153,34 @@ trait iauApcs {
     $w;
 
     /* Time since reference epoch, years (for proper motion calculation). */
-    $astrom->pmt = ( ($date1 - $DJ00) + $date2 ) / $DJY;
+    $astrom->pmt = ( ($date1 - SOFA::DJ00) + $date2 ) / SOFA::DJY;
 
     /* Adjust Earth ephemeris to observer. */
     for ($i = 0; $i < 3; $i++) {
-      $dp     = $pv[0][$i] / DAU;
-      $dv     = $pv[1][$i] / AUDMS;
+      $dp     = $pv[0][$i] / SOFA::DAU;
+      $dv     = $pv[1][$i] / $AUDMS;
       $pb[$i] = $ebpv[0][$i] + $dp;
       $vb[$i] = $ebpv[1][$i] + $dv;
       $ph[$i] = $ehp[$i] + $dp;
     }
 
     /* Barycentric position of observer (au). */
-    iauCp($pb, $astrom->eb);
+    SOFA::iauCp($pb, $astrom->eb);
 
     /* Heliocentric direction and distance (unit vector and au). */
-    iauPn($ph, &$astrom->em, $astrom->eh);
+    SOFA::iauPn($ph, $astrom->em, $astrom->eh);
 
     /* Barycentric vel. in units of c, and reciprocal of Lorenz factor. */
-    v2 = 0.0;
-    for (i = 0;
-    i < 3;
-    i++) {
-      w = vb[i] * CR;
-      astrom->v[i] = w;
-      v2 += w * w;
+    $v2 = 0.0;
+    for ($i = 0; $i < 3; $i++) {
+      $w             = $vb[$i] * $CR;
+      $astrom->v[$i] = $w;
+      $v2 += $w * $w;
     }
-    astrom->bm1 = sqrt(1.0 - v2);
+    $astrom->bm1 = sqrt(1.0 - $v2);
 
     /* Reset the NPB matrix. */
-    iauIr(astrom->bpn);
+    SOFA::iauIr($astrom->bpn);
 
     /* Finished. */
   }

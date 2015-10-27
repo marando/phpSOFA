@@ -10,9 +10,9 @@
 [ ]  Apci13  Prepare for ICRS <-> CIRS, terrestrial
 [ ]  Apco    Prepare for ICRS <-> observed, terrestrial, special
 [ ]  Apco13  Prepare for ICRS <-> observed, terrestrial
-[ ]  Apcs    Prepare for ICRS <-> CIRS, space, special
+[X]  Apcs    Prepare for ICRS <-> CIRS, space, special
 [ ]  Apcs13  Prepare for ICRS <-> CIRS, space
-[ ]  Aper    Insert ERA into context
+[X]  Aper    Insert ERA into context
 [ ]  Aper13  Update context for Earth rotation
 [ ]  Apio    Prepare for CIRS <-> observed, terrestrial, special
 [ ]  Apio13  Prepare for CIRS <-> observed, terrestrial
@@ -106,7 +106,7 @@
 [ ]  H2fk5   Transform Hipparcos star data into the FK5 frame
 [ ]  Hfk5z   Hipparcos to FK5 assuming zero Hipparcos proper motion
 [ ]  Icrs2g  Transform ICRS coordinates to IAU 1958 galactic
-[ ]  Ir      Initialize r-matrix to identity
+[X]  Ir      Initialize r-matrix to identity
 [ ]  Jd2cal  Julian Date to Gregorian year, month, day, fraction
 [ ]  Jdcalf  Julian Date to Gregorian date for formatted output
 [ ]  Ld      Light deflection by a single solar-system body

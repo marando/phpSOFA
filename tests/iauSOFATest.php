@@ -1,8 +1,9 @@
 <?php
 
 use \Marando\IAU\SOFA;
+use \Marando\IAU\iauASTROM;
 
-class SOFAtest extends \PHPUnit_Framework_TestCase {
+class iauSOFATest extends \PHPUnit_Framework_TestCase {
 
   public function test_iauA2af() {
     $s     = '';
@@ -123,6 +124,99 @@ class SOFAtest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(0.0, $p[0], null, 0.0);
     $this->assertEquals(0.0, $p[1], null, 0.0);
     $this->assertEquals(0.0, $p[2], null, 0.0);
+  }
+
+  public function test_iauAper() {
+    $theta;
+    $astrom = new iauASTROM();
+
+    $astrom->along = 1.234;
+    $theta         = 5.678;
+
+    SOFA::iauAper($theta, $astrom);
+
+    $this->assertEquals(6.912000000000000000, $astrom->eral, null, 1e-12);
+  }
+
+  public function test_iauIr() {
+    $r = [];
+
+    $r[0][0] = 2.0;
+    $r[0][1] = 3.0;
+    $r[0][2] = 2.0;
+
+    $r[1][0] = 3.0;
+    $r[1][1] = 2.0;
+    $r[1][2] = 3.0;
+
+    $r[2][0] = 3.0;
+    $r[2][1] = 4.0;
+    $r[2][2] = 5.0;
+
+    SOFA::iauIr($r);
+
+    $this->assertEquals(1.0, $r[0][0], null, 0.0);
+    $this->assertEquals(0.0, $r[0][1], null, 0.0);
+    $this->assertEquals(0.0, $r[0][2], null, 0.0);
+
+    $this->assertEquals(0.0, $r[1][0], null, 0.0);
+    $this->assertEquals(1.0, $r[1][1], null, 0.0);
+    $this->assertEquals(0.0, $r[1][2], null, 0.0);
+
+    $this->assertEquals(0.0, $r[2][0], null, 0.0);
+    $this->assertEquals(0.0, $r[2][1], null, 0.0);
+    $this->assertEquals(1.0, $r[2][2], null, 0.0);
+  }
+
+  public function test_iauApcs() {
+    $date1;
+    $date2;
+    $pv     = [];
+    $ebpv   = [];
+    $ehp    = [];
+    $astrom = new iauASTROM();
+
+    $date1      = 2456384.5;
+    $date2      = 0.970031644;
+    $pv[0][0]   = -1836024.09;
+    $pv[0][1]   = 1056607.72;
+    $pv[0][2]   = -5998795.26;
+    $pv[1][0]   = -77.0361767;
+    $pv[1][1]   = -133.310856;
+    $pv[1][2]   = 0.0971855934;
+    $ebpv[0][0] = -0.974170438;
+    $ebpv[0][1] = -0.211520082;
+    $ebpv[0][2] = -0.0917583024;
+    $ebpv[1][0] = 0.00364365824;
+    $ebpv[1][1] = -0.0154287319;
+    $ebpv[1][2] = -0.00668922024;
+    $ehp[0]     = -0.973458265;
+    $ehp[1]     = -0.209215307;
+    $ehp[2]     = -0.0906996477;
+
+    SOFA::iauApcs($date1, $date2, $pv, $ebpv, $ehp, $astrom);
+
+    $this->assertEquals(13.25248468622587269, $astrom->pmt, "pmt", 1e-11);
+    $this->assertEquals(-0.9741827110630456169, $astrom->eb[0], "eb(1)", 1e-12);
+    $this->assertEquals(-0.2115130190136085494, $astrom->eb[1], "eb(2)", 1e-12);
+    $this->assertEquals(-0.09179840186973175487, $astrom->eb[2], "eb(3)", 1e-12);
+    $this->assertEquals(-0.9736425571689386099, $astrom->eh[0], "eh(1)", 1e-12);
+    $this->assertEquals(-0.2092452125849967195, $astrom->eh[1], "eh(2)", 1e-12);
+    $this->assertEquals(-0.09075578152266466572, $astrom->eh[2], "eh(3)", 1e-12);
+    $this->assertEquals(0.9998233241710457140, $astrom->em, "em", 1e-12);
+    $this->assertEquals(0.2078704985513566571e-4, $astrom->v[0], "v(1)", 1e-16);
+    $this->assertEquals(-0.8955360074245006073e-4, $astrom->v[1], "v(2)", 1e-16);
+    $this->assertEquals(-0.3863338980073572719e-4, $astrom->v[2], "v(3)", 1e-16);
+    $this->assertEquals(0.9999999950277561601, $astrom->bm1, "bm1", 1e-12);
+    $this->assertEquals(1, $astrom->bpn[0][0], "bpn(1,1)", 0);
+    $this->assertEquals(0, $astrom->bpn[1][0], "bpn(2,1)", 0);
+    $this->assertEquals(0, $astrom->bpn[2][0], "bpn(3,1)", 0);
+    $this->assertEquals(0, $astrom->bpn[0][1], "bpn(1,2)", 0);
+    $this->assertEquals(1, $astrom->bpn[1][1], "bpn(2,2)", 0);
+    $this->assertEquals(0, $astrom->bpn[2][1], "bpn(3,2)", 0);
+    $this->assertEquals(0, $astrom->bpn[0][2], "bpn(1,3)", 0);
+    $this->assertEquals(0, $astrom->bpn[1][2], "bpn(2,3)", 0);
+    $this->assertEquals(1, $astrom->bpn[2][2], "bpn(3,3)", 0);
   }
 
   public function test_iauSxp() {

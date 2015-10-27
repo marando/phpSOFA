@@ -8,9 +8,29 @@ class SOFA {
   //----------------------------------------------------------------------------
 
   /**
+   *  Light time for 1 au (s)
+   */
+  const AULT = 499.004782;
+
+  /**
    * 2π
    */
   const D2PI = 6.283185307179586476925287;
+
+  /**
+   * Astronomical unit (m)
+   */
+  const DAU  = 149597870e3;
+
+  /**
+   * Reference epoch (J2000.0), JD
+   */
+  const DJ00 = 2451545;
+
+  /**
+   *  Days per Julian year
+   */
+  const DJY = 365.25;
 
   /**
    * π
@@ -49,7 +69,10 @@ class SOFA {
       iauPdp,
       iauZp,
       iauSxp,
-      iauPn;
+      iauPn,
+      iauAper,
+      iauIr,
+      iauApcs;
 }
 
 /**
