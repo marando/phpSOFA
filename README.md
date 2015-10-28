@@ -106,8 +106,8 @@ Status
         | Gd2gc   | Geodetic to geocentric transformation using a nominated ellipsoid
         | Gd2gce  | Geodetic to geocentric transformation for ellipsoid given a,f
  done   | Gmst00  | Greenwich Mean Sidereal Time, IAU 2000
-        | Gmst06  | Greenwich mean sidereal time, IAU 2006
-        | Gmst82  | Greenwich Mean Sidereal Time, IAU 1982
+ done   | Gmst06  | Greenwich mean sidereal time, IAU 2006
+ done   | Gmst82  | Greenwich Mean Sidereal Time, IAU 1982
         | Gst00a  | Greenwich Apparent Sidereal Time, IAU 2000A
         | Gst00b  | Greenwich Apparent Sidereal Time, IAU 2000B
         | Gst06   | Greenwich Apparent sidereal time, IAU 2006, given NPB matrix

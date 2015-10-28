@@ -88,6 +88,11 @@ class SOFA {
    */
   const DMAS2R = 4.848136811095359935899141e-9;
 
+  /**
+   * Seconds of time to radians
+   */
+  const DS2R = 7.272205216643039903848712e-5;
+
   //----------------------------------------------------------------------------
   // Traits - To avoid a large file each SOFA routine is included as a trait
   //----------------------------------------------------------------------------
@@ -130,7 +135,9 @@ class SOFA {
       iauNut00b,
       iauNut80,
       iauGmst00,
-      iauEra00;
+      iauEra00,
+      iauGmst06,
+      iauGmst82;
 }
 
 /**
