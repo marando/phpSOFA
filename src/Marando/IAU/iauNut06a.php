@@ -93,7 +93,7 @@ trait iauNut06a {
     $de;
 
     /* Interval between fundamental date J2000.0 and given date (JC). */
-    $t = (($date1 - static::DJ00) + $date2) / $DJC;
+    $t = (($date1 - static::DJ00) + $date2) / static::DJC;
 
     /* Factor correcting for secular variation of J2. */
     $fj2 = -2.7774e-6 * $t;

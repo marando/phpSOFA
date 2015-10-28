@@ -380,7 +380,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $dpsi;
     $deps;
 
-    SOFA::iauNut00a(2400000.5, 53736.0, $dpsi, $deps);
+    SOFA::iauNut06a(2400000.5, 53736.0, $dpsi, $deps);
 
     $this->assertEquals(-0.9630912025820308797e-5, $dpsi, "dpsi", 1e-13);
     $this->assertEquals(0.4063238496887249798e-4, $deps, "deps", 1e-13);
