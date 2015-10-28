@@ -49,7 +49,7 @@ trait iauFaur03 {
     $a;
 
     /* Mean longitude of Uranus (IERS Conventions 2003). */
-    $a = fmod(5.481293872 + 7.4781598567 * $t, static::D2PI);
+    $a = fmod(5.481293872 + 7.4781598567 * $t, D2PI);
 
     return $a;
   }

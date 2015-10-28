@@ -63,10 +63,10 @@ trait iauObl80 {
     $eps0;
 
     /* Interval between fundamental epoch J2000.0 and given date (JC). */
-    $t = (($date1 - static::DJ00) + $date2) / static::DJC;
+    $t = (($date1 - DJ00) + $date2) / DJC;
 
     /* Mean obliquity of date. */
-    $eps0 = static::DAS2R * (84381.448 +
+    $eps0 = DAS2R * (84381.448 +
             (-46.8150 +
             (-0.00059 +
             ( 0.001813) * $t) * $t) * $t);

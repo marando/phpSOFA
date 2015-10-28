@@ -41,8 +41,8 @@ trait iauEpj2jd {
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
   public static function iauEpj2jd($epj, &$djm0, &$djm) {
-    $djm0 = static::DJM0;
-    $djm  = static::DJM00 + ($epj - 2000.0) * 365.25;
+    $djm0 = DJM0;
+    $djm  = DJM00 + ($epj - 2000.0) * 365.25;
 
     return;
   }

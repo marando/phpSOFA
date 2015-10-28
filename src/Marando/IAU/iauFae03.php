@@ -52,7 +52,7 @@ trait iauFae03 {
     $a;
 
     /* Mean longitude of Earth (IERS Conventions 2003). */
-    $a = fmod(1.753470314 + 628.3075849991 * $t, static::D2PI);
+    $a = fmod(1.753470314 + 628.3075849991 * $t, D2PI);
 
     return $a;
   }

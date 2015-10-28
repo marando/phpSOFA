@@ -2,15 +2,14 @@
 
 namespace Marando\IAU;
 
-trait iauGmst00 {
+trait iauGmst06 {
 
   /**
    *  - - - - - - - - - -
-   *   i a u G m s t 0 0
+   *   i a u G m s t 0 6
    *  - - - - - - - - - -
    *
-   *  Greenwich mean sidereal time (model consistent with IAU 2000
-   *  resolutions).
+   *  Greenwich mean sidereal time (consistent with IAU 2006 precession).
    *
    *  This function is part of the International Astronomical Union's
    *  SOFA (Standards Of Fundamental Astronomy) software collection.
@@ -31,7 +30,7 @@ trait iauGmst00 {
    *     argument pairs.  For example, JD=2450123.7 could be expressed in
    *     any of these ways, among others:
    *
-   *            Part A         Part B
+   *            Part A        Part B
    *
    *         2450123.7           0.0       (JD method)
    *         2451545.0       -1421.3       (J2000 method)
@@ -44,7 +43,7 @@ trait iauGmst00 {
    *     in this respect).  The J2000 and MJD methods are good compromises
    *     between resolution and convenience.  For UT, the date & time
    *     method is best matched to the algorithm that is used by the Earth
-   *     Rotation Angle function, called internally:  maximum precision is
+   *     rotation angle function, called internally:  maximum precision is
    *     delivered when the uta argument is for 0hrs UT1 on the day in
    *     question and the utb argument lies in the range 0 to 1, or vice
    *     versa.
@@ -53,28 +52,19 @@ trait iauGmst00 {
    *     and TT to predict the effects of precession.  If UT1 is used for
    *     both purposes, errors of order 100 microarcseconds result.
    *
-   *  3) This GMST is compatible with the IAU 2000 resolutions and must be
-   *     used only in conjunction with other IAU 2000 compatible
-   *     components such as precession-nutation and equation of the
-   *     equinoxes.
+   *  3) This GMST is compatible with the IAU 2006 precession and must not
+   *     be used with other precession models.
    *
    *  4) The result is returned in the range 0 to 2pi.
-   *
-   *  5) The algorithm is from Capitaine et al. (2003) and IERS
-   *     Conventions 2003.
    *
    *  Called:
    *     iauEra00     Earth rotation angle, IAU 2000
    *     iauAnp       normalize angle into range 0 to 2pi
    *
-   *  References:
+   *  Reference:
    *
-   *     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions to
-   *     implement the IAU 2000 definition of UT1", Astronomy &
-   *     Astrophysics, 406, 1135-1149 (2003)
-   *
-   *     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
-   *     IERS Technical Note No. 32, BKG (2004)
+   *     Capitaine, N., Wallace, P.T. & Chapront, J., 2005,
+   *     Astron.Astrophys. 432, 355
    *
    *  This revision:  2013 June 18
    *
@@ -82,20 +72,21 @@ trait iauGmst00 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauGmst00($uta, $utb, $tta, $ttb) {
+  public static function iauGmst06($uta, $utb, $tta, $ttb) {
     $t;
     $gmst;
 
     /* TT Julian centuries since J2000.0. */
     $t = (($tta - DJ00) + $ttb) / DJC;
 
-    /* Greenwich Mean Sidereal Time, IAU 2000. */
+    /* Greenwich mean sidereal time, IAU 2006. */
     $gmst = SOFA::iauAnp(SOFA::iauEra00($uta, $utb) +
                     ( 0.014506 +
-                    ( 4612.15739966 +
-                    ( 1.39667721 +
-                    ( -0.00009344 +
-                    ( 0.00001882 ) * $t) * $t) * $t) * $t) * DAS2R);
+                    ( 4612.156534 +
+                    ( 1.3915817 +
+                    ( -0.00000044 +
+                    ( -0.000029956 +
+                    ( -0.0000000368 ) * $t) * $t) * $t) * $t) * $t) * DAS2R);
 
     return $gmst;
   }

@@ -61,7 +61,7 @@ trait iauObl06 {
     $eps0;
 
     /* Interval between fundamental date J2000.0 and given date (JC). */
-    $t = (($date1 - static::DJ00) + $date2) / static::DJC;
+    $t = (($date1 - DJ00) + $date2) / DJC;
 
     /* Mean obliquity. */
     $eps0 = (84381.406 +
@@ -69,7 +69,7 @@ trait iauObl06 {
             ( -0.0001831 +
             ( 0.00200340 +
             ( -0.000000576 +
-            ( -0.0000000434) * $t) * $t) * $t) * $t) * $t) * static::DAS2R;
+            ( -0.0000000434) * $t) * $t) * $t) * $t) * $t) * DAS2R;
 
     return $eps0;
   }

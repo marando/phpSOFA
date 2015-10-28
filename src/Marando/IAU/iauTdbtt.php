@@ -63,7 +63,7 @@ trait iauTdbtt {
     $dtrd;
 
     /* Result, safeguarding precision. */
-    $dtrd = $dtr / static::DAYSEC;
+    $dtrd = $dtr / DAYSEC;
     if ($tdb1 > $tdb2) {
       $tt1 = $tdb1;
       $tt2 = $tdb2 - $dtrd;

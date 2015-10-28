@@ -2,15 +2,15 @@
 
 namespace Marando\IAU;
 
-trait iauFasa03 {
+trait iauFalp03 {
 
   /**
    *  - - - - - - - - - -
-   *   i a u F a s a 0 3
+   *   i a u F a l p 0 3
    *  - - - - - - - - - -
    *
    *  Fundamental argument, IERS Conventions (2003):
-   *  mean longitude of Saturn.
+   *  mean anomaly of the Sun.
    *
    *  This function is part of the International Astronomical Union's
    *  SOFA (Standards Of Fundamental Astronomy) software collection.
@@ -21,7 +21,7 @@ trait iauFasa03 {
    *     t     double    TDB, Julian centuries since J2000.0 (Note 1)
    *
    *  Returned (function value):
-   *           double    mean longitude of Saturn, radians (Note 2)
+   *           double    l', radians (Note 2)
    *
    *  Notes:
    *
@@ -29,7 +29,7 @@ trait iauFasa03 {
    *     TT, which makes no significant difference.
    *
    *  2) The expression used is as adopted in IERS Conventions (2003) and
-   *     comes from Souchay et al. (1999) after Simon et al. (1994).
+   *     is from Simon et al. (1994).
    *
    *  References:
    *
@@ -39,20 +39,21 @@ trait iauFasa03 {
    *     Simon, J.-L., Bretagnon, P., Chapront, J., Chapront-Touze, M.,
    *     Francou, G., Laskar, J. 1994, Astron.Astrophys. 282, 663-683
    *
-   *     Souchay, J., Loysel, B., Kinoshita, H., Folgueira, M. 1999,
-   *     Astron.Astrophys.Supp.Ser. 135, 111
-   *
    *  This revision:  2013 June 18
    *
    *  SOFA release 2015-02-09
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauFasa03($t) {
+  public static function iauFalp03($t) {
     $a;
 
-    /* Mean longitude of Saturn (IERS Conventions 2003). */
-    $a = fmod(0.874016757 + 21.3299104960 * $t, D2PI);
+    /* Mean anomaly of the Sun (IERS Conventions 2003). */
+    $a = fmod(1287104.793048 +
+                    $t * ( 129596581.0481 +
+                    $t * ( - 0.5532 +
+                    $t * ( 0.000136 +
+                    $t * ( - 0.00001149 ) ) ) ), TURNAS) * DAS2R;
 
     return $a;
   }

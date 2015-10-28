@@ -52,7 +52,7 @@ trait iauAf2a {
     $rad = ( $s == '-' ? -1.0 : 1.0 ) *
             ( 60.0 * ( 60.0 * ( (double)abs($ideg) ) +
             ( (double)abs($iamin) ) ) +
-            abs($asec) ) * static::DAS2R;
+            abs($asec) ) * DAS2R;
 
     /* Validate arguments and return status. */
     if ($ideg < 0 || $ideg > 359)

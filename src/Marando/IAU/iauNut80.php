@@ -77,7 +77,7 @@ trait iauNut80 {
     $j;
 
     /* Units of 0.1 milliarcsecond to radians */
-    $U2R = static::DAS2R / 1e4;
+    $U2R = DAS2R / 1e4;
 
     /* ------------------------------------------------ */
     /* Table of multiples of arguments and coefficients */
@@ -218,7 +218,7 @@ trait iauNut80 {
     /* -------------------------------------------------------------------- */
 
     /* Interval between fundamental epoch J2000.0 and given date (JC). */
-    $t = (($date1 - static::DJ00) + $date2) / static::DJC;
+    $t = (($date1 - DJ00) + $date2) / DJC;
 
     /* --------------------- */
     /* Fundamental arguments */
@@ -226,29 +226,29 @@ trait iauNut80 {
 
     /* Mean longitude of Moon minus mean longitude of Moon's perigee. */
     $el = SOFA::iauAnpm(
-                    (485866.733 + (715922.633 + (31.310 + 0.064 * $t) * $t) * $t) * static::DAS2R + fmod(1325.0 * $t,
-                            1.0) * static::D2PI);
+                    (485866.733 + (715922.633 + (31.310 + 0.064 * $t) * $t) * $t) * DAS2R + fmod(1325.0 * $t,
+                            1.0) * D2PI);
 
     /* Mean longitude of Sun minus mean longitude of Sun's perigee. */
     $elp = SOFA::iauAnpm(
-                    (1287099.804 + (1292581.224 + (-0.577 - 0.012 * $t) * $t) * $t) * static::DAS2R + fmod(99.0 * $t,
-                            1.0) * static::D2PI);
+                    (1287099.804 + (1292581.224 + (-0.577 - 0.012 * $t) * $t) * $t) * DAS2R + fmod(99.0 * $t,
+                            1.0) * D2PI);
 
     /* Mean longitude of Moon minus mean longitude of Moon's node. */
     $f = SOFA::iauAnpm(
-                    (335778.877 + (295263.137 + (-13.257 + 0.011 * $t) * $t) * $t) * static::DAS2R + fmod(1342.0 * $t,
-                            1.0) * static::D2PI);
+                    (335778.877 + (295263.137 + (-13.257 + 0.011 * $t) * $t) * $t) * DAS2R + fmod(1342.0 * $t,
+                            1.0) * D2PI);
 
     /* Mean elongation of Moon from Sun. */
     $d = SOFA::iauAnpm(
-                    (1072261.307 + (1105601.328 + (-6.891 + 0.019 * $t) * $t) * $t) * static::DAS2R + fmod(1236.0 * $t,
-                            1.0) * static::D2PI);
+                    (1072261.307 + (1105601.328 + (-6.891 + 0.019 * $t) * $t) * $t) * DAS2R + fmod(1236.0 * $t,
+                            1.0) * D2PI);
 
     /* Longitude of the mean ascending node of the lunar orbit on the */
     /* ecliptic, measured from the mean equinox of date. */
     $om = SOFA::iauAnpm(
-                    (450160.280 + (-482890.539 + (7.455 + 0.008 * $t) * $t) * $t) * static::DAS2R + fmod(-5.0 * $t,
-                            1.0) * static::D2PI);
+                    (450160.280 + (-482890.539 + (7.455 + 0.008 * $t) * $t) * $t) * DAS2R + fmod(-5.0 * $t,
+                            1.0) * D2PI);
 
     /* --------------- */
     /* Nutation series */

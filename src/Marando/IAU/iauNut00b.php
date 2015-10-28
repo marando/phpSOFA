@@ -149,14 +149,14 @@ trait iauNut00b {
     $i;
 
     /* Units of 0.1 microarcsecond to radians */
-    $U2R = static::DAS2R / 1e7;
+    $U2R = DAS2R / 1e7;
 
     /* ---------------------------------------- */
     /* Fixed offsets in lieu of planetary terms */
     /* ---------------------------------------- */
 
-    $DPPLAN = -0.135 * static::DMAS2R;
-    $DEPLAN = 0.388 * static::DMAS2R;
+    $DPPLAN = -0.135 * DMAS2R;
+    $DEPLAN = 0.388 * DMAS2R;
 
     /* --------------------------------------------------- */
     /* Luni-solar nutation: argument and term coefficients */
@@ -264,7 +264,7 @@ trait iauNut00b {
     /* -------------------------------------------------------------------- */
 
     /* Interval between fundamental epoch J2000.0 and given date (JC). */
-    $t = (($date1 - static::DJ00) + $date2) / static::DJC;
+    $t = (($date1 - DJ00) + $date2) / DJC;
 
     /* -------------------- */
     /* LUNI-SOLAR NUTATION */
@@ -273,19 +273,19 @@ trait iauNut00b {
     /* Fundamental (Delaunay) arguments from Simon et al. (1994) */
 
     /* Mean anomaly of the Moon. */
-    $el = fmod(485868.249036 + (1717915923.2178) * $t, static::TURNAS) * static::DAS2R;
+    $el = fmod(485868.249036 + (1717915923.2178) * $t, TURNAS) * DAS2R;
 
     /* Mean anomaly of the Sun. */
-    $elp = fmod(1287104.79305 + (129596581.0481) * $t, static::TURNAS) * static::DAS2R;
+    $elp = fmod(1287104.79305 + (129596581.0481) * $t, TURNAS) * DAS2R;
 
     /* Mean argument of the latitude of the Moon. */
-    $f = fmod(335779.526232 + (1739527262.8478) * $t, static::TURNAS) * static::DAS2R;
+    $f = fmod(335779.526232 + (1739527262.8478) * $t, TURNAS) * DAS2R;
 
     /* Mean elongation of the Moon from the Sun. */
-    $d = fmod(1072260.70369 + (1602961601.2090) * $t, static::TURNAS) * static::DAS2R;
+    $d = fmod(1072260.70369 + (1602961601.2090) * $t, TURNAS) * DAS2R;
 
     /* Mean longitude of the ascending node of the Moon. */
-    $om = fmod(450160.398036 + (-6962890.5431) * $t, static::TURNAS) * static::DAS2R;
+    $om = fmod(450160.398036 + (-6962890.5431) * $t, TURNAS) * DAS2R;
 
     /* Initialize the nutation values. */
     $dp = 0.0;
@@ -299,7 +299,7 @@ trait iauNut00b {
               (double)$x[$i][1] * $elp +
               (double)$x[$i][2] * $f +
               (double)$x[$i][3] * $d +
-              (double)$x[$i][4] * $om, static::D2PI);
+              (double)$x[$i][4] * $om, D2PI);
       $sarg = sin($arg);
       $carg = cos($arg);
 

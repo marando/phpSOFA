@@ -93,7 +93,7 @@ trait iauNut06a {
     $de;
 
     /* Interval between fundamental date J2000.0 and given date (JC). */
-    $t = (($date1 - static::DJ00) + $date2) / static::DJC;
+    $t = (($date1 - DJ00) + $date2) / DJC;
 
     /* Factor correcting for secular variation of J2. */
     $fj2 = -2.7774e-6 * $t;
@@ -104,7 +104,7 @@ trait iauNut06a {
     /* Apply P03 adjustments (Wallace & Capitaine, 2006, Eqs.5). */
     $dpsi = $dp + $dp * (0.4697e-6 + $fj2);
     $deps = $de + $de * $fj2;
-
+    
     return;
   }
 

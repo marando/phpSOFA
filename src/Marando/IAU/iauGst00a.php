@@ -2,14 +2,14 @@
 
 namespace Marando\IAU;
 
-trait iauGmst00 {
+trait iauGst00a {
 
   /**
    *  - - - - - - - - - -
-   *   i a u G m s t 0 0
+   *   i a u G s t 0 0 a
    *  - - - - - - - - - -
    *
-   *  Greenwich mean sidereal time (model consistent with IAU 2000
+   *  Greenwich apparent sidereal time (consistent with IAU 2000
    *  resolutions).
    *
    *  This function is part of the International Astronomical Union's
@@ -22,7 +22,7 @@ trait iauGmst00 {
    *     tta,ttb    double    TT as a 2-part Julian Date (Notes 1,2)
    *
    *  Returned (function value):
-   *                double    Greenwich mean sidereal time (radians)
+   *                double    Greenwich apparent sidereal time (radians)
    *
    *  Notes:
    *
@@ -31,7 +31,7 @@ trait iauGmst00 {
    *     argument pairs.  For example, JD=2450123.7 could be expressed in
    *     any of these ways, among others:
    *
-   *            Part A         Part B
+   *            Part A        Part B
    *
    *         2450123.7           0.0       (JD method)
    *         2451545.0       -1421.3       (J2000 method)
@@ -50,13 +50,13 @@ trait iauGmst00 {
    *     versa.
    *
    *  2) Both UT1 and TT are required, UT1 to predict the Earth rotation
-   *     and TT to predict the effects of precession.  If UT1 is used for
-   *     both purposes, errors of order 100 microarcseconds result.
+   *     and TT to predict the effects of precession-nutation.  If UT1 is
+   *     used for both purposes, errors of order 100 microarcseconds
+   *     result.
    *
-   *  3) This GMST is compatible with the IAU 2000 resolutions and must be
+   *  3) This GAST is compatible with the IAU 2000 resolutions and must be
    *     used only in conjunction with other IAU 2000 compatible
-   *     components such as precession-nutation and equation of the
-   *     equinoxes.
+   *     components such as precession-nutation.
    *
    *  4) The result is returned in the range 0 to 2pi.
    *
@@ -64,7 +64,8 @@ trait iauGmst00 {
    *     Conventions 2003.
    *
    *  Called:
-   *     iauEra00     Earth rotation angle, IAU 2000
+   *     iauGmst00    Greenwich mean sidereal time, IAU 2000
+   *     iauEe00a     equation of the equinoxes, IAU 2000A
    *     iauAnp       normalize angle into range 0 to 2pi
    *
    *  References:
@@ -82,22 +83,16 @@ trait iauGmst00 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauGmst00($uta, $utb, $tta, $ttb) {
-    $t;
-    $gmst;
+  public static function iauGst00a($uta, $utb, $tta, $ttb) {
+    $gmst00;
+    $ee00a;
+    $gst;
 
-    /* TT Julian centuries since J2000.0. */
-    $t = (($tta - DJ00) + $ttb) / DJC;
+    $gmst00 = SOFA::iauGmst00($uta, $utb, $tta, $ttb);
+    $ee00a  = SOFA::iauEe00a($tta, $ttb);
+    $gst    = SOFA::iauAnp($gmst00 + $ee00a);
 
-    /* Greenwich Mean Sidereal Time, IAU 2000. */
-    $gmst = SOFA::iauAnp(SOFA::iauEra00($uta, $utb) +
-                    ( 0.014506 +
-                    ( 4612.15739966 +
-                    ( 1.39667721 +
-                    ( -0.00009344 +
-                    ( 0.00001882 ) * $t) * $t) * $t) * $t) * DAS2R);
-
-    return $gmst;
+    return $gst;
   }
 
 }

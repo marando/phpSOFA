@@ -194,7 +194,7 @@ trait iauNut00a {
     $depspl;
 
     /* Units of 0.1 microarcsecond to radians */
-    $U2R = static::DAS2R / 1e7;
+    $U2R = DAS2R / 1e7;
 
     /* ------------------------- */
     /* Luni-Solar nutation model */
@@ -1755,7 +1755,7 @@ trait iauNut00a {
 
 
     /* Interval between fundamental date J2000.0 and given date (JC). */
-    $t = (($date1 - static::DJ00) + $date2) / static::DJC;
+    $t = (($date1 - DJ00) + $date2) / DJC;
 
     /* ------------------- */
     /* LUNI-SOLAR NUTATION */
@@ -1771,7 +1771,7 @@ trait iauNut00a {
                     $t * (129596581.0481 +
                     $t * (-0.5532 +
                     $t * (0.000136 +
-                    $t * (-0.00001149)))), static::TURNAS) * static::DAS2R;
+                    $t * (-0.00001149)))), TURNAS) * DAS2R;
 
     /* Mean longitude of the Moon minus that of the ascending node */
     /* (IERS 2003. */
@@ -1782,7 +1782,7 @@ trait iauNut00a {
                     $t * (1602961601.2090 +
                     $t * (-6.3706 +
                     $t * (0.006593 +
-                    $t * (-0.00003169)))), static::TURNAS) * static::DAS2R;
+                    $t * (-0.00003169)))), TURNAS) * DAS2R;
 
     /* Mean longitude of the ascending node of the Moon (IERS 2003). */
     $om = SOFA::iauFaom03($t);
@@ -1799,7 +1799,7 @@ trait iauNut00a {
               (double)$xls[$i][1] * $elp +
               (double)$xls[$i][2] * $f +
               (double)$xls[$i][3] * $d +
-              (double)$xls[$i][4] * $om, static::D2PI);
+              (double)$xls[$i][4] * $om, D2PI);
       $sarg = sin($arg);
       $carg = cos($arg);
 
@@ -1824,17 +1824,17 @@ trait iauNut00a {
     /* 0.1 microarcsecond. */
 
     /* Mean anomaly of the Moon (MHB2000). */
-    $al = fmod(2.35555598 + 8328.6914269554 * $t, static::D2PI);
+    $al = fmod(2.35555598 + 8328.6914269554 * $t, D2PI);
 
     /* Mean longitude of the Moon minus that of the ascending node */
     /* (MHB2000). */
-    $af = fmod(1.627905234 + 8433.466158131 * $t, static::D2PI);
+    $af = fmod(1.627905234 + 8433.466158131 * $t, D2PI);
 
     /* Mean elongation of the Moon from the Sun (MHB2000). */
-    $ad = fmod(5.198466741 + 7771.3771468121 * $t, static::D2PI);
+    $ad = fmod(5.198466741 + 7771.3771468121 * $t, D2PI);
 
     /* Mean longitude of the ascending node of the Moon (MHB2000). */
-    $aom = fmod(2.18243920 - 33.757045 * $t, static::D2PI);
+    $aom = fmod(2.18243920 - 33.757045 * $t, D2PI);
 
     /* General accumulated precession in longitude (IERS 2003). */
     $apa = SOFA::iauFapa03($t);
@@ -1849,7 +1849,7 @@ trait iauNut00a {
     $alur = SOFA::iauFaur03($t);
 
     /* Neptune longitude (MHB2000). */
-    $alne = fmod(5.321159000 + 3.8127774000 * $t, static::D2PI);
+    $alne = fmod(5.321159000 + 3.8127774000 * $t, D2PI);
 
     /* Initialize the nutation values. */
     $dp = 0.0;
@@ -1871,7 +1871,7 @@ trait iauNut00a {
               (double)$xpl[$i][9] * $alsa +
               (double)$xpl[$i][10] * $alur +
               (double)$xpl[$i][11] * $alne +
-              (double)$xpl[$i][12] * $apa, static::D2PI);
+              (double)$xpl[$i][12] * $apa, D2PI);
       $sarg = sin($arg);
       $carg = cos($arg);
 

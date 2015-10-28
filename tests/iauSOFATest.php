@@ -420,4 +420,69 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(0.4022837240028158102, $era00, null, 1e-12);
   }
 
+  public function test_iauGmst06() {
+    $theta;
+
+    $theta = SOFA::iauGmst06(2400000.5, 53736.0, 2400000.5, 53736.0);
+    $this->assertEquals(1.754174971870091203, $theta, null, 1e-12);
+  }
+
+  public function test_iauGmst82() {
+    $theta;
+
+    $theta = SOFA::iauGmst82(2400000.5, 53736.0);
+    $this->assertEquals(1.754174981860675096, $theta, null, 1e-12);
+  }
+
+  public function test_iauGst00a() {
+    $theta;
+
+    $theta = SOFA::iauGst00a(2400000.5, 53736.0, 2400000.5, 53736.0);
+    $this->assertEquals(1.754166138018281369, $theta, null, 1e-12);
+  }
+
+  public function test_iauEe00a() {
+    $ee;
+
+    $ee = SOFA::iauEe00a(2400000.5, 53736.0);
+    $this->assertEquals(-0.8834192459222588227e-5, $ee, null, 1e-18);
+  }
+
+  public function test_iauPr00() {
+    $dpsipr;
+    $depspr;
+
+    SOFA::iauPr00(2400000.5, 53736, $dpsipr, $depspr);
+
+    $this->assertEquals(-0.8716465172668347629e-7, $dpsipr, null, 1e-22);
+    $this->assertEquals(-0.7342018386722813087e-8, $depspr, null, 1e-22);
+  }
+
+  public function test_iauEe00() {
+    $epsa;
+    $dpsi;
+    $ee;
+
+    $epsa = 0.4090789763356509900;
+    $dpsi = -0.9630909107115582393e-5;
+
+    $ee = SOFA::iauEe00(2400000.5, 53736.0, $epsa, $dpsi);
+    $this->assertEquals(-0.8834193235367965479e-5, $ee, null, 1e-18);
+  }
+
+  public function test_iauEect00() {
+    $eect;
+
+    $eect = SOFA::iauEect00(2400000.5, 53736.0);
+    $this->assertEquals(0.204608500488125264e-8, $eect, null, 1e-20);
+  }
+
+  public function test_iauFalp03() {
+    $this->assertEquals(6.226797973505507345, SOFA::iauFalp03(0.80), null, 1e-12);
+  }
+
+  public function test_iauFad03() {
+    $this->assertEquals(1.946709205396925672, SOFA::iauFad03(0.80), null, 1e-12);
+  }
+
 }

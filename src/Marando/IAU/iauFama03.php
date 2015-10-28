@@ -52,7 +52,7 @@ trait iauFama03 {
     $a;
 
     /* Mean longitude of Mars (IERS Conventions 2003). */
-    $a = fmod(6.203480913 + 334.0612426700 * $t, static::D2PI);
+    $a = fmod(6.203480913 + 334.0612426700 * $t, D2PI);
 
     return $a;
   }

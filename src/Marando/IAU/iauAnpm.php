@@ -31,9 +31,9 @@ trait iauAnpm {
   public static function iauAnpm($a) {
     $w;
 
-    $w = fmod($a, static::D2PI);
-    if (abs($w) >= static::DPI)
-      $w -= sign(static::D2PI, $a);
+    $w = fmod($a, D2PI);
+    if (abs($w) >= DPI)
+      $w -= sign(D2PI, $a);
 
     return $w;
   }

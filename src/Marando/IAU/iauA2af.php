@@ -67,7 +67,7 @@ trait iauA2af {
    */
   public static function iauA2af($ndp, $angle, &$sign, array &$idmsf) {
     /* Hours to degrees * radians to turns */
-    $F = 15.0 / static::D2PI;
+    $F = 15.0 / D2PI;
 
     /* Scale then use days to h,m,s function. */
     static::iauD2tf($ndp, $angle * $F, $sign, $idmsf);
