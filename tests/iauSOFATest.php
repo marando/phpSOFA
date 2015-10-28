@@ -372,12 +372,8 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
 
     SOFA::iauNut00a(2400000.5, 53736.0, $dpsi, $deps);
 
-    // Original tests had a precision of 1e-13
-    //$this->assertEquals(-0.9630909107115518431e-5, $dpsi, "dpsi", 1e-13);
-    //$this->assertEquals(0.4063239174001678710e-4, $deps, "deps", 1e-13);
-    // Use these precisions due to rounding errors from php float
-    $this->assertEquals(-0.9630909107115518431e-5, $dpsi, "dpsi", 1e-8);
-    $this->assertEquals(0.4063239174001678710e-4, $deps, "deps", 1e-9);
+    $this->assertEquals(-0.9630909107115518431e-5, $dpsi, "dpsi", 1e-13);
+    $this->assertEquals(0.4063239174001678710e-4, $deps, "deps", 1e-13);
   }
 
   public function test_iauNut06a() {
@@ -386,12 +382,18 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
 
     SOFA::iauNut00a(2400000.5, 53736.0, $dpsi, $deps);
 
-    // Original tests had a precision of 1e-13
-    //$this->assertEquals(-0.9630912025820308797e-5, $dpsi, "dpsi", 1e-13);
-    //$this->assertEquals(0.4063238496887249798e-4, $deps, "deps", 1e-13);
-    // Use these precisions due to rounding errors from php float
-    $this->assertEquals(-0.9630912025820308797e-5, $dpsi, "dpsi", 1e-8);
-    $this->assertEquals(0.4063238496887249798e-4, $deps, "deps", 1e-9);
+    $this->assertEquals(-0.9630912025820308797e-5, $dpsi, "dpsi", 1e-13);
+    $this->assertEquals(0.4063238496887249798e-4, $deps, "deps", 1e-13);
+  }
+
+  public function test_iauNut00b() {
+    $dpsi;
+    $deps;
+
+    SOFA::iauNut00b(2400000.5, 53736.0, $dpsi, $deps);
+
+    $this->assertEquals(-0.9632552291148362783e-5, $dpsi, "dpsi", 1e-13);
+    $this->assertEquals(0.4063197106621159367e-4, $deps, "deps", 1e-13);
   }
 
 }

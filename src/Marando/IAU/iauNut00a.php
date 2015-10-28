@@ -959,7 +959,8 @@ trait iauNut00a {
     ];
 
     /* Number of terms in the luni-solar nutation model */
-    $NLS = (int)( count($xls) / count($xls[0]) );
+    //$NLS = (int)( count($xls) / count($xls[0]) );
+    $NLS = count($xls);
 
     /* ------------------------ */
     /* Planetary nutation model */
@@ -1747,7 +1748,8 @@ trait iauNut00a {
     ];
 
     /* Number of terms in the planetary nutation model */
-    $NPL = (int)( count($xpl) / count($xpl[0]) );
+    //$NPL = (int)( count($xpl) / count($xpl[0]) );
+    $NPL = count($xpl);
 
     /* -------------------------------------------------------------------- */
 

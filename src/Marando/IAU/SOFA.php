@@ -83,6 +83,11 @@ class SOFA {
    */
   const TURNAS = 1296000.0;
 
+  /**
+   * Milliarcseconds to radians
+   */
+  const DMAS2R = 4.848136811095359935899141e-9;
+
   //----------------------------------------------------------------------------
   // Traits - To avoid a large file each SOFA routine is included as a trait
   //----------------------------------------------------------------------------
@@ -121,7 +126,8 @@ class SOFA {
       iauFaur03,
       iauFapa03,
       iauNut00a,
-      iauNut06a;
+      iauNut06a,
+      iauNut00b;
 }
 
 /**
