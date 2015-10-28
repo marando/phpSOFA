@@ -127,7 +127,8 @@ class SOFA {
       iauFapa03,
       iauNut00a,
       iauNut06a,
-      iauNut00b;
+      iauNut00b,
+      iauNut80;
 }
 
 /**

@@ -396,4 +396,14 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(0.4063197106621159367e-4, $deps, "deps", 1e-13);
   }
 
+  public function test_iauNut80() {
+    $dpsi;
+    $deps;
+
+    SOFA::iauNut80(2400000.5, 53736.0, $dpsi, $deps);
+
+    $this->assertEquals(-0.9643658353226563966e-5, $dpsi, "dpsi", 1e-13);
+    $this->assertEquals(0.4060051006879713322e-4, $deps, "deps", 1e-13);
+  }
+
 }
