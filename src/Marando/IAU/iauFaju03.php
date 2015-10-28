@@ -52,7 +52,7 @@ trait iauFaju03 {
     $a;
 
     /* Mean longitude of Jupiter (IERS Conventions 2003). */
-    $a = fmod(0.599546497 + 52.9690962641 * $t, static::D2PI);
+    $a = fmod(0.599546497 + 52.9690962641 * $t, D2PI);
 
     return $a;
   }

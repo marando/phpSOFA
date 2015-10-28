@@ -67,7 +67,7 @@ trait iauA2tf {
    */
   public static function iauA2tf($ndp, $angle, &$sign, array &$ihmsf) {
     /* Scale then use days to h,m,s function. */
-    static::iauD2tf($ndp, $angle / static::D2PI, $sign, $ihmsf);
+    static::iauD2tf($ndp, $angle / D2PI, $sign, $ihmsf);
 
     return;
   }

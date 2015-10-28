@@ -138,10 +138,10 @@ trait iauApcs {
           array $ehp, iauASTROM &$astrom) {
 
     /* au/d to m/s */
-    $AUDMS = static::DAU / static::DAYSEC;
+    $AUDMS = DAU / DAYSEC;
 
     /* Light time for 1 AU (day) */
-    $CR = static::AULT / static::DAYSEC;
+    $CR = AULT / DAYSEC;
 
     $i;
     $dp;
@@ -153,11 +153,11 @@ trait iauApcs {
     $w;
 
     /* Time since reference epoch, years (for proper motion calculation). */
-    $astrom->pmt = ( ($date1 - static::DJ00) + $date2 ) / static::DJY;
+    $astrom->pmt = ( ($date1 - DJ00) + $date2 ) / DJY;
 
     /* Adjust Earth ephemeris to observer. */
     for ($i = 0; $i < 3; $i++) {
-      $dp     = $pv[0][$i] / static::DAU;
+      $dp     = $pv[0][$i] / DAU;
       $dv     = $pv[1][$i] / $AUDMS;
       $pb[$i] = $ebpv[0][$i] + $dp;
       $vb[$i] = $ebpv[1][$i] + $dv;

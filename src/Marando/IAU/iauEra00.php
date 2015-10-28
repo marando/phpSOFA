@@ -84,13 +84,13 @@ trait iauEra00 {
       $d1 = $dj2;
       $d2 = $dj1;
     }
-    $t = $d1 + ($d2 - static::DJ00);
+    $t = $d1 + ($d2 - DJ00);
 
     /* Fractional part of T (days). */
     $f = fmod($d1, 1.0) + fmod($d2, 1.0);
 
     /* Earth rotation angle at this UT1. */
-    $theta = SOFA::iauAnp(static::D2PI * ($f + 0.7790572732640 + 0.00273781191135448 * $t));
+    $theta = SOFA::iauAnp(D2PI * ($f + 0.7790572732640 + 0.00273781191135448 * $t));
 
     return $theta;
   }

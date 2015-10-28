@@ -76,7 +76,7 @@ trait iauGmst82 {
    */
   public static function iauGmst82($dj1, $dj2) {
     /* Coefficients of IAU 1982 GMST-UT1 model */
-    $A = 24110.54841 - static::DAYSEC / 2.0;
+    $A = 24110.54841 - DAYSEC / 2.0;
     $B = 8640184.812866;
     $C = 0.093104;
     $D = -6.2e-6;
@@ -100,13 +100,13 @@ trait iauGmst82 {
       $d1 = $dj2;
       $d2 = $dj1;
     }
-    $t = ($d1 + ($d2 - static::DJ00)) / static::DJC;
+    $t = ($d1 + ($d2 - DJ00)) / DJC;
 
     /* Fractional part of JD(UT1), in seconds. */
-    $f = static::DAYSEC * (fmod($d1, 1.0) + fmod($d2, 1.0));
+    $f = DAYSEC * (fmod($d1, 1.0) + fmod($d2, 1.0));
 
     /* GMST at this UT1. */
-    $gmst = SOFA::iauAnp(static::DS2R * (($A + ($B + ($C + $D * $t) * $t) * $t) + $f));
+    $gmst = SOFA::iauAnp(DS2R * (($A + ($B + ($C + $D * $t) * $t) * $t) + $f));
 
     return $gmst;
   }

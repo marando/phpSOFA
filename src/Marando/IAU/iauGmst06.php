@@ -77,7 +77,7 @@ trait iauGmst06 {
     $gmst;
 
     /* TT Julian centuries since J2000.0. */
-    $t = (($tta - static::DJ00) + $ttb) / static::DJC;
+    $t = (($tta - DJ00) + $ttb) / DJC;
 
     /* Greenwich mean sidereal time, IAU 2006. */
     $gmst = SOFA::iauAnp(SOFA::iauEra00($uta, $utb) +
@@ -86,7 +86,7 @@ trait iauGmst06 {
                     ( 1.3915817 +
                     ( -0.00000044 +
                     ( -0.000029956 +
-                    ( -0.0000000368 ) * $t) * $t) * $t) * $t) * $t) * static::DAS2R);
+                    ( -0.0000000368 ) * $t) * $t) * $t) * $t) * $t) * DAS2R);
 
     return $gmst;
   }

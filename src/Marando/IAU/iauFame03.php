@@ -52,7 +52,7 @@ trait iauFame03 {
     $a;
 
     /* Mean longitude of Mercury (IERS Conventions 2003). */
-    $a = fmod(4.402608842 + 2608.7903141574 * $t, static::D2PI);
+    $a = fmod(4.402608842 + 2608.7903141574 * $t, D2PI);
 
     return $a;
   }

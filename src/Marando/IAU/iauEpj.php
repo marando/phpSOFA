@@ -43,7 +43,7 @@ trait iauEpj {
   public static function iauEpj($dj1, $dj2) {
     $epj;
 
-    $epj = 2000.0 + (($dj1 - static::DJ00) + $dj2) / static::DJY;
+    $epj = 2000.0 + (($dj1 - DJ00) + $dj2) / DJY;
 
     return $epj;
   }

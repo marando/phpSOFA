@@ -52,7 +52,7 @@ trait iauFasa03 {
     $a;
 
     /* Mean longitude of Saturn (IERS Conventions 2003). */
-    $a = fmod(0.874016757 + 21.3299104960 * $t, static::D2PI);
+    $a = fmod(0.874016757 + 21.3299104960 * $t, D2PI);
 
     return $a;
   }

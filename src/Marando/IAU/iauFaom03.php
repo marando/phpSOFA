@@ -54,7 +54,7 @@ trait iauFaom03 {
              $t * ( - 6962890.5431 +
              $t * (         7.4722 +
              $t * (         0.007702 +
-             $t * (       - 0.00005939 ) ) ) ), static::TURNAS ) * static::DAS2R;
+             $t * (       - 0.00005939 ) ) ) ), TURNAS ) * DAS2R;
 
    return $a;
   }

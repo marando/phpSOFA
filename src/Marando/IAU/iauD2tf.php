@@ -79,7 +79,7 @@ trait iauD2tf {
     $sign = $days >= 0.0 ? '+' : '-';
 
     /* Interval in seconds. */
-    $a = static::DAYSEC * abs($days);
+    $a = DAYSEC * abs($days);
 
     /* Pre-round if resolution coarser than 1s (then pretend ndp=1). */
     if ($ndp < 0) {
