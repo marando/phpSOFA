@@ -3,8 +3,8 @@ phpSOFA
 A PHP port of the IAU SOFA Library
 
 
-Conversion Status
------------------
+Status
+------
 
  Status | Routine | Description
 --------|---------|------------------------------------------------
