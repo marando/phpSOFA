@@ -44,7 +44,14 @@ class SOFA {
       iauGmst00,
       iauEra00,
       iauGmst06,
-      iauGmst82;
+      iauGmst82,
+      iauGst00a,
+      iauEe00a,
+      iauPr00,
+      iauEe00,
+      iauEect00,
+      iauFalp03,
+      iauFad03;
 }
 
 //------------------------------------------------------------------------------

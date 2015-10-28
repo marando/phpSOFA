@@ -66,11 +66,11 @@ Status
         | Dat     | Delta(AT) (=TAI-UTC) for a given UTC date
  done   | Dtdb    | TDB-TT
         | Dtf2d   | Civil Date to Julian Date
-        | Ee00    | Equation of the equinoxes, IAU 2000
-        | Ee00a   | Equation of the equinoxes, IAU 2000A
+ done   | Ee00    | Equation of the equinoxes, IAU 2000
+ done   | Ee00a   | Equation of the equinoxes, IAU 2000A
         | Ee00b   | Equation of the equinoxes, IAU 2000B
         | Ee06a   | Equation of the equinoxes, IAU 2006/2000A
-        | Eect00  | Equation of the equinoxes complementary terms
+ done   | Eect00  | Equation of the equinoxes complementary terms
         | Eform   | a,f for a nominated Earth reference ellipsoid
         | Eo06a   | Equation of the origins, IAU 2006/2000A
         | Eors    | Equation of the origins, given NPB matrix and s
@@ -81,12 +81,12 @@ Status
         | Epv00   | Earth position and velocity
         | Eqeq94  | Equation of the equinoxes, IAU 1994
  done   | Era00   | Earth Rotation Angle, IAU 2000
-        | Fad03   | Mean elongation of the Moon from the Sun
+ done   | Fad03   | Mean elongation of the Moon from the Sun
  done   | Fae03   | Mean longitude of Earth
  done   | Faf03   | Mean longitude of the Moon minus mean longitude of the ascending node
  done   | Faju03  | Mean longitude of Jupiter
  done   | Fal03   | Mean anomaly of the Moon
-        | Falp03  | Mean anomaly of the Sun
+ done   | Falp03  | Mean anomaly of the Sun
  done   | Fama03  | Mean longitude of Mars
  done   | Fame03  | Mean longitude of Mercury
         | Fane03  | Mean longitude of Neptune
@@ -108,7 +108,7 @@ Status
  done   | Gmst00  | Greenwich Mean Sidereal Time, IAU 2000
  done   | Gmst06  | Greenwich mean sidereal time, IAU 2006
  done   | Gmst82  | Greenwich Mean Sidereal Time, IAU 1982
-        | Gst00a  | Greenwich Apparent Sidereal Time, IAU 2000A
+ done   | Gst00a  | Greenwich Apparent Sidereal Time, IAU 2000A
         | Gst00b  | Greenwich Apparent Sidereal Time, IAU 2000B
         | Gst06   | Greenwich Apparent sidereal time, IAU 2006, given NPB matrix
         | Gst06a  | Greenwich Apparent sidereal time IAU 2006/2000A
@@ -162,7 +162,7 @@ Status
         | Pom00   | Polar-motion matrix, IAU 2000
         | Ppp     | p-vector plus p-vector
         | Ppsp    | p-vector plus scaled p-vector
-        | Pr00    | Adjustments to IAU 1976 precession, IAU 2000
+ done   | Pr00    | Adjustments to IAU 1976 precession, IAU 2000
         | Prec76  | Precession, IAU 1976
         | Pv2p    | Discard velocity component of pv-vector
         | Pv2s    | pv-vector to spherical
