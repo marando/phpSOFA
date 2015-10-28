@@ -406,4 +406,18 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(0.4060051006879713322e-4, $deps, "deps", 1e-13);
   }
 
+  public function test_iauGmst00() {
+    $theta;
+
+    $theta = SOFA::iauGmst00(2400000.5, 53736.0, 2400000.5, 53736.0);
+    $this->assertEquals(1.754174972210740592, $theta, null, 1e-12);
+  }
+
+  public function test_iauEra00() {
+    $era00;
+
+    $era00 = SOFA::iauEra00(2400000.5, 54388.0);
+    $this->assertEquals(0.4022837240028158102, $era00, null, 1e-12);
+  }
+
 }

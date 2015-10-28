@@ -80,7 +80,7 @@ Porting Status
  done   | Epj2jd  | Julian Epoch to Julian Date
         | Epv00   | Earth position and velocity
         | Eqeq94  | Equation of the equinoxes, IAU 1994
-        | Era00   | Earth Rotation Angle, IAU 2000
+ done   | Era00   | Earth Rotation Angle, IAU 2000
         | Fad03   | Mean elongation of the Moon from the Sun
  done   | Fae03   | Mean longitude of Earth
  done   | Faf03   | Mean longitude of the Moon minus mean longitude of the ascending node
@@ -105,7 +105,7 @@ Porting Status
         | Gc2gde  | Geocentric to geodetic transformation for ellipsoid given a,f
         | Gd2gc   | Geodetic to geocentric transformation using a nominated ellipsoid
         | Gd2gce  | Geodetic to geocentric transformation for ellipsoid given a,f
-        | Gmst00  | Greenwich Mean Sidereal Time, IAU 2000
+ done   | Gmst00  | Greenwich Mean Sidereal Time, IAU 2000
         | Gmst06  | Greenwich mean sidereal time, IAU 2006
         | Gmst82  | Greenwich Mean Sidereal Time, IAU 1982
         | Gst00a  | Greenwich Apparent Sidereal Time, IAU 2000A
