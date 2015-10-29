@@ -51,7 +51,19 @@ class SOFA {
       iauEe00,
       iauEect00,
       iauFalp03,
-      iauFad03;
+      iauFad03,
+      iauRefco,
+      iauC2s,
+      iauS2c,
+      iauCpv,
+      iauApcg,
+      iauBi00,
+      iauRx,
+      iauRy,
+      iauRz,
+      iauCr,
+      iauBp00,
+      iauRxr;
 }
 
 //------------------------------------------------------------------------------

@@ -14,7 +14,7 @@ Status
  done   | Af2a    | Decompose ° ' " into radians
  done   | Anp     | Normalize radians to range 0 to 2pi
  done   | Anpm    | Normalize radians to range -pi to +pi
-        | Apcg    | Prepare for ICRS <-> GCRS, geocentric, special
+ done   | Apcg    | Prepare for ICRS <-> GCRS, geocentric, special
         | Apcg13  | Prepare for ICRS <-> GCRS, geocentric
         | Apci    | Prepare for ICRS <-> CIRS, terrestrial, special
         | Apci13  | Prepare for ICRS <-> CIRS, terrestrial
@@ -39,8 +39,8 @@ Status
         | Atoc13  | Observed -> astrometric ICRS
         | Atoi13  | Observed -> CIRS
         | AtOiq   | Quick observed -> CIRS
-        | Bi00    | Frame bias, ICRS to mean J2000, IAU 2000
-        | Bp00    | Frame bias and precession matrices, IAU 2000
+ done   | Bi00    | Frame bias, ICRS to mean J2000, IAU 2000
+ done   | Bp00    | Frame bias and precession matrices, IAU 2000
         | Bp06    | Frame bias and precession matrices, IAU 2006 precession
         | Bpn2xy  | Bias-precession-nutation matrix given CIP
         | C2i00a  | Celestial-to-intermediate matrix, IAU 2000A
@@ -49,7 +49,7 @@ Status
         | C2ibpn  | Celestial-to-intermediate matrix given b-p-n
         | C2ixy   | Celestial-to-intermediate matrix given CIP
         | C2ixys  | Celestial-to-intermediate matrix given CIP and s
-        | C2s     | Unit vector to spherical
+ done   | C2s     | Unit vector to spherical
         | C2t00a  | Celestial-to-terrestrial matrix, IAU 2000A
         | C2t00b  | Celestial-to-terrestrial matrix, IAU 2000B
         | C2t06a  | Celestial-to-terrestrial matrix, IAU 2006/2000A
@@ -59,8 +59,8 @@ Status
         | C2txy   | Celestial-to-terrestrial matrix given CIP
         | Cal2jd  | Gregorian Calendar to Julian Day Number
  done   | Cp      | Copy p-vector
-        | Cpv     | Copy pv-vector
-        | Cr      | Copy r-matrix
+ done   | Cpv     | Copy pv-vector
+ done   | Cr      | Copy r-matrix
         | D2dtf   | Julian Date to Civil Date
  done   | D2tf    | Decompose days into hms
         | Dat     | Delta(AT) (=TAI-UTC) for a given UTC date
@@ -176,21 +176,21 @@ Status
         | Pvup    | Update pv-vector discarding velocity
         | Pvxpv   | Outer (=vector=cross) product of two pv-vectors
         | Pxp     | Outer (=vector=cross) product of two p-vectors
-        | Refco   | Refraction constants
+ done   | Refco   | Refraction constants
         | Rm2v    | r-matrix to r-vector
         | Rv2m    | r-vector to r-matrix
-        | Rx      | Rotate r-matrix about x
+ done   | Rx      | Rotate r-matrix about x
         | Rxp     | Product of r-matrix and p-vector
         | Rxpv    | Product of r-matrix and pv-vector
-        | Rxr     | r-matrix multiply
-        | Ry      | Rotate r-matrix about y
-        | Rz      | Rotate r-matrix about z
+ done   | Rxr     | r-matrix multiply
+ done   | Ry      | Rotate r-matrix about y
+ done   | Rz      | Rotate r-matrix about z
         | S00     | The CIO locator s, given X,Y, quantity s, IAU 2000A,
         | S00a    | The CIO locator s, IAU 2000A
         | S00b    | The CIO locator s, IAU 2000B
         | S06     | The CIO locator s, given X,Y, IAU 2006
         | S06a    | The CIO locator s, IAU 2006/2000A
-        | S2c     | Spherical to unit vector
+ done   | S2c     | Spherical to unit vector
         | S2p     | Spherical to p-vector
         | S2pv    | Spherical to pv-vector
         | S2xpv   | Multiply pv-vector by two scalars
