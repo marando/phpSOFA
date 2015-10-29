@@ -49,7 +49,7 @@ Status
         | C2ibpn  | Celestial-to-intermediate matrix given b-p-n
         | C2ixy   | Celestial-to-intermediate matrix given CIP
         | C2ixys  | Celestial-to-intermediate matrix given CIP and s
-        | C2s     | Unit vector to spherical
+ done   | C2s     | Unit vector to spherical
         | C2t00a  | Celestial-to-terrestrial matrix, IAU 2000A
         | C2t00b  | Celestial-to-terrestrial matrix, IAU 2000B
         | C2t06a  | Celestial-to-terrestrial matrix, IAU 2006/2000A
@@ -176,7 +176,7 @@ Status
         | Pvup    | Update pv-vector discarding velocity
         | Pvxpv   | Outer (=vector=cross) product of two pv-vectors
         | Pxp     | Outer (=vector=cross) product of two p-vectors
-        | Refco   | Refraction constants
+ done   | Refco   | Refraction constants
         | Rm2v    | r-matrix to r-vector
         | Rv2m    | r-vector to r-matrix
         | Rx      | Rotate r-matrix about x
@@ -190,7 +190,7 @@ Status
         | S00b    | The CIO locator s, IAU 2000B
         | S06     | The CIO locator s, given X,Y, IAU 2006
         | S06a    | The CIO locator s, IAU 2006/2000A
-        | S2c     | Spherical to unit vector
+ done   | S2c     | Spherical to unit vector
         | S2p     | Spherical to p-vector
         | S2pv    | Spherical to pv-vector
         | S2xpv   | Multiply pv-vector by two scalars

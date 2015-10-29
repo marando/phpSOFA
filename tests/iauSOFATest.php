@@ -485,4 +485,47 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(1.946709205396925672, SOFA::iauFad03(0.80), null, 1e-12);
   }
 
+  public function test_iauRefco() {
+    $phpa;
+    $tc;
+    $rh;
+    $wl;
+    $refa;
+    $refb;
+
+    $phpa = 800.0;
+    $tc   = 10.0;
+    $rh   = 0.9;
+    $wl   = 0.4;
+
+    SOFA::iauRefco($phpa, $tc, $rh, $wl, $refa, $refb);
+
+    $this->assertEquals(0.2264949956241415009e-3, $refa, "refa", 1e-15);
+    $this->assertEquals(-0.2598658261729343970e-6, $refb, "refb", 1e-18);
+  }
+
+  public function test_iauC2s() {
+    $p;
+    $theta;
+    $phi;
+
+    $p[0] = 100.0;
+    $p[1] = -50.0;
+    $p[2] = 25.0;
+
+    SOFA::iauC2s($p, $theta, $phi);
+    $this->assertEquals(-0.4636476090008061162, $theta, "theta", 1e-14);
+    $this->assertEquals(0.2199879773954594463, $phi, "phi", 1e-14);
+  }
+
+  public function test_iauS2c() {
+    $c = [];
+
+    SOFA::iauS2c(3.0123, -0.999, $c);
+
+    $this->assertEquals(-0.5366267667260523906, $c[0], "1", 1e-12);
+    $this->assertEquals(0.0697711109765145365, $c[1], "2", 1e-12);
+    $this->assertEquals(-0.8409302618566214041, $c[2], "3", 1e-12);
+  }
+
 }
