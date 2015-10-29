@@ -528,4 +528,295 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(-0.8409302618566214041, $c[2], "3", 1e-12);
   }
 
+  public function test_iauCpv() {
+    $pv = [];
+    $c  = [];
+
+    $pv[0][0] = 0.3;
+    $pv[0][1] = 1.2;
+    $pv[0][2] = -2.5;
+
+    $pv[1][0] = -0.5;
+    $pv[1][1] = 3.1;
+    $pv[1][2] = 0.9;
+
+    SOFA::iauCpv($pv, $c);
+
+    $this->assertEquals(0.3, $c[0][0], "p1", 0.0);
+    $this->assertEquals(1.2, $c[0][1], "p2", 0.0);
+    $this->assertEquals(-2.5, $c[0][2], "p3", 0.0);
+
+    $this->assertEquals(-0.5, $c[1][0], "v1", 0.0);
+    $this->assertEquals(3.1, $c[1][1], "v2", 0.0);
+    $this->assertEquals(0.9, $c[1][2], "v3", 0.0);
+  }
+
+  public function test_iauApcg() {
+    $date1;
+    $date2;
+    $ebpv   = [];
+    $ehp    = [];
+    $astrom = new iauASTROM();
+
+    $date1      = 2456165.5;
+    $date2      = 0.401182685;
+    $ebpv[0][0] = 0.901310875;
+    $ebpv[0][1] = -0.417402664;
+    $ebpv[0][2] = -0.180982288;
+    $ebpv[1][0] = 0.00742727954;
+    $ebpv[1][1] = 0.0140507459;
+    $ebpv[1][2] = 0.00609045792;
+    $ehp[0]     = 0.903358544;
+    $ehp[1]     = -0.415395237;
+    $ehp[2]     = -0.180084014;
+
+    SOFA::iauApcg($date1, $date2, $ebpv, $ehp, $astrom);
+
+    $this->assertEquals(12.65133794027378508, $astrom->pmt, "pmt", 1e-11);
+    $this->assertEquals(0.901310875, $astrom->eb[0], "eb(1)", 1e-12);
+    $this->assertEquals(-0.417402664, $astrom->eb[1], "eb(2)", 1e-12);
+    $this->assertEquals(-0.180982288, $astrom->eb[2], "eb(3)", 1e-12);
+    $this->assertEquals(0.8940025429324143045, $astrom->eh[0], "eh(1)", 1e-12);
+    $this->assertEquals(-0.4110930268679817955, $astrom->eh[1], "eh(2)", 1e-12);
+    $this->assertEquals(-0.1782189004872870264, $astrom->eh[2], "eh(3)", 1e-12);
+    $this->assertEquals(1.010465295811013146, $astrom->em, "em", 1e-12);
+    $this->assertEquals(0.4289638897813379954e-4, $astrom->v[0], "v(1_", 1e-16);
+    $this->assertEquals(0.8115034021720941898e-4, $astrom->v[1], "v(2)", 1e-16);
+    $this->assertEquals(0.3517555123437237778e-4, $astrom->v[2], "v(3)", 1e-16);
+    $this->assertEquals(0.9999999951686013336, $astrom->bm1, "bm1", 1e-12);
+    $this->assertEquals(1.0, $astrom->bpn[0][0], "bpn(1,1)", 0.0);
+    $this->assertEquals(0.0, $astrom->bpn[1][0], "bpn(2,1)", 0.0);
+    $this->assertEquals(0.0, $astrom->bpn[2][0], "bpn(3,1)", 0.0);
+    $this->assertEquals(0.0, $astrom->bpn[0][1], "bpn(1,2)", 0.0);
+    $this->assertEquals(1.0, $astrom->bpn[1][1], "bpn(2,2)", 0.0);
+    $this->assertEquals(0.0, $astrom->bpn[2][1], "bpn(3,2)", 0.0);
+    $this->assertEquals(0.0, $astrom->bpn[0][2], "bpn(1,3)", 0.0);
+    $this->assertEquals(0.0, $astrom->bpn[1][2], "bpn(2,3)", 0.0);
+    $this->assertEquals(1.0, $astrom->bpn[2][2], "bpn(3,3)", 0.0);
+  }
+
+  public function test_iauBi00() {
+    $dpsibi;
+    $depsbi;
+    $dra;
+
+    SOFA::iauBi00($dpsibi, $depsbi, $dra);
+
+    $this->assertEquals(-0.2025309152835086613e-6, $dpsibi, "dpsibi", 1e-12);
+    $this->assertEquals(-0.3306041454222147847e-7, $depsbi, "depsbi", 1e-12);
+    $this->assertEquals(-0.7078279744199225506e-7, $dra, "dra", 1e-12);
+  }
+
+  public function test_iauRx() {
+    $phi;
+    $r = [];
+
+    $phi = 0.3456789;
+
+    $r[0][0] = 2.0;
+    $r[0][1] = 3.0;
+    $r[0][2] = 2.0;
+
+    $r[1][0] = 3.0;
+    $r[1][1] = 2.0;
+    $r[1][2] = 3.0;
+
+    $r[2][0] = 3.0;
+    $r[2][1] = 4.0;
+    $r[2][2] = 5.0;
+
+    SOFA::iauRx($phi, $r);
+
+    $this->assertEquals(2.0, $r[0][0], "11", 0.0);
+    $this->assertEquals(3.0, $r[0][1], "12", 0.0);
+    $this->assertEquals(2.0, $r[0][2], "13", 0.0);
+
+    $this->assertEquals(3.839043388235612460, $r[1][0], "21", 1e-12);
+    $this->assertEquals(3.237033249594111899, $r[1][1], "22", 1e-12);
+    $this->assertEquals(4.516714379005982719, $r[1][2], "23", 1e-12);
+
+    $this->assertEquals(1.806030415924501684, $r[2][0], "31", 1e-12);
+    $this->assertEquals(3.085711545336372503, $r[2][1], "32", 1e-12);
+    $this->assertEquals(3.687721683977873065, $r[2][2], "33", 1e-12);
+  }
+
+  public function test_iauRy() {
+    $theta;
+    $r = [];
+
+    $theta = 0.3456789;
+
+    $r[0][0] = 2.0;
+    $r[0][1] = 3.0;
+    $r[0][2] = 2.0;
+
+    $r[1][0] = 3.0;
+    $r[1][1] = 2.0;
+    $r[1][2] = 3.0;
+
+    $r[2][0] = 3.0;
+    $r[2][1] = 4.0;
+    $r[2][2] = 5.0;
+
+    SOFA::iauRy($theta, $r);
+
+    $this->assertEquals(0.8651847818978159930, $r[0][0], "11", 1e-12);
+    $this->assertEquals(1.467194920539316554, $r[0][1], "12", 1e-12);
+    $this->assertEquals(0.1875137911274457342, $r[0][2], "13", 1e-12);
+
+    $this->assertEquals(3, $r[1][0], "21", 1e-12);
+    $this->assertEquals(2, $r[1][1], "22", 1e-12);
+    $this->assertEquals(3, $r[1][2], "23", 1e-12);
+
+    $this->assertEquals(3.500207892850427330, $r[2][0], "31", 1e-12);
+    $this->assertEquals(4.779889022262298150, $r[2][1], "32", 1e-12);
+    $this->assertEquals(5.381899160903798712, $r[2][2], "33", 1e-12);
+  }
+
+  public function test_iauRz() {
+    $psi;
+    $r = [];
+
+    $psi = 0.3456789;
+
+    $r[0][0] = 2.0;
+    $r[0][1] = 3.0;
+    $r[0][2] = 2.0;
+
+    $r[1][0] = 3.0;
+    $r[1][1] = 2.0;
+    $r[1][2] = 3.0;
+
+    $r[2][0] = 3.0;
+    $r[2][1] = 4.0;
+    $r[2][2] = 5.0;
+
+    SOFA::iauRz($psi, $r);
+
+    $this->assertEquals(2.898197754208926769, $r[0][0], "11", 1e-12);
+    $this->assertEquals(3.500207892850427330, $r[0][1], "12", 1e-12);
+    $this->assertEquals(2.898197754208926769, $r[0][2], "13", 1e-12);
+
+    $this->assertEquals(2.144865911309686813, $r[1][0], "21", 1e-12);
+    $this->assertEquals(0.865184781897815993, $r[1][1], "22", 1e-12);
+    $this->assertEquals(2.144865911309686813, $r[1][2], "23", 1e-12);
+
+    $this->assertEquals(3.0, $r[2][0], "31", 1e-12);
+    $this->assertEquals(4.0, $r[2][1], "32", 1e-12);
+    $this->assertEquals(5.0, $r[2][2], "33", 1e-12);
+  }
+
+  public function test_iauCr() {
+    $r = [];
+    $c = [];
+
+    $r[0][0] = 2.0;
+    $r[0][1] = 3.0;
+    $r[0][2] = 2.0;
+
+    $r[1][0] = 3.0;
+    $r[1][1] = 2.0;
+    $r[1][2] = 3.0;
+
+    $r[2][0] = 3.0;
+    $r[2][1] = 4.0;
+    $r[2][2] = 5.0;
+
+    SOFA::iauCr($r, $c);
+
+    $this->assertEquals(2.0, $c[0][0], "11", 0.0);
+    $this->assertEquals(3.0, $c[0][1], "12", 0.0);
+    $this->assertEquals(2.0, $c[0][2], "13", 0.0);
+
+    $this->assertEquals(3.0, $c[1][0], "21", 0.0);
+    $this->assertEquals(2.0, $c[1][1], "22", 0.0);
+    $this->assertEquals(3.0, $c[1][2], "23", 0.0);
+
+    $this->assertEquals(3.0, $c[2][0], "31", 0.0);
+    $this->assertEquals(4.0, $c[2][1], "32", 0.0);
+    $this->assertEquals(5.0, $c[2][2], "33", 0.0);
+  }
+
+  public function test_iauBp00() {
+    $rb  = [];
+    $rp  = [];
+    $rbp = [];
+
+    SOFA::iauBp00(2400000.5, 50123.9999, $rb, $rp, $rbp);
+
+    $this->assertEquals(0.9999999999999942498, $rb[0][0], "rb11", 1e-12);
+    $this->assertEquals(-0.7078279744199196626e-7, $rb[0][1], "rb12", 1e-16);
+    $this->assertEquals(0.8056217146976134152e-7, $rb[0][2], "rb13", 1e-16);
+    $this->assertEquals(0.7078279477857337206e-7, $rb[1][0], "rb21", 1e-16);
+    $this->assertEquals(0.9999999999999969484, $rb[1][1], "rb22", 1e-12);
+    $this->assertEquals(0.3306041454222136517e-7, $rb[1][2], "rb23", 1e-16);
+    $this->assertEquals(-0.8056217380986972157e-7, $rb[2][0], "rb31", 1e-16);
+    $this->assertEquals(-0.3306040883980552500e-7, $rb[2][1], "rb32", 1e-16);
+    $this->assertEquals(0.9999999999999962084, $rb[2][2], "rb33", 1e-12);
+
+    $this->assertEquals(0.9999995504864048241, $rp[0][0], "rp11", 1e-12);
+    $this->assertEquals(0.8696113836207084411e-3, $rp[0][1], "rp12", 1e-14);
+    $this->assertEquals(0.3778928813389333402e-3, $rp[0][2], "rp13", 1e-14);
+    $this->assertEquals(-0.8696113818227265968e-3, $rp[1][0], "rp21", 1e-14);
+    $this->assertEquals(0.9999996218879365258, $rp[1][1], "rp22", 1e-12);
+    $this->assertEquals(-0.1690679263009242066e-6, $rp[1][2], "rp23", 1e-14);
+    $this->assertEquals(-0.3778928854764695214e-3, $rp[2][0], "rp31", 1e-14);
+    $this->assertEquals(-0.1595521004195286491e-6, $rp[2][1], "rp32", 1e-14);
+    $this->assertEquals(0.9999999285984682756, $rp[2][2], "rp33", 1e-12);
+
+    $this->assertEquals(0.9999995505175087260, $rbp[0][0], "rbp11", 1e-12);
+    $this->assertEquals(0.8695405883617884705e-3, $rbp[0][1], "rbp12", 1e-14);
+    $this->assertEquals(0.3779734722239007105e-3, $rbp[0][2], "rbp13", 1e-14);
+    $this->assertEquals(-0.8695405990410863719e-3, $rbp[1][0], "rbp21", 1e-14);
+    $this->assertEquals(0.9999996219494925900, $rbp[1][1], "rbp22", 1e-12);
+    $this->assertEquals(-0.1360775820404982209e-6, $rbp[1][2], "rbp23", 1e-14);
+    $this->assertEquals(-0.3779734476558184991e-3, $rbp[2][0], "rbp31", 1e-14);
+    $this->assertEquals(-0.1925857585832024058e-6, $rbp[2][1], "rbp32", 1e-14);
+    $this->assertEquals(0.9999999285680153377, $rbp[2][2], "rbp33", 1e-12);
+  }
+
+  public function test_iauRxr() {
+    $a   = [];
+    $b   = [];
+    $atb = [];
+
+    $a[0][0] = 2.0;
+    $a[0][1] = 3.0;
+    $a[0][2] = 2.0;
+
+    $a[1][0] = 3.0;
+    $a[1][1] = 2.0;
+    $a[1][2] = 3.0;
+
+    $a[2][0] = 3.0;
+    $a[2][1] = 4.0;
+    $a[2][2] = 5.0;
+
+    $b[0][0] = 1.0;
+    $b[0][1] = 2.0;
+    $b[0][2] = 2.0;
+
+    $b[1][0] = 4.0;
+    $b[1][1] = 1.0;
+    $b[1][2] = 1.0;
+
+    $b[2][0] = 3.0;
+    $b[2][1] = 0.0;
+    $b[2][2] = 1.0;
+
+    SOFA::iauRxr($a, $b, $atb);
+
+    $this->assertEquals(20.0, $atb[0][0], "11", 1e-12);
+    $this->assertEquals(7.0, $atb[0][1], "12", 1e-12);
+    $this->assertEquals(9.0, $atb[0][2], "13", 1e-12);
+
+    $this->assertEquals(20.0, $atb[1][0], "21", 1e-12);
+    $this->assertEquals(8.0, $atb[1][1], "22", 1e-12);
+    $this->assertEquals(11.0, $atb[1][2], "23", 1e-12);
+
+    $this->assertEquals(34.0, $atb[2][0], "31", 1e-12);
+    $this->assertEquals(10.0, $atb[2][1], "32", 1e-12);
+    $this->assertEquals(15.0, $atb[2][2], "33", 1e-12);
+  }
+
 }
