@@ -29,7 +29,7 @@ trait iauS2c {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauS2c($theta, $phi, array &$c) {
+  public static function S2c($theta, $phi, array &$c) {
     $cp;
 
     $cp   = cos($phi);

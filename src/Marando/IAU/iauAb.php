@@ -61,7 +61,7 @@ trait iauAb {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauAb(array $pnat, array $v, $s, $bm1, array &$ppr) {
+  public static function Ab(array $pnat, array $v, $s, $bm1, array &$ppr) {
     $i;
     $pdv;
     $w1;
@@ -71,7 +71,7 @@ trait iauAb {
     $p = [];
     $r;
 
-    $pdv = static::iauPdp($pnat, $v);
+    $pdv = static::Pdp($pnat, $v);
     $w1  = 1.0 + $pdv / (1.0 + $bm1);
     $w2  = SRS / $s;
     $r2  = 0.0;

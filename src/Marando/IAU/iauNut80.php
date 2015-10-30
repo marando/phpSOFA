@@ -62,7 +62,7 @@ trait iauNut80 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauNut80($date1, $date2, &$dpsi, &$deps) {
+  public static function Nut80($date1, $date2, &$dpsi, &$deps) {
     $t;
     $el;
     $elp;
@@ -225,28 +225,28 @@ trait iauNut80 {
     /* --------------------- */
 
     /* Mean longitude of Moon minus mean longitude of Moon's perigee. */
-    $el = SOFA::iauAnpm(
+    $el = IAU::Anpm(
                     (485866.733 + (715922.633 + (31.310 + 0.064 * $t) * $t) * $t) * DAS2R + fmod(1325.0 * $t,
                             1.0) * D2PI);
 
     /* Mean longitude of Sun minus mean longitude of Sun's perigee. */
-    $elp = SOFA::iauAnpm(
+    $elp = IAU::Anpm(
                     (1287099.804 + (1292581.224 + (-0.577 - 0.012 * $t) * $t) * $t) * DAS2R + fmod(99.0 * $t,
                             1.0) * D2PI);
 
     /* Mean longitude of Moon minus mean longitude of Moon's node. */
-    $f = SOFA::iauAnpm(
+    $f = IAU::Anpm(
                     (335778.877 + (295263.137 + (-13.257 + 0.011 * $t) * $t) * $t) * DAS2R + fmod(1342.0 * $t,
                             1.0) * D2PI);
 
     /* Mean elongation of Moon from Sun. */
-    $d = SOFA::iauAnpm(
+    $d = IAU::Anpm(
                     (1072261.307 + (1105601.328 + (-6.891 + 0.019 * $t) * $t) * $t) * DAS2R + fmod(1236.0 * $t,
                             1.0) * D2PI);
 
     /* Longitude of the mean ascending node of the lunar orbit on the */
     /* ecliptic, measured from the mean equinox of date. */
-    $om = SOFA::iauAnpm(
+    $om = IAU::Anpm(
                     (450160.280 + (-482890.539 + (7.455 + 0.008 * $t) * $t) * $t) * DAS2R + fmod(-5.0 * $t,
                             1.0) * D2PI);
 

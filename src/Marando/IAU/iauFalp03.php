@@ -45,7 +45,7 @@ trait iauFalp03 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauFalp03($t) {
+  public static function Falp03($t) {
     $a;
 
     /* Mean anomaly of the Sun (IERS Conventions 2003). */

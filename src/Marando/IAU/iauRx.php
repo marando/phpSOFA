@@ -42,7 +42,7 @@ trait iauRx {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauRx($phi, array &$r) {
+  public static function Rx($phi, array &$r) {
     $s;
     $c;
     $a10;

@@ -42,7 +42,7 @@ trait iauRy {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauRy($theta, array &$r) {
+  public static function Ry($theta, array &$r) {
     $s;
     $c;
     $a00;

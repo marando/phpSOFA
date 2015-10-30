@@ -130,7 +130,7 @@ trait iauNut00b {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauNut00b($date1, $date2, &$dpsi, &$deps) {
+  public static function Nut00b($date1, $date2, &$dpsi, &$deps) {
     $t;
     $el;
     $elp;

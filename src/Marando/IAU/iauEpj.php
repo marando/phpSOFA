@@ -40,7 +40,7 @@ trait iauEpj {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauEpj($dj1, $dj2) {
+  public static function Epj($dj1, $dj2) {
     $epj;
 
     $epj = 2000.0 + (($dj1 - DJ00) + $dj2) / DJY;

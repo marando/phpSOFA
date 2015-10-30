@@ -83,14 +83,14 @@ trait iauGst00a {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauGst00a($uta, $utb, $tta, $ttb) {
+  public static function Gst00a($uta, $utb, $tta, $ttb) {
     $gmst00;
     $ee00a;
     $gst;
 
-    $gmst00 = SOFA::iauGmst00($uta, $utb, $tta, $ttb);
-    $ee00a  = SOFA::iauEe00a($tta, $ttb);
-    $gst    = SOFA::iauAnp($gmst00 + $ee00a);
+    $gmst00 = IAU::Gmst00($uta, $utb, $tta, $ttb);
+    $ee00a  = IAU::Ee00a($tta, $ttb);
+    $gst    = IAU::Anp($gmst00 + $ee00a);
 
     return $gst;
   }

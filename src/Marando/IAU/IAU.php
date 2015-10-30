@@ -2,7 +2,7 @@
 
 namespace Marando\IAU;
 
-class SOFA {
+class IAU {
 
   use iauA2af,
       iauA2tf,
@@ -63,7 +63,8 @@ class SOFA {
       iauRz,
       iauCr,
       iauBp00,
-      iauRxr;
+      iauRxr,
+      iauPmpx;
 }
 
 //------------------------------------------------------------------------------

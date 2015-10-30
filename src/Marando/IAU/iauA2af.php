@@ -65,12 +65,12 @@ trait iauA2af {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauA2af($ndp, $angle, &$sign, array &$idmsf) {
+  public static function A2af($ndp, $angle, &$sign, array &$idmsf) {
     /* Hours to degrees * radians to turns */
     $F = 15.0 / D2PI;
 
     /* Scale then use days to h,m,s function. */
-    static::iauD2tf($ndp, $angle * $F, $sign, $idmsf);
+    static::D2tf($ndp, $angle * $F, $sign, $idmsf);
 
     return;
   }

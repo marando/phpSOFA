@@ -56,7 +56,7 @@ trait iauObl06 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauObl06($date1, $date2) {
+  public static function Obl06($date1, $date2) {
     $t;
     $eps0;
 

@@ -74,7 +74,7 @@ trait iauGmst82 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauGmst82($dj1, $dj2) {
+  public static function Gmst82($dj1, $dj2) {
     /* Coefficients of IAU 1982 GMST-UT1 model */
     $A = 24110.54841 - DAYSEC / 2.0;
     $B = 8640184.812866;
@@ -106,7 +106,7 @@ trait iauGmst82 {
     $f = DAYSEC * (fmod($d1, 1.0) + fmod($d2, 1.0));
 
     /* GMST at this UT1. */
-    $gmst = SOFA::iauAnp(DS2R * (($A + ($B + ($C + $D * $t) * $t) * $t) + $f));
+    $gmst = IAU::Anp(DS2R * (($A + ($B + ($C + $D * $t) * $t) * $t) + $f));
 
     return $gmst;
   }

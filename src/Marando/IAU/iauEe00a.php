@@ -72,7 +72,7 @@ trait iauEe00a {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauEe00a($date1, $date2) {
+  public static function Ee00a($date1, $date2) {
     $dpsipr;
     $depspr;
     $epsa;
@@ -81,16 +81,16 @@ trait iauEe00a {
     $ee;
 
     /* IAU 2000 precession-rate adjustments. */
-    SOFA::iauPr00($date1, $date2, $dpsipr, $depspr);
+    IAU::Pr00($date1, $date2, $dpsipr, $depspr);
 
     /* Mean obliquity, consistent with IAU 2000 precession-nutation. */
-    $epsa = SOFA::iauObl80($date1, $date2) + $depspr;
+    $epsa = IAU::Obl80($date1, $date2) + $depspr;
 
     /* Nutation in longitude. */
-    SOFA::iauNut00a($date1, $date2, $dpsi, $deps);
+    IAU::Nut00a($date1, $date2, $dpsi, $deps);
 
     /* Equation of the equinoxes. */
-    $ee = SOFA::iauEe00($date1, $date2, $epsa, $dpsi);
+    $ee = IAU::Ee00($date1, $date2, $epsa, $dpsi);
 
     return $ee;
   }

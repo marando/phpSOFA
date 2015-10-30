@@ -45,7 +45,7 @@ trait iauFaom03 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauFaom03($t) {
+  public static function Faom03($t) {
    $a;
 
 /* Mean longitude of the Moon's ascending node */

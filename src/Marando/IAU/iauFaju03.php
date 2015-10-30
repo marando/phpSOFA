@@ -48,7 +48,7 @@ trait iauFaju03 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauFaju03($t) {
+  public static function Faju03($t) {
     $a;
 
     /* Mean longitude of Jupiter (IERS Conventions 2003). */

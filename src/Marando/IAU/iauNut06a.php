@@ -86,7 +86,7 @@ trait iauNut06a {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauNut06a($date1, $date2, &$dpsi, &$deps) {
+  public static function Nut06a($date1, $date2, &$dpsi, &$deps) {
     $t;
     $fj2;
     $dp;
@@ -99,7 +99,7 @@ trait iauNut06a {
     $fj2 = -2.7774e-6 * $t;
 
     /* Obtain IAU 2000A nutation. */
-    SOFA::iauNut00a($date1, $date2, $dp, $de);
+    IAU::Nut00a($date1, $date2, $dp, $de);
 
     /* Apply P03 adjustments (Wallace & Capitaine, 2006, Eqs.5). */
     $dpsi = $dp + $dp * (0.4697e-6 + $fj2);

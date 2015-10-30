@@ -48,7 +48,7 @@ trait iauFave03 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauFave03($t) {
+  public static function Fave03($t) {
     $a;
 
     /* Mean longitude of Venus (IERS Conventions 2003). */

@@ -48,7 +48,7 @@ trait iauFasa03 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauFasa03($t) {
+  public static function Fasa03($t) {
     $a;
 
     /* Mean longitude of Saturn (IERS Conventions 2003). */

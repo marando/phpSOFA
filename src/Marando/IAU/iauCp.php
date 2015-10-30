@@ -28,7 +28,7 @@ trait iauCp {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauCp(array $p, array &$c) {
+  public static function Cp(array $p, array &$c) {
     $c[0] = $p[0];
     $c[1] = $p[1];
     $c[2] = $p[2];

@@ -45,7 +45,7 @@ trait iauFal03 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauFal03($t) {
+  public static function Fal03($t) {
     $a;
 
     /* Mean anomaly of the Moon (IERS Conventions 2003). */

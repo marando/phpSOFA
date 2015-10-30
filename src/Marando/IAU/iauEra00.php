@@ -68,7 +68,7 @@ trait iauEra00 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauEra00($dj1, $dj2) {
+  public static function Era00($dj1, $dj2) {
     $d1;
     $d2;
     $t;
@@ -90,7 +90,7 @@ trait iauEra00 {
     $f = fmod($d1, 1.0) + fmod($d2, 1.0);
 
     /* Earth rotation angle at this UT1. */
-    $theta = SOFA::iauAnp(D2PI * ($f + 0.7790572732640 + 0.00273781191135448 * $t));
+    $theta = IAU::Anp(D2PI * ($f + 0.7790572732640 + 0.00273781191135448 * $t));
 
     return $theta;
   }

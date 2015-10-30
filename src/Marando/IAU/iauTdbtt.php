@@ -59,7 +59,7 @@ trait iauTdbtt {
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    *
    */
-  public static function iauTdbtt($tdb1, $tdb2, $dtr, &$tt1, &$tt2) {
+  public static function Tdbtt($tdb1, $tdb2, $dtr, &$tt1, &$tt2) {
     $dtrd;
 
     /* Result, safeguarding precision. */

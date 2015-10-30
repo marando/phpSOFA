@@ -105,7 +105,7 @@ trait iauEect00 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauEect00($date1, $date2) {
+  public static function Eect00($date1, $date2) {
     /* Time since J2000.0, in Julian centuries */
     $t;
 
@@ -190,28 +190,28 @@ trait iauEect00 {
     /* Fundamental Arguments (from IERS Conventions 2003) */
 
     /* Mean anomaly of the Moon. */
-    $fa[0] = SOFA::iauFal03($t);
+    $fa[0] = IAU::Fal03($t);
 
     /* Mean anomaly of the Sun. */
-    $fa[1] = SOFA::iauFalp03($t);
+    $fa[1] = IAU::Falp03($t);
 
     /* Mean longitude of the Moon minus that of the ascending node. */
-    $fa[2] = SOFA::iauFaf03($t);
+    $fa[2] = IAU::Faf03($t);
 
     /* Mean elongation of the Moon from the Sun. */
-    $fa[3] = SOFA::iauFad03($t);
+    $fa[3] = IAU::Fad03($t);
 
     /* Mean longitude of the ascending node of the Moon. */
-    $fa[4] = SOFA::iauFaom03($t);
+    $fa[4] = IAU::Faom03($t);
 
     /* Mean longitude of Venus. */
-    $fa[5] = SOFA::iauFave03($t);
+    $fa[5] = IAU::Fave03($t);
 
     /* Mean longitude of Earth. */
-    $fa[6] = SOFA::iauFae03($t);
+    $fa[6] = IAU::Fae03($t);
 
     /* General precession in longitude. */
-    $fa[7] = SOFA::iauFapa03($t);
+    $fa[7] = IAU::Fapa03($t);
 
     /* Evaluate the EE complementary terms. */
     $s0 = 0.0;

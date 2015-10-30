@@ -72,7 +72,7 @@ trait iauGmst06 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauGmst06($uta, $utb, $tta, $ttb) {
+  public static function Gmst06($uta, $utb, $tta, $ttb) {
     $t;
     $gmst;
 
@@ -80,7 +80,7 @@ trait iauGmst06 {
     $t = (($tta - DJ00) + $ttb) / DJC;
 
     /* Greenwich mean sidereal time, IAU 2006. */
-    $gmst = SOFA::iauAnp(SOFA::iauEra00($uta, $utb) +
+    $gmst = IAU::Anp(IAU::Era00($uta, $utb) +
                     ( 0.014506 +
                     ( 4612.156534 +
                     ( 1.3915817 +

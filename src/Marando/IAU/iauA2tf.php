@@ -65,9 +65,9 @@ trait iauA2tf {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauA2tf($ndp, $angle, &$sign, array &$ihmsf) {
+  public static function A2tf($ndp, $angle, &$sign, array &$ihmsf) {
     /* Scale then use days to h,m,s function. */
-    static::iauD2tf($ndp, $angle / D2PI, $sign, $ihmsf);
+    static::D2tf($ndp, $angle / D2PI, $sign, $ihmsf);
 
     return;
   }
