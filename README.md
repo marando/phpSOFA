@@ -119,9 +119,9 @@ Status
  done   | Ir      | Initialize r-matrix to identity
         | Jd2cal  | Julian Date to Gregorian year, month, day, fraction
         | Jdcalf  | Julian Date to Gregorian date for formatted output
-        | Ld      | Light deflection by a single solar-system body
+ done   | Ld      | Light deflection by a single solar-system body
         | Ldn     | Light deflection by multiple solar-system bodies
-        | Ldsun   | Light deflection by the Sun
+ done   | Ldsun   | Light deflection by the Sun
         | Num00a  | Nutation matrix, IAU 2000A
         | Num00b  | Nutation matrix, IAU 2000B
         | Num06a  | Nutation matrix, IAU 2006/2000A
@@ -175,7 +175,7 @@ Status
         | Pvu     | Update pv-vector
         | Pvup    | Update pv-vector discarding velocity
         | Pvxpv   | Outer (=vector=cross) product of two pv-vectors
-        | Pxp     | Outer (=vector=cross) product of two p-vectors
+ done   | Pxp     | Outer (=vector=cross) product of two p-vectors
  done   | Refco   | Refraction constants
         | Rm2v    | r-matrix to r-vector
         | Rv2m    | r-vector to r-matrix

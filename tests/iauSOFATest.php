@@ -274,13 +274,13 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
   }
 
   public function test_iauObl06() {
-    $this->assertEquals(0.4090749229387258204,
-            IAU::Obl06(2400000.5, 54388.0), null, 1e-14);
+    $this->assertEquals(0.4090749229387258204, IAU::Obl06(2400000.5, 54388.0),
+            null, 1e-14);
   }
 
   public function test_iauObl80() {
-    $this->assertEquals(0.4090751347643816218,
-            IAU::Obl80(2400000.5, 54388.0), null, 1e-14);
+    $this->assertEquals(0.4090751347643816218, IAU::Obl80(2400000.5, 54388.0),
+            null, 1e-14);
   }
 
   public function test_iauTdbtt() {
@@ -846,6 +846,76 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(0.2328137623960308440, $pco[0], "1", 1e-12);
     $this->assertEquals(0.6651097085397855317, $pco[1], "2", 1e-12);
     $this->assertEquals(0.7095257765896359847, $pco[2], "3", 1e-12);
+  }
+
+  public function test_iauLd() {
+    $bm;
+    $p  = [];
+    $q  = [];
+    $e  = [];
+    $em;
+    $dlim;
+    $p1 = [];
+
+    $bm   = 0.00028574;
+    $p[0] = -0.763276255;
+    $p[1] = -0.608633767;
+    $p[2] = -0.216735543;
+    $q[0] = -0.763276255;
+    $q[1] = -0.608633767;
+    $q[2] = -0.216735543;
+    $e[0] = 0.76700421;
+    $e[1] = 0.605629598;
+    $e[2] = 0.211937094;
+    $em   = 8.91276983;
+    $dlim = 3e-10;
+
+    IAU::Ld($bm, $p, $q, $e, $em, $dlim, $p1);
+
+    $this->assertEquals(-0.7632762548968159627, $p1[0], "1", 1e-12);
+    $this->assertEquals(-0.6086337670823762701, $p1[1], "2", 1e-12);
+    $this->assertEquals(-0.2167355431320546947, $p1[2], "3", 1e-12);
+  }
+
+  public function test_iauPxp() {
+    $a   = [];
+    $b   = [];
+    $axb = [];
+
+    $a[0] = 2.0;
+    $a[1] = 2.0;
+    $a[2] = 3.0;
+
+    $b[0] = 1.0;
+    $b[1] = 3.0;
+    $b[2] = 4.0;
+
+    IAU::Pxp($a, $b, $axb);
+
+    $this->assertEquals(-1.0, $axb[0], "1", 1e-12);
+    $this->assertEquals(-5.0, $axb[1], "2", 1e-12);
+    $this->assertEquals(4.0, $axb[2], "3", 1e-12);
+  }
+
+  public function test_iauLdsun() {
+    $p  = [];
+    $e  = [];
+    $em;
+    $p1 = [];
+
+    $p[0] = -0.763276255;
+    $p[1] = -0.608633767;
+    $p[2] = -0.216735543;
+    $e[0] = -0.973644023;
+    $e[1] = -0.20925523;
+    $e[2] = -0.0907169552;
+    $em   = 0.999809214;
+
+    IAU::Ldsun($p, $e, $em, $p1);
+
+    $this->assertEquals(-0.7632762580731413169, $p1[0], "1", 1e-12);
+    $this->assertEquals(-0.6086337635262647900, $p1[1], "2", 1e-12);
+    $this->assertEquals(-0.2167355419322321302, $p1[2], "3", 1e-12);
   }
 
 }
