@@ -147,7 +147,7 @@ Status
         | Pmat06  | Precession bias matrix, IAU 2006
         | Pmat76  | Precession matrix, IAU 1976
         | Pmp     | p-vector minus p-vector
-        | Pmpx    | Apply proper motion and parallax
+ done   | Pmpx    | Apply proper motion and parallax
         | Pmsafe  | Apply proper motion, with zero-parallax precautions
  done   | Pn      | Normalize p-vector returning modulus
         | Pn00    | b,p,n matrices, IAU 2000, given nutation

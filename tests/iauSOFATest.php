@@ -819,4 +819,33 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(15.0, $atb[2][2], "33", 1e-12);
   }
 
+  public function test_iauPmpx() {
+    $rc;
+    $dc;
+    $pr;
+    $pd;
+    $px;
+    $rv;
+    $pmt;
+    $pob = [];
+    $pco = [];
+
+    $rc     = 1.234;
+    $dc     = 0.789;
+    $pr     = 1e-5;
+    $pd     = -2e-5;
+    $px     = 1e-2;
+    $rv     = 10.0;
+    $pmt    = 8.75;
+    $pob[0] = 0.9;
+    $pob[1] = 0.4;
+    $pob[2] = 0.1;
+
+    SOFA::iauPmpx($rc, $dc, $pr, $pd, $px, $rv, $pmt, $pob, $pco);
+
+    $this->assertEquals(0.2328137623960308440, $pco[0], "1", 1e-12);
+    $this->assertEquals(0.6651097085397855317, $pco[1], "2", 1e-12);
+    $this->assertEquals(0.7095257765896359847, $pco[2], "3", 1e-12);
+  }
+
 }
