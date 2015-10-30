@@ -45,7 +45,7 @@ trait iauFaur03 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauFaur03($t) {
+  public static function Faur03($t) {
     $a;
 
     /* Mean longitude of Uranus (IERS Conventions 2003). */

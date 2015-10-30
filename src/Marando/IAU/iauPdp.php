@@ -29,7 +29,7 @@ trait iauPdp {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauPdp(array $a, array $b) {
+  public static function Pdp(array $a, array $b) {
     $w;
 
     $w = 0 +

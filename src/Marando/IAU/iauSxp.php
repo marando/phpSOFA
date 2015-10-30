@@ -32,7 +32,7 @@ trait iauSxp {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauSxp($s, array $p, array &$sp) {
+  public static function Sxp($s, array $p, array &$sp) {
     $sp[0] = $s * $p[0];
     $sp[1] = $s * $p[1];
     $sp[2] = $s * $p[2];

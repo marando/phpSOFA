@@ -36,7 +36,7 @@ trait iauRxr {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauRxr(array $a, array $b, array &$atb) {
+  public static function Rxr(array $a, array $b, array &$atb) {
     $i;
     $j;
     $k;
@@ -52,7 +52,7 @@ trait iauRxr {
         $wm[$i][$j] = $w;
       }
     }
-    SOFA::iauCr($wm, $atb);
+    IAU::Cr($wm, $atb);
 
     return;
   }

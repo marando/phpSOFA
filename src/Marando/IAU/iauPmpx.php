@@ -58,7 +58,7 @@ trait iauPmpx {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauPmpx($rc, $dc, $pr, $pd, $px, $rv, $pmt, array $pob,
+  public static function Pmpx($rc, $dc, $pr, $pd, $px, $rv, $pmt, array $pob,
           array &$pco) {
 
     /* Km/s to au/year */
@@ -92,7 +92,7 @@ trait iauPmpx {
     $p[2] = $z    = $sd;
 
     /* Proper motion time interval (y) including Roemer effect. */
-    $dt = $pmt + SOFA::iauPdp($p, $pob) * $AULTY;
+    $dt = $pmt + IAU::Pdp($p, $pob) * $AULTY;
 
     /* Space motion (radians per year). */
     $pxr   = $px * DAS2R;
@@ -106,7 +106,7 @@ trait iauPmpx {
     for ($i = 0; $i < 3; $i++) {
       $p[$i] += $dt * $pm[$i] - $pxr * $pob[$i];
     }
-    SOFA::iauPn($p, $w, $pco);
+    IAU::Pn($p, $w, $pco);
 
     /* Finished. */
   }

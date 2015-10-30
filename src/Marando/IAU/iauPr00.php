@@ -80,7 +80,7 @@ trait iauPr00 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauPr00($date1, $date2, &$dpsipr, &$depspr) {
+  public static function Pr00($date1, $date2, &$dpsipr, &$depspr) {
     $t;
 
     /* Precession and obliquity corrections (radians per century) */

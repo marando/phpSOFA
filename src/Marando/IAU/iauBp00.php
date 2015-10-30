@@ -83,7 +83,7 @@ trait iauBp00 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauBp00($date1, $date2, array &$rb, array &$rp,
+  public static function Bp00($date1, $date2, array &$rb, array &$rp,
           array &$rbp) {
 
     /* J2000.0 obliquity (Lieske et al. 1977) */
@@ -106,7 +106,7 @@ trait iauBp00 {
     $t = (($date1 - DJ00) + $date2) / DJC;
 
     /* Frame bias. */
-    SOFA::iauBi00($dpsibi, $depsbi, $dra0);
+    IAU::Bi00($dpsibi, $depsbi, $dra0);
 
     /* Precession angles (Lieske et al. 1977) */
     $psia77 = (5038.7784 + (-1.07259 + (-0.001147) * $t) * $t) * $t * DAS2R;
@@ -114,26 +114,26 @@ trait iauBp00 {
     $chia   = ( 10.5526 + (-2.38064 + (-0.001125) * $t) * $t) * $t * DAS2R;
 
     /* Apply IAU 2000 precession corrections. */
-    SOFA::iauPr00($date1, $date2, $dpsipr, $depspr);
+    IAU::Pr00($date1, $date2, $dpsipr, $depspr);
     $psia = $psia77 + $dpsipr;
     $oma  = $oma77 + $depspr;
 
     /* Frame bias matrix: GCRS to J2000.0. */
-    SOFA::iauIr($rbw);
-    SOFA::iauRz($dra0, $rbw);
-    SOFA::iauRy($dpsibi * sin($EPS0), $rbw);
-    SOFA::iauRx(-$depsbi, $rbw);
-    SOFA::iauCr($rbw, $rb);
+    IAU::Ir($rbw);
+    IAU::Rz($dra0, $rbw);
+    IAU::Ry($dpsibi * sin($EPS0), $rbw);
+    IAU::Rx(-$depsbi, $rbw);
+    IAU::Cr($rbw, $rb);
 
     /* Precession matrix: J2000.0 to mean of date. */
-    SOFA::iauIr($rp);
-    SOFA::iauRx($EPS0, $rp);
-    SOFA::iauRz(-$psia, $rp);
-    SOFA::iauRx(-$oma, $rp);
-    SOFA::iauRz($chia, $rp);
+    IAU::Ir($rp);
+    IAU::Rx($EPS0, $rp);
+    IAU::Rz(-$psia, $rp);
+    IAU::Rx(-$oma, $rp);
+    IAU::Rz($chia, $rp);
 
     /* Bias-precession matrix: GCRS to mean of date. */
-    SOFA::iauRxr($rp, $rbw, $rbp);
+    IAU::Rxr($rp, $rbw, $rbp);
 
     return;
   }

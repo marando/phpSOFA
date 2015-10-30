@@ -48,7 +48,7 @@ trait iauFae03 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauFae03($t) {
+  public static function Fae03($t) {
     $a;
 
     /* Mean longitude of Earth (IERS Conventions 2003). */

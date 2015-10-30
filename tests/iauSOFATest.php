@@ -1,6 +1,6 @@
 <?php
 
-use \Marando\IAU\SOFA;
+use \Marando\IAU\IAU;
 use \Marando\IAU\iauASTROM;
 
 class iauSOFATest extends \PHPUnit_Framework_TestCase {
@@ -9,7 +9,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $s     = '';
     $idmsf = [];
 
-    SOFA::iauA2af(4, 2.345, $s, $idmsf);
+    IAU::A2af(4, 2.345, $s, $idmsf);
 
     $this->assertEquals('+', $s);
     $this->assertEquals(134, $idmsf[0]);
@@ -22,7 +22,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $ihmsf = [];
     $s     = '';
 
-    SOFA::iauA2tf(4, -3.01234, $s, $ihmsf);
+    IAU::A2tf(4, -3.01234, $s, $ihmsf);
 
     $this->assertEquals('-', $s);
     $this->assertEquals(11, $ihmsf[0]);
@@ -35,7 +35,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $ihmsf = [];
     $s     = '';
 
-    SOFA::iauD2tf(4, -0.987654321, $s, $ihmsf);
+    IAU::D2tf(4, -0.987654321, $s, $ihmsf);
 
     $this->assertEquals('-', $s);
     $this->assertEquals(23, $ihmsf[0]);
@@ -58,7 +58,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $s       = 0.99980921395708788;
     $bm1     = 0.99999999506209258;
 
-    SOFA::iauAb($pnat, $v, $s, $bm1, $ppr);
+    IAU::Ab($pnat, $v, $s, $bm1, $ppr);
 
     $this->assertEquals(-0.7631631094219556269, $ppr[0], null, 1e-12);
     $this->assertEquals(-0.6087553082505590832, $ppr[1], null, 1e-12);
@@ -70,18 +70,18 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $j;
 
 
-    $j = SOFA::iauAf2a('-', 45, 13, 27.2, $a);
+    $j = IAU::Af2a('-', 45, 13, 27.2, $a);
 
     $this->assertEquals(-0.7893115794313644842, $a, null, 1e-12);
     $this->assertEquals(0, $j);
   }
 
   public function test_iauAnp() {
-    $this->assertEquals(6.183185307179586477, SOFA::iauAnp(-0.1), null, 1e-12);
+    $this->assertEquals(6.183185307179586477, IAU::Anp(-0.1), null, 1e-12);
   }
 
   public function test_iauAnpm() {
-    $this->assertEquals(2.283185307179586477, SOFA::iauAnpm(-4.0), null, 1e-12);
+    $this->assertEquals(2.283185307179586477, IAU::Anpm(-4.0), null, 1e-12);
   }
 
   public function test_iauCp() {
@@ -92,7 +92,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $p[1] = 1.2;
     $p[2] = -2.5;
 
-    SOFA::iauCp($p, $c);
+    IAU::Cp($p, $c);
 
     $this->assertEquals(0.3, $c[0], null, 0.0);
     $this->assertEquals(1.2, $c[1], null, 0.0);
@@ -107,7 +107,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $p[1] = 1.2;
     $p[2] = -2.5;
 
-    $r = SOFA::iauPm($p);
+    $r = IAU::Pm($p);
 
     $this->assertEquals(2.789265136196270604, $r, null, 1e-12);
   }
@@ -119,7 +119,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $p[1] = 1.2;
     $p[2] = -2.5;
 
-    SOFA::iauZp($p);
+    IAU::Zp($p);
 
     $this->assertEquals(0.0, $p[0], null, 0.0);
     $this->assertEquals(0.0, $p[1], null, 0.0);
@@ -133,7 +133,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $astrom->along = 1.234;
     $theta         = 5.678;
 
-    SOFA::iauAper($theta, $astrom);
+    IAU::Aper($theta, $astrom);
 
     $this->assertEquals(6.912000000000000000, $astrom->eral, null, 1e-12);
   }
@@ -153,7 +153,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $r[2][1] = 4.0;
     $r[2][2] = 5.0;
 
-    SOFA::iauIr($r);
+    IAU::Ir($r);
 
     $this->assertEquals(1.0, $r[0][0], null, 0.0);
     $this->assertEquals(0.0, $r[0][1], null, 0.0);
@@ -194,7 +194,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $ehp[1]     = -0.209215307;
     $ehp[2]     = -0.0906996477;
 
-    SOFA::iauApcs($date1, $date2, $pv, $ebpv, $ehp, $astrom);
+    IAU::Apcs($date1, $date2, $pv, $ebpv, $ehp, $astrom);
 
     $this->assertEquals(13.25248468622587269, $astrom->pmt, "pmt", 1e-11);
     $this->assertEquals(-0.9741827110630456169, $astrom->eb[0], "eb(1)", 1e-12);
@@ -230,7 +230,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $p[1] = 1.2;
     $p[2] = -2.5;
 
-    SOFA::iauSxp($s, $p, $sp);
+    IAU::Sxp($s, $p, $sp);
 
     $this->assertEquals(0.6, $sp[0], null, 0.0);
     $this->assertEquals(2.4, $sp[1], null, 0.0);
@@ -246,7 +246,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $p[1] = 1.2;
     $p[2] = -2.5;
 
-    SOFA::iauPn($p, $r, $u);
+    IAU::Pn($p, $r, $u);
 
     $this->assertEquals(2.789265136196270604, $r, null, 1e-12);
 
@@ -268,19 +268,19 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $b[1] = 3.0;
     $b[2] = 4.0;
 
-    $adb = SOFA::iauPdp($a, $b);
+    $adb = IAU::Pdp($a, $b);
 
     $this->assertEquals(20, $adb, null, 1e-12);
   }
 
   public function test_iauObl06() {
     $this->assertEquals(0.4090749229387258204,
-            SOFA::iauObl06(2400000.5, 54388.0), null, 1e-14);
+            IAU::Obl06(2400000.5, 54388.0), null, 1e-14);
   }
 
   public function test_iauObl80() {
     $this->assertEquals(0.4090751347643816218,
-            SOFA::iauObl80(2400000.5, 54388.0), null, 1e-14);
+            IAU::Obl80(2400000.5, 54388.0), null, 1e-14);
   }
 
   public function test_iauTdbtt() {
@@ -288,7 +288,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $t2;
     $j;
 
-    $j = SOFA::iauTdbtt(2453750.5, 0.892855137, -0.000201, $t1, $t2);
+    $j = IAU::Tdbtt(2453750.5, 0.892855137, -0.000201, $t1, $t2);
 
     $this->assertEquals(2453750.5, $t1, "t1", 1e-6);
     $this->assertEquals($t2, 0.8928551393263888889, "t2", 1e-12);
@@ -298,14 +298,14 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
   public function test_iauDtdb() {
     $dtdb;
 
-    $dtdb = SOFA::iauDtdb(2448939.5, 0.123, 0.76543, 5.0123, 5525.242, 3190.0);
+    $dtdb = IAU::Dtdb(2448939.5, 0.123, 0.76543, 5.0123, 5525.242, 3190.0);
     $this->assertEquals(-0.1280368005936998991e-2, $dtdb, null, 1e-15);
   }
 
   public function test_iauEpj() {
     $epj;
 
-    $epj = SOFA::iauEpj(2451545, -7392.5);
+    $epj = IAU::Epj(2451545, -7392.5);
     $this->assertEquals(1979.760438056125941, $epj, 1e-12);
   }
 
@@ -316,61 +316,61 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
 
     $epj = 1996.8;
 
-    SOFA::iauEpj2jd($epj, $djm0, $djm);
+    IAU::Epj2jd($epj, $djm0, $djm);
 
     $this->assertEquals(2400000.5, $djm0, "djm0", 1e-9);
     $this->assertEquals(50375.7, $djm, "mjd", 1e-9);
   }
 
   public function test_iauFal03() {
-    $this->assertEquals(5.132369751108684150, SOFA::iauFal03(0.80), 1e-12);
+    $this->assertEquals(5.132369751108684150, IAU::Fal03(0.80), 1e-12);
   }
 
   public function test_iauFaf03() {
-    $this->assertEquals(0.2597711366745499518, SOFA::iauFaf03(0.80), 1e-12);
+    $this->assertEquals(0.2597711366745499518, IAU::Faf03(0.80), 1e-12);
   }
 
   public function test_iauFaom03() {
-    $this->assertEquals(-5.973618440951302183, SOFA::iauFaom03(0.80), 1e-12);
+    $this->assertEquals(-5.973618440951302183, IAU::Faom03(0.80), 1e-12);
   }
 
   public function test_iauFame03() {
-    $this->assertEquals(5.417338184297289661, SOFA::iauFame03(0.80), 1e-12);
+    $this->assertEquals(5.417338184297289661, IAU::Fame03(0.80), 1e-12);
   }
 
   public function test_iauFave03() {
-    $this->assertEquals(3.424900460533758000, SOFA::iauFave03(0.80), 1e-12);
+    $this->assertEquals(3.424900460533758000, IAU::Fave03(0.80), 1e-12);
   }
 
   public function test_iauFae03() {
-    $this->assertEquals(1.744713738913081846, SOFA::iauFae03(0.80), 1e-12);
+    $this->assertEquals(1.744713738913081846, IAU::Fae03(0.80), 1e-12);
   }
 
   public function test_iauFama03() {
-    $this->assertEquals(3.275506840277781492, SOFA::iauFama03(0.80), 1e-12);
+    $this->assertEquals(3.275506840277781492, IAU::Fama03(0.80), 1e-12);
   }
 
   public function test_iauFaju03() {
-    $this->assertEquals(5.275711665202481138, SOFA::iauFaju03(0.80), 1e-12);
+    $this->assertEquals(5.275711665202481138, IAU::Faju03(0.80), 1e-12);
   }
 
   public function test_iauFasa03() {
-    $this->assertEquals(5.371574539440827046, SOFA::iauFasa03(0.80), 1e-12);
+    $this->assertEquals(5.371574539440827046, IAU::Fasa03(0.80), 1e-12);
   }
 
   public function test_iauFaur03() {
-    $this->assertEquals(5.180636450180413523, SOFA::iauFaur03(0.80), 1e-12);
+    $this->assertEquals(5.180636450180413523, IAU::Faur03(0.80), 1e-12);
   }
 
   public function test_iauFapa03() {
-    $this->assertEquals(0.1950884762240000000e-1, SOFA::iauFapa03(0.80), 1e-12);
+    $this->assertEquals(0.1950884762240000000e-1, IAU::Fapa03(0.80), 1e-12);
   }
 
   public function test_iauNut00a() {
     $dpsi;
     $deps;
 
-    SOFA::iauNut00a(2400000.5, 53736.0, $dpsi, $deps);
+    IAU::Nut00a(2400000.5, 53736.0, $dpsi, $deps);
 
     $this->assertEquals(-0.9630909107115518431e-5, $dpsi, "dpsi", 1e-13);
     $this->assertEquals(0.4063239174001678710e-4, $deps, "deps", 1e-13);
@@ -380,7 +380,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $dpsi;
     $deps;
 
-    SOFA::iauNut06a(2400000.5, 53736.0, $dpsi, $deps);
+    IAU::Nut06a(2400000.5, 53736.0, $dpsi, $deps);
 
     $this->assertEquals(-0.9630912025820308797e-5, $dpsi, "dpsi", 1e-13);
     $this->assertEquals(0.4063238496887249798e-4, $deps, "deps", 1e-13);
@@ -390,7 +390,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $dpsi;
     $deps;
 
-    SOFA::iauNut00b(2400000.5, 53736.0, $dpsi, $deps);
+    IAU::Nut00b(2400000.5, 53736.0, $dpsi, $deps);
 
     $this->assertEquals(-0.9632552291148362783e-5, $dpsi, "dpsi", 1e-13);
     $this->assertEquals(0.4063197106621159367e-4, $deps, "deps", 1e-13);
@@ -400,7 +400,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $dpsi;
     $deps;
 
-    SOFA::iauNut80(2400000.5, 53736.0, $dpsi, $deps);
+    IAU::Nut80(2400000.5, 53736.0, $dpsi, $deps);
 
     $this->assertEquals(-0.9643658353226563966e-5, $dpsi, "dpsi", 1e-13);
     $this->assertEquals(0.4060051006879713322e-4, $deps, "deps", 1e-13);
@@ -409,42 +409,42 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
   public function test_iauGmst00() {
     $theta;
 
-    $theta = SOFA::iauGmst00(2400000.5, 53736.0, 2400000.5, 53736.0);
+    $theta = IAU::Gmst00(2400000.5, 53736.0, 2400000.5, 53736.0);
     $this->assertEquals(1.754174972210740592, $theta, null, 1e-12);
   }
 
   public function test_iauEra00() {
     $era00;
 
-    $era00 = SOFA::iauEra00(2400000.5, 54388.0);
+    $era00 = IAU::Era00(2400000.5, 54388.0);
     $this->assertEquals(0.4022837240028158102, $era00, null, 1e-12);
   }
 
   public function test_iauGmst06() {
     $theta;
 
-    $theta = SOFA::iauGmst06(2400000.5, 53736.0, 2400000.5, 53736.0);
+    $theta = IAU::Gmst06(2400000.5, 53736.0, 2400000.5, 53736.0);
     $this->assertEquals(1.754174971870091203, $theta, null, 1e-12);
   }
 
   public function test_iauGmst82() {
     $theta;
 
-    $theta = SOFA::iauGmst82(2400000.5, 53736.0);
+    $theta = IAU::Gmst82(2400000.5, 53736.0);
     $this->assertEquals(1.754174981860675096, $theta, null, 1e-12);
   }
 
   public function test_iauGst00a() {
     $theta;
 
-    $theta = SOFA::iauGst00a(2400000.5, 53736.0, 2400000.5, 53736.0);
+    $theta = IAU::Gst00a(2400000.5, 53736.0, 2400000.5, 53736.0);
     $this->assertEquals(1.754166138018281369, $theta, null, 1e-12);
   }
 
   public function test_iauEe00a() {
     $ee;
 
-    $ee = SOFA::iauEe00a(2400000.5, 53736.0);
+    $ee = IAU::Ee00a(2400000.5, 53736.0);
     $this->assertEquals(-0.8834192459222588227e-5, $ee, null, 1e-18);
   }
 
@@ -452,7 +452,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $dpsipr;
     $depspr;
 
-    SOFA::iauPr00(2400000.5, 53736, $dpsipr, $depspr);
+    IAU::Pr00(2400000.5, 53736, $dpsipr, $depspr);
 
     $this->assertEquals(-0.8716465172668347629e-7, $dpsipr, null, 1e-22);
     $this->assertEquals(-0.7342018386722813087e-8, $depspr, null, 1e-22);
@@ -466,23 +466,23 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $epsa = 0.4090789763356509900;
     $dpsi = -0.9630909107115582393e-5;
 
-    $ee = SOFA::iauEe00(2400000.5, 53736.0, $epsa, $dpsi);
+    $ee = IAU::Ee00(2400000.5, 53736.0, $epsa, $dpsi);
     $this->assertEquals(-0.8834193235367965479e-5, $ee, null, 1e-18);
   }
 
   public function test_iauEect00() {
     $eect;
 
-    $eect = SOFA::iauEect00(2400000.5, 53736.0);
+    $eect = IAU::Eect00(2400000.5, 53736.0);
     $this->assertEquals(0.204608500488125264e-8, $eect, null, 1e-20);
   }
 
   public function test_iauFalp03() {
-    $this->assertEquals(6.226797973505507345, SOFA::iauFalp03(0.80), null, 1e-12);
+    $this->assertEquals(6.226797973505507345, IAU::Falp03(0.80), null, 1e-12);
   }
 
   public function test_iauFad03() {
-    $this->assertEquals(1.946709205396925672, SOFA::iauFad03(0.80), null, 1e-12);
+    $this->assertEquals(1.946709205396925672, IAU::Fad03(0.80), null, 1e-12);
   }
 
   public function test_iauRefco() {
@@ -498,7 +498,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $rh   = 0.9;
     $wl   = 0.4;
 
-    SOFA::iauRefco($phpa, $tc, $rh, $wl, $refa, $refb);
+    IAU::Refco($phpa, $tc, $rh, $wl, $refa, $refb);
 
     $this->assertEquals(0.2264949956241415009e-3, $refa, "refa", 1e-15);
     $this->assertEquals(-0.2598658261729343970e-6, $refb, "refb", 1e-18);
@@ -513,7 +513,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $p[1] = -50.0;
     $p[2] = 25.0;
 
-    SOFA::iauC2s($p, $theta, $phi);
+    IAU::C2s($p, $theta, $phi);
     $this->assertEquals(-0.4636476090008061162, $theta, "theta", 1e-14);
     $this->assertEquals(0.2199879773954594463, $phi, "phi", 1e-14);
   }
@@ -521,7 +521,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
   public function test_iauS2c() {
     $c = [];
 
-    SOFA::iauS2c(3.0123, -0.999, $c);
+    IAU::S2c(3.0123, -0.999, $c);
 
     $this->assertEquals(-0.5366267667260523906, $c[0], "1", 1e-12);
     $this->assertEquals(0.0697711109765145365, $c[1], "2", 1e-12);
@@ -540,7 +540,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $pv[1][1] = 3.1;
     $pv[1][2] = 0.9;
 
-    SOFA::iauCpv($pv, $c);
+    IAU::Cpv($pv, $c);
 
     $this->assertEquals(0.3, $c[0][0], "p1", 0.0);
     $this->assertEquals(1.2, $c[0][1], "p2", 0.0);
@@ -570,7 +570,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $ehp[1]     = -0.415395237;
     $ehp[2]     = -0.180084014;
 
-    SOFA::iauApcg($date1, $date2, $ebpv, $ehp, $astrom);
+    IAU::Apcg($date1, $date2, $ebpv, $ehp, $astrom);
 
     $this->assertEquals(12.65133794027378508, $astrom->pmt, "pmt", 1e-11);
     $this->assertEquals(0.901310875, $astrom->eb[0], "eb(1)", 1e-12);
@@ -600,7 +600,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $depsbi;
     $dra;
 
-    SOFA::iauBi00($dpsibi, $depsbi, $dra);
+    IAU::Bi00($dpsibi, $depsbi, $dra);
 
     $this->assertEquals(-0.2025309152835086613e-6, $dpsibi, "dpsibi", 1e-12);
     $this->assertEquals(-0.3306041454222147847e-7, $depsbi, "depsbi", 1e-12);
@@ -625,7 +625,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $r[2][1] = 4.0;
     $r[2][2] = 5.0;
 
-    SOFA::iauRx($phi, $r);
+    IAU::Rx($phi, $r);
 
     $this->assertEquals(2.0, $r[0][0], "11", 0.0);
     $this->assertEquals(3.0, $r[0][1], "12", 0.0);
@@ -658,7 +658,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $r[2][1] = 4.0;
     $r[2][2] = 5.0;
 
-    SOFA::iauRy($theta, $r);
+    IAU::Ry($theta, $r);
 
     $this->assertEquals(0.8651847818978159930, $r[0][0], "11", 1e-12);
     $this->assertEquals(1.467194920539316554, $r[0][1], "12", 1e-12);
@@ -691,7 +691,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $r[2][1] = 4.0;
     $r[2][2] = 5.0;
 
-    SOFA::iauRz($psi, $r);
+    IAU::Rz($psi, $r);
 
     $this->assertEquals(2.898197754208926769, $r[0][0], "11", 1e-12);
     $this->assertEquals(3.500207892850427330, $r[0][1], "12", 1e-12);
@@ -722,7 +722,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $r[2][1] = 4.0;
     $r[2][2] = 5.0;
 
-    SOFA::iauCr($r, $c);
+    IAU::Cr($r, $c);
 
     $this->assertEquals(2.0, $c[0][0], "11", 0.0);
     $this->assertEquals(3.0, $c[0][1], "12", 0.0);
@@ -742,7 +742,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $rp  = [];
     $rbp = [];
 
-    SOFA::iauBp00(2400000.5, 50123.9999, $rb, $rp, $rbp);
+    IAU::Bp00(2400000.5, 50123.9999, $rb, $rp, $rbp);
 
     $this->assertEquals(0.9999999999999942498, $rb[0][0], "rb11", 1e-12);
     $this->assertEquals(-0.7078279744199196626e-7, $rb[0][1], "rb12", 1e-16);
@@ -804,7 +804,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $b[2][1] = 0.0;
     $b[2][2] = 1.0;
 
-    SOFA::iauRxr($a, $b, $atb);
+    IAU::Rxr($a, $b, $atb);
 
     $this->assertEquals(20.0, $atb[0][0], "11", 1e-12);
     $this->assertEquals(7.0, $atb[0][1], "12", 1e-12);
@@ -841,7 +841,7 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $pob[1] = 0.4;
     $pob[2] = 0.1;
 
-    SOFA::iauPmpx($rc, $dc, $pr, $pd, $px, $rv, $pmt, $pob, $pco);
+    IAU::Pmpx($rc, $dc, $pr, $pd, $px, $rv, $pmt, $pob, $pco);
 
     $this->assertEquals(0.2328137623960308440, $pco[0], "1", 1e-12);
     $this->assertEquals(0.6651097085397855317, $pco[1], "2", 1e-12);

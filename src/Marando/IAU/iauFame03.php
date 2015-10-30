@@ -48,7 +48,7 @@ trait iauFame03 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauFame03($t) {
+  public static function Fame03($t) {
     $a;
 
     /* Mean longitude of Mercury (IERS Conventions 2003). */

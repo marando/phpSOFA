@@ -162,7 +162,7 @@ trait iauNut00a {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauNut00a($date1, $date2, &$dpsi, &$deps) {
+  public static function Nut00a($date1, $date2, &$dpsi, &$deps) {
     $i;
     $t;
     $el;
@@ -1764,7 +1764,7 @@ trait iauNut00a {
     /* Fundamental (Delaunay) arguments */
 
     /* Mean anomaly of the Moon (IERS 2003). */
-    $el = SOFA::iauFal03($t);
+    $el = IAU::Fal03($t);
 
     /* Mean anomaly of the Sun (MHB2000). */
     $elp = fmod(1287104.79305 +
@@ -1775,7 +1775,7 @@ trait iauNut00a {
 
     /* Mean longitude of the Moon minus that of the ascending node */
     /* (IERS 2003. */
-    $f = SOFA::iauFaf03($t);
+    $f = IAU::Faf03($t);
 
     /* Mean elongation of the Moon from the Sun (MHB2000). */
     $d = fmod(1072260.70369 +
@@ -1785,7 +1785,7 @@ trait iauNut00a {
                     $t * (-0.00003169)))), TURNAS) * DAS2R;
 
     /* Mean longitude of the ascending node of the Moon (IERS 2003). */
-    $om = SOFA::iauFaom03($t);
+    $om = IAU::Faom03($t);
 
     /* Initialize the nutation values. */
     $dp = 0.0;
@@ -1837,16 +1837,16 @@ trait iauNut00a {
     $aom = fmod(2.18243920 - 33.757045 * $t, D2PI);
 
     /* General accumulated precession in longitude (IERS 2003). */
-    $apa = SOFA::iauFapa03($t);
+    $apa = IAU::Fapa03($t);
 
     /* Planetary longitudes, Mercury through Uranus (IERS 2003). */
-    $alme = SOFA::iauFame03($t);
-    $alve = SOFA::iauFave03($t);
-    $alea = SOFA::iauFae03($t);
-    $alma = SOFA::iauFama03($t);
-    $alju = SOFA::iauFaju03($t);
-    $alsa = SOFA::iauFasa03($t);
-    $alur = SOFA::iauFaur03($t);
+    $alme = IAU::Fame03($t);
+    $alve = IAU::Fave03($t);
+    $alea = IAU::Fae03($t);
+    $alma = IAU::Fama03($t);
+    $alju = IAU::Faju03($t);
+    $alsa = IAU::Fasa03($t);
+    $alur = IAU::Faur03($t);
 
     /* Neptune longitude (MHB2000). */
     $alne = fmod(5.321159000 + 3.8127774000 * $t, D2PI);

@@ -114,7 +114,7 @@ trait iauApcg {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauApcg($date1, $date2, array $ebpv, array $ehp,
+  public static function Apcg($date1, $date2, array $ebpv, array $ehp,
           iauASTROM &$astrom) {
 
     /* Geocentric observer */
@@ -122,7 +122,7 @@ trait iauApcg {
         [ 0.0, 0.0, 0.0]];
 
     /* Compute the star-independent astrometry parameters. */
-    SOFA::iauApcs($date1, $date2, $pv, $ebpv, $ehp, $astrom);
+    IAU::Apcs($date1, $date2, $pv, $ebpv, $ehp, $astrom);
 
     /* Finished. */
   }

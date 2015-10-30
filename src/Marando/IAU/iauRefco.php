@@ -158,7 +158,7 @@ trait iauRefco {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauRefco($phpa, $tc, $rh, $wl, &$refa, &$refb) {
+  public static function Refco($phpa, $tc, $rh, $wl, &$refa, &$refb) {
     $optic;
     $p;
     $t;

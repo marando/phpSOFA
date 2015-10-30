@@ -42,20 +42,20 @@ trait iauPn {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauPn(array $p, &$r, array &$u) {
+  public static function Pn(array $p, &$r, array &$u) {
     $w;
 
     /* Obtain the modulus and test for zero. */
-    $w = static::iauPm($p);
+    $w = static::Pm($p);
     if ($w == 0.0) {
 
       /* Null vector. */
-      static::iauZp($u);
+      static::Zp($u);
     }
     else {
 
       /* Unit vector. */
-      static::iauSxp(1.0 / $w, $p, $u);
+      static::Sxp(1.0 / $w, $p, $u);
     }
 
     /* Return the modulus. */

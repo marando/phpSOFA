@@ -37,7 +37,7 @@ trait iauC2s {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauC2s(array $p, &$theta, &$phi) {
+  public static function C2s(array $p, &$theta, &$phi) {
     $x;
     $y;
     $z;

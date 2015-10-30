@@ -62,7 +62,7 @@ trait iauD2tf {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauD2tf($ndp, $days, &$sign, array &$ihmsf) {
+  public static function D2tf($ndp, $days, &$sign, array &$ihmsf) {
     $nrs;
     $n;
     $rs;

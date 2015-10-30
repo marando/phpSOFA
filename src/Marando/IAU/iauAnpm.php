@@ -28,7 +28,7 @@ trait iauAnpm {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauAnpm($a) {
+  public static function Anpm($a) {
     $w;
 
     $w = fmod($a, D2PI);

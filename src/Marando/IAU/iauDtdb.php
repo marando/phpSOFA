@@ -170,7 +170,7 @@ trait iauDtdb {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauDtdb($date1, $date2, $ut, $elong, $u, $v) {
+  public static function Dtdb($date1, $date2, $ut, $elong, $u, $v) {
     $t;
     $tsol;
     $w;

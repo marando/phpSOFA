@@ -31,13 +31,13 @@ trait iauCpv {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauCpv(array $pv, array &$c) {
+  public static function Cpv(array $pv, array &$c) {
     // Added in PHP porting... initialize $c array
     $c[] = [0, 0, 0];
     $c[] = [0, 0, 0];
 
-    SOFA::iauCp($pv[0], $c[0]);
-    SOFA::iauCp($pv[1], $c[1]);
+    IAU::Cp($pv[0], $c[0]);
+    IAU::Cp($pv[1], $c[1]);
 
     return;
   }

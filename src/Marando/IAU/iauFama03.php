@@ -48,7 +48,7 @@ trait iauFama03 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauFama03($t) {
+  public static function Fama03($t) {
     $a;
 
     /* Mean longitude of Mars (IERS Conventions 2003). */

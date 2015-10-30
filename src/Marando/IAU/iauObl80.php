@@ -58,7 +58,7 @@ trait iauObl80 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauObl80($date1, $date2) {
+  public static function Obl80($date1, $date2) {
     $t;
     $eps0;
 

@@ -47,7 +47,7 @@ trait iauAf2a {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauAf2a($s, $ideg, $iamin, $asec, &$rad) {
+  public static function Af2a($s, $ideg, $iamin, $asec, &$rad) {
     /* Compute the interval. */
     $rad = ( $s == '-' ? -1.0 : 1.0 ) *
             ( 60.0 * ( 60.0 * ( (double)abs($ideg) ) +

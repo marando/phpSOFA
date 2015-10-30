@@ -49,7 +49,7 @@ trait iauFapa03 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauFapa03($t) {
+  public static function Fapa03($t) {
     $a;
 
     /* General accumulated precession in longitude. */

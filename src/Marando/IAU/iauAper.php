@@ -103,7 +103,7 @@ trait iauAper {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauAper($theta, iauASTROM &$astrom) {
+  public static function Aper($theta, iauASTROM &$astrom) {
     $astrom->eral = $theta + $astrom->along;
   }
 

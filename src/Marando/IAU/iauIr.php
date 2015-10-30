@@ -25,7 +25,7 @@ trait iauIr {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauIr(array &$r) {
+  public static function Ir(array &$r) {
     $r[0][0] = 1.0;
     $r[0][1] = 0.0;
     $r[0][2] = 0.0;

@@ -28,7 +28,7 @@ trait iauPm {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauPm(array $p) {
+  public static function Pm(array $p) {
     return sqrt($p[0] * $p[0] + $p[1] * $p[1] + $p[2] * $p[2]);
   }
 

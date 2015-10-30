@@ -25,7 +25,7 @@ trait iauZp {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauZp(array &$p) {
+  public static function Zp(array &$p) {
     $p[0] = 0.0;
     $p[1] = 0.0;
     $p[2] = 0.0;

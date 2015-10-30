@@ -55,7 +55,7 @@ trait iauBi00 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauBi00(&$dpsibi, &$depsbi, &$dra) {
+  public static function Bi00(&$dpsibi, &$depsbi, &$dra) {
     /* The frame bias corrections in longitude and obliquity */
     $DPBIAS = -0.041775 * DAS2R;
     $DEBIAS = -0.0068192 * DAS2R;

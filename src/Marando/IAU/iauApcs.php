@@ -134,7 +134,7 @@ trait iauApcs {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauApcs($date1, $date2, array $pv, array $ebpv,
+  public static function Apcs($date1, $date2, array $pv, array $ebpv,
           array $ehp, iauASTROM &$astrom) {
 
     /* au/d to m/s */
@@ -165,10 +165,10 @@ trait iauApcs {
     }
 
     /* Barycentric position of observer (au). */
-    static::iauCp($pb, $astrom->eb);
+    static::Cp($pb, $astrom->eb);
 
     /* Heliocentric direction and distance (unit vector and au). */
-    static::iauPn($ph, $astrom->em, $astrom->eh);
+    static::Pn($ph, $astrom->em, $astrom->eh);
 
     /* Barycentric vel. in units of c, and reciprocal of Lorenz factor. */
     $v2 = 0.0;
@@ -180,7 +180,7 @@ trait iauApcs {
     $astrom->bm1 = sqrt(1.0 - $v2);
 
     /* Reset the NPB matrix. */
-    static::iauIr($astrom->bpn);
+    static::Ir($astrom->bpn);
 
     /* Finished. */
   }

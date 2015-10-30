@@ -74,11 +74,11 @@ trait iauEe00 {
    *
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
-  public static function iauEe00($date1, $date2, $epsa, $dpsi) {
+  public static function Ee00($date1, $date2, $epsa, $dpsi) {
     $ee;
 
     /* Equation of the equinoxes. */
-    $ee = $dpsi * cos($epsa) + SOFA::iauEect00($date1, $date2);
+    $ee = $dpsi * cos($epsa) + IAU::Eect00($date1, $date2);
 
     return $ee;
   }
