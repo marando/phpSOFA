@@ -3,7 +3,7 @@
 use \Marando\IAU\IAU;
 use \Marando\IAU\iauASTROM;
 
-class iauSOFATest extends \PHPUnit_Framework_TestCase {
+class iauSOFATest extends PHPUnit_Framework_TestCase {
 
   public function test_iauA2af() {
     $s     = '';
@@ -1247,6 +1247,140 @@ class iauSOFATest extends \PHPUnit_Framework_TestCase {
     $eo = IAU::Eors($rnpb, $s);
 
     $this->assertEquals(-0.1332882715130744606e-2, $eo, null, 1e-14);
+  }
+
+  public function test_iauJd2cal() {
+    $dj1;
+    $dj2;
+    $fd;
+    $iy;
+    $im;
+    $id;
+    $j;
+
+    $dj1 = 2400000.5;
+    $dj2 = 50123.9999;
+
+    $j = IAU::Jd2cal($dj1, $dj2, $iy, $im, $id, $fd);
+
+    $this->assertEquals(1996, $iy, "y");
+    $this->assertEquals(2, $im, "m");
+    $this->assertEquals(10, $id, "d");
+    $this->assertEquals(0.9999, $fd, "fd", 1e-7);
+    $this->assertEquals(0, $j, "j");
+
+
+    // // //
+
+    /**
+     * The Jd2cal function relies heavily on type safe features of the C
+     * language, primarilly implicit integer division. Becasue PHP is not a type
+     * safe language, and the method was modified to simulate these features,
+     * more extensive testing is provided to enxure the algorithm performs as
+     * expected.
+     */
+    $tests = [
+        [2440624, 1970, 2, 6, 0.5],
+        [2441624, 1972, 11, 2, 0.5],
+        [2441624.343200, 1972, 11, 2, 0.8432],
+        [2441624.345420, 1972, 11, 02, 0.84542],
+        [2458375.092840, 2018, 9, 13, 0.59284],
+        [2453750.5 + 0.892100694, 2006, 1, 15, 0.8921006],
+        [2453752, 2006, 1, 16, 0.5],
+    ];
+
+    foreach ($tests as $test) {
+      $j = IAU::Jd2cal($test[0], 0, $iy, $im, $id, $fd);
+
+      $this->assertEquals($test[1], $iy, "{$test[0]} y");
+      $this->assertEquals($test[2], $im, "{$test[0]} m");
+      $this->assertEquals($test[3], $id, "{$test[0]} d");
+      $this->assertEquals($test[4], $fd, "{$test[0]} fd", 1e-7);
+      $this->assertEquals(0, $j, "{$test[0]} j");
+    }
+  }
+
+  public function test_Cal2jd() {
+    $j;
+    $djm0;
+    $djm;
+
+    $j = IAU::Cal2jd(2003, 06, 01, $djm0, $djm);
+
+    $this->assertEquals(2400000.5, $djm0, "djm0", 0.0);
+    $this->assertEquals(52791.0, $djm, "djm", 0.0);
+
+    $this->assertEquals(0, $j, "j");
+
+    // // //
+
+    /**
+     * The Jd2cal function relies heavily on type safe features of the C
+     * language, primarilly implicit integer division. Becasue PHP is not a type
+     * safe language, and the method was modified to simulate these features,
+     * more extensive testing is provided to enxure the algorithm performs as
+     * expected.
+     */
+    $tests = [
+        [2440623.5, 1970, 2, 6],
+        [2441624.5, 1972, 11, 3],
+        [2441623.5, 1972, 11, 2],
+        [2441623.5, 1972, 11, 2],
+        [2458374.5, 2018, 9, 13],
+    ];
+
+    foreach ($tests as $test) {
+      $j = IAU::Cal2jd($test[1], $test[2], $test[3], $djm0, $djm);
+
+      $this->assertEquals(2400000.5, $djm0, "{$test[0]} djm0", 0.0);
+      $this->assertEquals($test[0] - 2400000.5, $djm, "{$test[0]} djm", 0.0);
+
+      $this->assertEquals(0, $j, "{$test[0]} j");
+    }
+  }
+
+  public function test_iauTaitt() {
+    $t1;
+    $t2;
+    $j;
+
+    $j = IAU::Taitt(2453750.5, 0.892482639, $t1, $t2);
+
+    $this->assertEquals(2453750.5, $t1, "t1", 1e-6);
+    $this->assertEquals(0.892855139, $t2, "t2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauDat() {
+    $j;
+    $deltat;
+
+    $j = IAU::Dat(2003, 6, 1, 0.0, $deltat);
+
+    $this->assertEquals(32.0, $deltat, "d1", 0.0);
+    $this->assertEquals(0, $j, "j1");
+
+    $j = IAU::Dat(2008, 1, 17, 0.0, $deltat);
+
+    $this->assertEquals(33.0, $deltat, "d2", 0.0);
+    $this->assertEquals(0, $j, "j2");
+
+    $j = IAU::Dat(2015, 9, 1, 0.0, $deltat);
+
+    $this->assertEquals(36.0, $deltat, "d3", 0.0);
+    $this->assertEquals(0, $j, "j3");
+  }
+
+  public function test_iauUtctai() {
+    $u1;
+    $u2;
+    $j;
+
+    $j = IAU::Utctai(2453750.5, 0.892100694, $u1, $u2);
+
+    $this->assertEquals(2453750.5, $u1, "u1", 1e-6);
+    $this->assertEquals(0.8924826384444444444, $u2, "u2", 1e-12);
+    $this->assertEquals(0, $j, "j");
   }
 
 }

@@ -79,7 +79,12 @@ class IAU {
       iauS2c,
       iauSxp,
       iauTdbtt,
-      iauZp;
+      iauZp,
+      iauJd2cal,
+      iauCal2jd,
+      iauTaitt,
+      iauDat,
+      iauUtctai;
 }
 
 //------------------------------------------------------------------------------

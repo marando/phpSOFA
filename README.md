@@ -57,13 +57,13 @@ Status
         | C2teqx  | Celestial-to-terrestrial matrix, classical
         | C2tpe   | Celestial-to-terrestrial matrix given nutation
         | C2txy   | Celestial-to-terrestrial matrix given CIP
-        | Cal2jd  | Gregorian Calendar to Julian Day Number
+ done   | Cal2jd  | Gregorian Calendar to Julian Day Number
  done   | Cp      | Copy p-vector
  done   | Cpv     | Copy pv-vector
  done   | Cr      | Copy r-matrix
         | D2dtf   | Julian Date to Civil Date
  done   | D2tf    | Decompose days into hms
-        | Dat     | Delta(AT) (=TAI-UTC) for a given UTC date
+ done   | Dat     | Delta(AT) (=TAI-UTC) for a given UTC date
  done   | Dtdb    | TDB-TT
         | Dtf2d   | Civil Date to Julian Date
  done   | Ee00    | Equation of the equinoxes, IAU 2000
@@ -117,7 +117,7 @@ Status
         | Hfk5z   | Hipparcos to FK5 assuming zero Hipparcos proper motion
         | Icrs2g  | Transform ICRS coordinates to IAU 1958 galactic
  done   | Ir      | Initialize r-matrix to identity
-        | Jd2cal  | Julian Date to Gregorian year, month, day, fraction
+ done   | Jd2cal  | Julian Date to Gregorian year, month, day, fraction
         | Jdcalf  | Julian Date to Gregorian date for formatted output
  done   | Ld      | Light deflection by a single solar-system body
         | Ldn     | Light deflection by multiple solar-system bodies
@@ -201,7 +201,7 @@ Status
         | Starpv  | Star catalog coordinates to position+velocity vector
  done   | Sxp     | Multiply p-vector by scalar
         | Sxpv    | Multiply pv-vector by scalar
-        | Taitt   | Convert TAI to TT
+ done   | Taitt   | Convert TAI to TT
         | Taiut1  | Convert TAI to UT1
         | Taiutc  | Convert TAI to UTC
         | Tcbtdb  | Convert TCB to TDB
@@ -217,7 +217,7 @@ Status
         | Tttcg   | Convert TT to TCG
         | Tttdb   | Convert TT to TDB
         | Ttut1   | Convert TT to UT1
-        | Utctai  | Convert UTC to TAI
+ done   | Utctai  | Convert UTC to TAI
         | Utcut1  | Convert UTC to UT1
         | Ut1tai  | Convert UT1 to TAI
         | Ut1tt   | Convert UT1 to TT
