@@ -64,7 +64,22 @@ class IAU {
       iauCr,
       iauBp00,
       iauRxr,
-      iauPmpx;
+      iauPmpx,
+      iauLd,
+      iauPxp,
+      iauLdsun,
+      iauRxp,
+      iauAtciq,
+      iauApci13,
+      iauEpv00,
+      iauPnm06a,
+      iauPfw06,
+      iauFw2m,
+      iauBpn2xy,
+      iauS06,
+      iauApci,
+      iauC2ixys,
+      iauEors;
 }
 
 //------------------------------------------------------------------------------

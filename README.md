@@ -16,8 +16,8 @@ Status
  done   | Anpm    | Normalize radians to range -pi to +pi
  done   | Apcg    | Prepare for ICRS <-> GCRS, geocentric, special
         | Apcg13  | Prepare for ICRS <-> GCRS, geocentric
-        | Apci    | Prepare for ICRS <-> CIRS, terrestrial, special
-        | Apci13  | Prepare for ICRS <-> CIRS, terrestrial
+ done   | Apci    | Prepare for ICRS <-> CIRS, terrestrial, special
+ done   | Apci13  | Prepare for ICRS <-> CIRS, terrestrial
         | Apco    | Prepare for ICRS <-> observed, terrestrial, special
         | Apco13  | Prepare for ICRS <-> observed, terrestrial
  done   | Apcs    | Prepare for ICRS <-> CIRS, space, special
@@ -27,7 +27,7 @@ Status
         | Apio    | Prepare for CIRS <-> observed, terrestrial, special
         | Apio13  | Prepare for CIRS <-> observed, terrestrial
         | Atci13  | Catalog -> CIRS
-        | Atciq   | Quick ICRS -> CIRS
+ done   | Atciq   | Quick ICRS -> CIRS
         | Atciqn  | Quick ICRS -> CIRS, multiple deflections
         | Atciqz  | Quick astrometric ICRS -> CIRS
         | Atco13  | ICRS -> observed
@@ -42,13 +42,13 @@ Status
  done   | Bi00    | Frame bias, ICRS to mean J2000, IAU 2000
  done   | Bp00    | Frame bias and precession matrices, IAU 2000
         | Bp06    | Frame bias and precession matrices, IAU 2006 precession
-        | Bpn2xy  | Bias-precession-nutation matrix given CIP
+ done   | Bpn2xy  | Bias-precession-nutation matrix given CIP
         | C2i00a  | Celestial-to-intermediate matrix, IAU 2000A
         | C2i00b  | Celestial-to-intermediate matrix, IAU 2000B
         | C2i06a  | Celestial-to-intermediate matrix, IAU 2006/2000A
         | C2ibpn  | Celestial-to-intermediate matrix given b-p-n
         | C2ixy   | Celestial-to-intermediate matrix given CIP
-        | C2ixys  | Celestial-to-intermediate matrix given CIP and s
+ done   | C2ixys  | Celestial-to-intermediate matrix given CIP and s
  done   | C2s     | Unit vector to spherical
         | C2t00a  | Celestial-to-terrestrial matrix, IAU 2000A
         | C2t00b  | Celestial-to-terrestrial matrix, IAU 2000B
@@ -73,12 +73,12 @@ Status
  done   | Eect00  | Equation of the equinoxes complementary terms
         | Eform   | a,f for a nominated Earth reference ellipsoid
         | Eo06a   | Equation of the origins, IAU 2006/2000A
-        | Eors    | Equation of the origins, given NPB matrix and s
+ done   | Eors    | Equation of the origins, given NPB matrix and s
         | Epb     | Julian Date to Besselian Epoch
         | Epb2jd  | Besselian Epoch to Julian Date
  done   | Epj     | Julian Date to Julian Epoch
  done   | Epj2jd  | Julian Epoch to Julian Date
-        | Epv00   | Earth position and velocity
+ done   | Epv00   | Earth position and velocity
         | Eqeq94  | Equation of the equinoxes, IAU 1994
  done   | Era00   | Earth Rotation Angle, IAU 2000
  done   | Fad03   | Mean elongation of the Moon from the Sun
@@ -98,7 +98,7 @@ Status
         | Fk52h   | Transform FK5 star data into the Hipparcos frame
         | Fk5hip  | FK5 orientation and spin with respect to Hipparcos
         | Fk5hz   | FK5 to Hipparcos assuming zero Hipparcos proper motion
-        | Fw2m    | Fukushima-Williams angles to r-matrix
+ done   | Fw2m    | Fukushima-Williams angles to r-matrix
         | Fw2xy   | Fukushima-Williams angles to XY
         | G2icrs  | Transform IAU 1958 galactic coordinates to ICRS
         | Gc2gd   | Geocentric to geodetic transformation using a nominated ellipsoid
@@ -119,9 +119,9 @@ Status
  done   | Ir      | Initialize r-matrix to identity
         | Jd2cal  | Julian Date to Gregorian year, month, day, fraction
         | Jdcalf  | Julian Date to Gregorian date for formatted output
-        | Ld      | Light deflection by a single solar-system body
+ done   | Ld      | Light deflection by a single solar-system body
         | Ldn     | Light deflection by multiple solar-system bodies
-        | Ldsun   | Light deflection by the Sun
+ done   | Ldsun   | Light deflection by the Sun
         | Num00a  | Nutation matrix, IAU 2000A
         | Num00b  | Nutation matrix, IAU 2000B
         | Num06a  | Nutation matrix, IAU 2006/2000A
@@ -140,7 +140,7 @@ Status
         | Pas     | Position angle from spherical coordinates
         | Pb06    | Zeta,z,theta precession angles, IAU 2006, including bias
  done   | Pdp     | Inner (=scalar=dot) product of two p-vectors
-        | Pfw06   | bias-precession Fukushima-Williams angles IAU 2006
+ done   | Pfw06   | bias-precession Fukushima-Williams angles IAU 2006
         | Plan94  | Major-planet position and velocity
  done   | Pm      | Modulus of p-vector
         | Pmat00  | Precession matrix (including frame bias), IAU 2000
@@ -157,7 +157,7 @@ Status
         | Pn06a   | Bias, precession, nutation results, IAU 2006/2000A
         | Pnm00a  | Classical NPB matrix, IAU 2000A
         | Pnm00b  | Classical NPB matrix, IAU 2000B
-        | Pnm06a  | Classical NPB matrix, IAU 2006/2000A
+ done   | Pnm06a  | Classical NPB matrix, IAU 2006/2000A
         | Pnm80   | Precession/nutation matrix, IAU 1976/1980
         | Pom00   | Polar-motion matrix, IAU 2000
         | Ppp     | p-vector plus p-vector
@@ -175,12 +175,12 @@ Status
         | Pvu     | Update pv-vector
         | Pvup    | Update pv-vector discarding velocity
         | Pvxpv   | Outer (=vector=cross) product of two pv-vectors
-        | Pxp     | Outer (=vector=cross) product of two p-vectors
+ done   | Pxp     | Outer (=vector=cross) product of two p-vectors
  done   | Refco   | Refraction constants
         | Rm2v    | r-matrix to r-vector
         | Rv2m    | r-vector to r-matrix
  done   | Rx      | Rotate r-matrix about x
-        | Rxp     | Product of r-matrix and p-vector
+ done   | Rxp     | Product of r-matrix and p-vector
         | Rxpv    | Product of r-matrix and pv-vector
  done   | Rxr     | r-matrix multiply
  done   | Ry      | Rotate r-matrix about y
@@ -188,7 +188,7 @@ Status
         | S00     | The CIO locator s, given X,Y, quantity s, IAU 2000A,
         | S00a    | The CIO locator s, IAU 2000A
         | S00b    | The CIO locator s, IAU 2000B
-        | S06     | The CIO locator s, given X,Y, IAU 2006
+ done   | S06     | The CIO locator s, given X,Y, IAU 2006
         | S06a    | The CIO locator s, IAU 2006/2000A
  done   | S2c     | Spherical to unit vector
         | S2p     | Spherical to p-vector
