@@ -84,7 +84,26 @@ class IAU {
       iauCal2jd,
       iauTaitt,
       iauDat,
-      iauUtctai;
+      iauUtctai,
+  ////////
+      iauUtcut1,
+      iauTaiut1,
+      iauSp00,
+      iauEform,
+      iauGd2gce,
+      iauGd2gc,
+      iauPom00,
+      iauTr,
+      iauTrxp,
+      iauPvtob,
+      iauTrxpv,
+      iauRxpv,
+      iauApco,
+      iauApco13,
+      iauAtioq,
+      iauApio,
+      iauApio13,
+      iauAtco13;
 }
 
 //------------------------------------------------------------------------------
