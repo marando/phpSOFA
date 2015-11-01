@@ -18,24 +18,24 @@ Status
         | Apcg13  | Prepare for ICRS <-> GCRS, geocentric
  done   | Apci    | Prepare for ICRS <-> CIRS, terrestrial, special
  done   | Apci13  | Prepare for ICRS <-> CIRS, terrestrial
-        | Apco    | Prepare for ICRS <-> observed, terrestrial, special
-        | Apco13  | Prepare for ICRS <-> observed, terrestrial
+ done   | Apco    | Prepare for ICRS <-> observed, terrestrial, special
+ done   | Apco13  | Prepare for ICRS <-> observed, terrestrial
  done   | Apcs    | Prepare for ICRS <-> CIRS, space, special
         | Apcs13  | Prepare for ICRS <-> CIRS, space
  done   | Aper    | Insert ERA into context
         | Aper13  | Update context for Earth rotation
-        | Apio    | Prepare for CIRS <-> observed, terrestrial, special
-        | Apio13  | Prepare for CIRS <-> observed, terrestrial
+ done   | Apio    | Prepare for CIRS <-> observed, terrestrial, special
+ done   | Apio13  | Prepare for CIRS <-> observed, terrestrial
         | Atci13  | Catalog -> CIRS
  done   | Atciq   | Quick ICRS -> CIRS
         | Atciqn  | Quick ICRS -> CIRS, multiple deflections
         | Atciqz  | Quick astrometric ICRS -> CIRS
-        | Atco13  | ICRS -> observed
+ done   | Atco13  | ICRS -> observed
         | Atic13  | CIRS -> ICRS
         | Aticq   | Quick CIRS -> ICRS
         | Aticqn  | Quick CIRS -> ICRS, multiple deflections
         | Atio13  | CIRS -> observed
-        | Atioq   | Quick CIRS -> observed
+ done   | Atioq   | Quick CIRS -> observed
         | Atoc13  | Observed -> astrometric ICRS
         | Atoi13  | Observed -> CIRS
         | AtOiq   | Quick observed -> CIRS
@@ -57,13 +57,13 @@ Status
         | C2teqx  | Celestial-to-terrestrial matrix, classical
         | C2tpe   | Celestial-to-terrestrial matrix given nutation
         | C2txy   | Celestial-to-terrestrial matrix given CIP
-        | Cal2jd  | Gregorian Calendar to Julian Day Number
+ done   | Cal2jd  | Gregorian Calendar to Julian Day Number
  done   | Cp      | Copy p-vector
  done   | Cpv     | Copy pv-vector
  done   | Cr      | Copy r-matrix
         | D2dtf   | Julian Date to Civil Date
  done   | D2tf    | Decompose days into hms
-        | Dat     | Delta(AT) (=TAI-UTC) for a given UTC date
+ done   | Dat     | Delta(AT) (=TAI-UTC) for a given UTC date
  done   | Dtdb    | TDB-TT
         | Dtf2d   | Civil Date to Julian Date
  done   | Ee00    | Equation of the equinoxes, IAU 2000
@@ -71,7 +71,7 @@ Status
         | Ee00b   | Equation of the equinoxes, IAU 2000B
         | Ee06a   | Equation of the equinoxes, IAU 2006/2000A
  done   | Eect00  | Equation of the equinoxes complementary terms
-        | Eform   | a,f for a nominated Earth reference ellipsoid
+ done   | Eform   | a,f for a nominated Earth reference ellipsoid
         | Eo06a   | Equation of the origins, IAU 2006/2000A
  done   | Eors    | Equation of the origins, given NPB matrix and s
         | Epb     | Julian Date to Besselian Epoch
@@ -103,8 +103,8 @@ Status
         | G2icrs  | Transform IAU 1958 galactic coordinates to ICRS
         | Gc2gd   | Geocentric to geodetic transformation using a nominated ellipsoid
         | Gc2gde  | Geocentric to geodetic transformation for ellipsoid given a,f
-        | Gd2gc   | Geodetic to geocentric transformation using a nominated ellipsoid
-        | Gd2gce  | Geodetic to geocentric transformation for ellipsoid given a,f
+ done   | Gd2gc   | Geodetic to geocentric transformation using a nominated ellipsoid
+ done   | Gd2gce  | Geodetic to geocentric transformation for ellipsoid given a,f
  done   | Gmst00  | Greenwich Mean Sidereal Time, IAU 2000
  done   | Gmst06  | Greenwich mean sidereal time, IAU 2006
  done   | Gmst82  | Greenwich Mean Sidereal Time, IAU 1982
@@ -117,7 +117,7 @@ Status
         | Hfk5z   | Hipparcos to FK5 assuming zero Hipparcos proper motion
         | Icrs2g  | Transform ICRS coordinates to IAU 1958 galactic
  done   | Ir      | Initialize r-matrix to identity
-        | Jd2cal  | Julian Date to Gregorian year, month, day, fraction
+ done   | Jd2cal  | Julian Date to Gregorian year, month, day, fraction
         | Jdcalf  | Julian Date to Gregorian date for formatted output
  done   | Ld      | Light deflection by a single solar-system body
         | Ldn     | Light deflection by multiple solar-system bodies
@@ -159,7 +159,7 @@ Status
         | Pnm00b  | Classical NPB matrix, IAU 2000B
  done   | Pnm06a  | Classical NPB matrix, IAU 2006/2000A
         | Pnm80   | Precession/nutation matrix, IAU 1976/1980
-        | Pom00   | Polar-motion matrix, IAU 2000
+ done   | Pom00   | Polar-motion matrix, IAU 2000
         | Ppp     | p-vector plus p-vector
         | Ppsp    | p-vector plus scaled p-vector
  done   | Pr00    | Adjustments to IAU 1976 precession, IAU 2000
@@ -171,7 +171,7 @@ Status
         | Pvmpv   | pv-vector minus pv-vector
         | Pvppv   | pv-vector plus pv-vector
         | Pvstar  | Star position+velocity vector to catalog coordinates
-        | Pvtob   | Observatory position and velocity
+ done   | Pvtob   | Observatory position and velocity
         | Pvu     | Update pv-vector
         | Pvup    | Update pv-vector discarding velocity
         | Pvxpv   | Outer (=vector=cross) product of two pv-vectors
@@ -181,7 +181,7 @@ Status
         | Rv2m    | r-vector to r-matrix
  done   | Rx      | Rotate r-matrix about x
  done   | Rxp     | Product of r-matrix and p-vector
-        | Rxpv    | Product of r-matrix and pv-vector
+ done   | Rxpv    | Product of r-matrix and pv-vector
  done   | Rxr     | r-matrix multiply
  done   | Ry      | Rotate r-matrix about y
  done   | Rz      | Rotate r-matrix about z
@@ -196,13 +196,13 @@ Status
         | S2xpv   | Multiply pv-vector by two scalars
         | Sepp    | Angular separation from p-vectors
         | Seps    | Angular separation from spherical coordinates
-        | Sp00    | The quantity s', IERS 2003
+ done   | Sp00    | The quantity s', IERS 2003
         | Starpm  | Proper motion between two epochs
         | Starpv  | Star catalog coordinates to position+velocity vector
  done   | Sxp     | Multiply p-vector by scalar
         | Sxpv    | Multiply pv-vector by scalar
-        | Taitt   | Convert TAI to TT
-        | Taiut1  | Convert TAI to UT1
+ done   | Taitt   | Convert TAI to TT
+ done   | Taiut1  | Convert TAI to UT1
         | Taiutc  | Convert TAI to UTC
         | Tcbtdb  | Convert TCB to TDB
         | Tcgtt   | Convert TCG to TT
@@ -210,15 +210,15 @@ Status
  done   | Tdbtt   | Convert TDB to TT
         | Tf2a    | Decompose hms into radians
         | Tf2d    | Decompose hms into days
-        | Tr      | Transpose r-matrix
-        | Trxp    | Product of transpose of r-matrix and p-vector
-        | Trxpv   | Product of transpose of r-matrix and pv-vector
+ done   | Tr      | Transpose r-matrix
+ done   | Trxp    | Product of transpose of r-matrix and p-vector
+ done   | Trxpv   | Product of transpose of r-matrix and pv-vector
         | Tttai   | Convert TT to TAI
         | Tttcg   | Convert TT to TCG
         | Tttdb   | Convert TT to TDB
         | Ttut1   | Convert TT to UT1
-        | Utctai  | Convert UTC to TAI
-        | Utcut1  | Convert UTC to UT1
+ done   | Utctai  | Convert UTC to TAI
+ done   | Utcut1  | Convert UTC to UT1
         | Ut1tai  | Convert UT1 to TAI
         | Ut1tt   | Convert UT1 to TT
         | Ut1utc  | Convert UT1 to UTC
