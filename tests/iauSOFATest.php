@@ -2340,4 +2340,195 @@ class iauSOFATest extends PHPUnit_Framework_TestCase {
     $this->assertEquals(-0.2167355420646328159, $sn[2], "3", 1e-12);
   }
 
+  public function test_Atciqn() {
+    $b      = [new iauLDBODY, new iauLDBODY, new iauLDBODY];
+    $date1;
+    $date2;
+    $eo;
+    $rc;
+    $dc;
+    $pr;
+    $pd;
+    $px;
+    $rv;
+    $ri;
+    $di;
+    $astrom = new iauASTROM();
+
+    $date1          = 2456165.5;
+    $date2          = 0.401182685;
+    IAU::Apci13($date1, $date2, $astrom, $eo);
+    $rc             = 2.71;
+    $dc             = 0.174;
+    $pr             = 1e-5;
+    $pd             = 5e-6;
+    $px             = 0.1;
+    $rv             = 55.0;
+    $b[0]->bm       = 0.00028574;
+    $b[0]->dl       = 3e-10;
+    $b[0]->pv[0][0] = -7.81014427;
+    $b[0]->pv[0][1] = -5.60956681;
+    $b[0]->pv[0][2] = -1.98079819;
+    $b[0]->pv[1][0] = 0.0030723249;
+    $b[0]->pv[1][1] = -0.00406995477;
+    $b[0]->pv[1][2] = -0.00181335842;
+    $b[1]->bm       = 0.00095435;
+    $b[1]->dl       = 3e-9;
+    $b[1]->pv[0][0] = 0.738098796;
+    $b[1]->pv[0][1] = 4.63658692;
+    $b[1]->pv[0][2] = 1.9693136;
+    $b[1]->pv[1][0] = -0.00755816922;
+    $b[1]->pv[1][1] = 0.00126913722;
+    $b[1]->pv[1][2] = 0.000727999001;
+    $b[2]->bm       = 1.0;
+    $b[2]->dl       = 6e-6;
+    $b[2]->pv[0][0] = -0.000712174377;
+    $b[2]->pv[0][1] = -0.00230478303;
+    $b[2]->pv[0][2] = -0.00105865966;
+    $b[2]->pv[1][0] = 6.29235213e-6;
+    $b[2]->pv[1][1] = -3.30888387e-7;
+    $b[2]->pv[1][2] = -2.96486623e-7;
+
+    IAU::Atciqn($rc, $dc, $pr, $pd, $px, $rv, $astrom, 3, $b, $ri, $di);
+
+    $this->assertEquals(2.710122008105325582, $ri, "ri", 1e-12);
+    $this->assertEquals(0.1729371916491459122, $di, "di", 1e-12);
+  }
+
+  public function test_iauAtciqz() {
+    $date1;
+    $date2;
+    $eo;
+    $rc;
+    $dc;
+    $ri;
+    $di;
+    $astrom = new iauASTROM();
+
+    $date1 = 2456165.5;
+    $date2 = 0.401182685;
+    IAU::Apci13($date1, $date2, $astrom, $eo);
+    $rc    = 2.71;
+    $dc    = 0.174;
+
+    IAU::Atciqz($rc, $dc, $astrom, $ri, $di);
+
+    $this->assertEquals(2.709994899247599271, $ri, "ri", 1e-12);
+    $this->assertEquals(0.1728740720983623469, $di, "di", 1e-12);
+  }
+
+  public function test_iauAtic13() {
+    $ri;
+    $di;
+    $date1;
+    $date2;
+    $rc;
+    $dc;
+    $eo;
+
+    $ri    = 2.710121572969038991;
+    $di    = 0.1729371367218230438;
+    $date1 = 2456165.5;
+    $date2 = 0.401182685;
+
+    IAU::Atic13($ri, $di, $date1, $date2, $rc, $dc, $eo);
+
+    $this->assertEquals(2.710126504531374930, $rc, "rc", 1e-12);
+    $this->assertEquals(0.1740632537628342320, $dc, "dc", 1e-12);
+    $this->assertEquals(-0.002900618712657375647, $eo, "eo", 1e-14);
+  }
+
+  public function test_iauAticq() {
+    $date1;
+    $date2;
+    $eo;
+    $ri;
+    $di;
+    $rc;
+    $dc;
+    $astrom = new iauASTROM();
+
+    $date1 = 2456165.5;
+    $date2 = 0.401182685;
+    IAU::Apci13($date1, $date2, $astrom, $eo);
+    $ri    = 2.710121572969038991;
+    $di    = 0.1729371367218230438;
+
+    IAU::Aticq($ri, $di, $astrom, $rc, $dc);
+
+    $this->assertEquals(2.710126504531374930, $rc, "rc", 1e-12);
+    $this->assertEquals(0.1740632537628342320, $dc, "dc", 1e-12);
+  }
+
+  public function test_iauAticqn() {
+    $date1;
+    $date2;
+    $eo;
+    $ri;
+    $di;
+    $rc;
+    $dc;
+    $b      = [new iauLDBODY, new iauLDBODY, new iauLDBODY];
+    $astrom = new iauASTROM();
+
+    $date1          = 2456165.5;
+    $date2          = 0.401182685;
+    IAU::Apci13($date1, $date2, $astrom, $eo);
+    $ri             = 2.709994899247599271;
+    $di             = 0.1728740720983623469;
+    $b[0]->bm       = 0.00028574;
+    $b[0]->dl       = 3e-10;
+    $b[0]->pv[0][0] = -7.81014427;
+    $b[0]->pv[0][1] = -5.60956681;
+    $b[0]->pv[0][2] = -1.98079819;
+    $b[0]->pv[1][0] = 0.0030723249;
+    $b[0]->pv[1][1] = -0.00406995477;
+    $b[0]->pv[1][2] = -0.00181335842;
+    $b[1]->bm       = 0.00095435;
+    $b[1]->dl       = 3e-9;
+    $b[1]->pv[0][0] = 0.738098796;
+    $b[1]->pv[0][1] = 4.63658692;
+    $b[1]->pv[0][2] = 1.9693136;
+    $b[1]->pv[1][0] = -0.00755816922;
+    $b[1]->pv[1][1] = 0.00126913722;
+    $b[1]->pv[1][2] = 0.000727999001;
+    $b[2]->bm       = 1.0;
+    $b[2]->dl       = 6e-6;
+    $b[2]->pv[0][0] = -0.000712174377;
+    $b[2]->pv[0][1] = -0.00230478303;
+    $b[2]->pv[0][2] = -0.00105865966;
+    $b[2]->pv[1][0] = 6.29235213e-6;
+    $b[2]->pv[1][1] = -3.30888387e-7;
+    $b[2]->pv[1][2] = -2.96486623e-7;
+
+    IAU::Aticqn($ri, $di, $astrom, 3, $b, $rc, $dc);
+
+    $this->assertEquals(2.709999575032685412, $rc, "rc", 1e-12);
+    $this->assertEquals(0.1739999656317778034, $dc, "dc", 1e-12);
+  }
+
+  public function test_iauS2p() {
+    $p = [0, 0, 0];
+
+    IAU::S2p(-3.21, 0.123, 0.456, $p);
+
+    $this->assertEquals(-0.4514964673880165228, $p[0], "x", 1e-12);
+    $this->assertEquals(0.0309339427734258688, $p[1], "y", 1e-12);
+    $this->assertEquals(0.0559466810510877933, $p[2], "z", 1e-12);
+  }
+
+  public function test_iauS2pv() {
+    $pv = [];
+
+    IAU::S2pv(-3.21, 0.123, 0.456, -7.8e-6, 9.01e-6, -1.23e-5, $pv);
+
+    $this->assertEquals(-0.4514964673880165228, $pv[0][0], "x", 1e-12);
+    $this->assertEquals(0.0309339427734258688, $pv[0][1], "y", 1e-12);
+    $this->assertEquals(0.0559466810510877933, $pv[0][2], "z", 1e-12);
+
+    $this->assertEquals(0.1292270850663260170e-4, $pv[1][0], "vx", 1e-16);
+    $this->assertEquals(0.2652814182060691422e-5, $pv[1][1], "vy", 1e-16);
+    $this->assertEquals(0.2568431853930292259e-5, $pv[1][2], "vz", 1e-16);
+  }
+
 }

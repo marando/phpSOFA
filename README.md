@@ -28,12 +28,12 @@ Status
  done   | Apio13  | Prepare for CIRS <-> observed, terrestrial
  done   | Atci13  | Catalog -> CIRS
  done   | Atciq   | Quick ICRS -> CIRS
-        | Atciqn  | Quick ICRS -> CIRS, multiple deflections
-        | Atciqz  | Quick astrometric ICRS -> CIRS
+ done   | Atciqn  | Quick ICRS -> CIRS, multiple deflections
+ done   | Atciqz  | Quick astrometric ICRS -> CIRS
  done   | Atco13  | ICRS -> observed
-        | Atic13  | CIRS -> ICRS
-        | Aticq   | Quick CIRS -> ICRS
-        | Aticqn  | Quick CIRS -> ICRS, multiple deflections
+ done   | Atic13  | CIRS -> ICRS
+ done   | Aticq   | Quick CIRS -> ICRS
+ done   | Aticqn  | Quick CIRS -> ICRS, multiple deflections
         | Atio13  | CIRS -> observed
  done   | Atioq   | Quick CIRS -> observed
         | Atoc13  | Observed -> astrometric ICRS
@@ -191,8 +191,8 @@ Status
  done   | S06     | The CIO locator s, given X,Y, IAU 2006
         | S06a    | The CIO locator s, IAU 2006/2000A
  done   | S2c     | Spherical to unit vector
-        | S2p     | Spherical to p-vector
-        | S2pv    | Spherical to pv-vector
+ done   | S2p     | Spherical to p-vector
+ done   | S2pv    | Spherical to pv-vector
         | S2xpv   | Multiply pv-vector by two scalars
         | Sepp    | Angular separation from p-vectors
         | Seps    | Angular separation from spherical coordinates
