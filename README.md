@@ -15,18 +15,18 @@ Status
  done   | Anp     | Normalize radians to range 0 to 2pi
  done   | Anpm    | Normalize radians to range -pi to +pi
  done   | Apcg    | Prepare for ICRS <-> GCRS, geocentric, special
-        | Apcg13  | Prepare for ICRS <-> GCRS, geocentric
+ done   | Apcg13  | Prepare for ICRS <-> GCRS, geocentric
  done   | Apci    | Prepare for ICRS <-> CIRS, terrestrial, special
  done   | Apci13  | Prepare for ICRS <-> CIRS, terrestrial
  done   | Apco    | Prepare for ICRS <-> observed, terrestrial, special
  done   | Apco13  | Prepare for ICRS <-> observed, terrestrial
  done   | Apcs    | Prepare for ICRS <-> CIRS, space, special
-        | Apcs13  | Prepare for ICRS <-> CIRS, space
+ done   | Apcs13  | Prepare for ICRS <-> CIRS, space
  done   | Aper    | Insert ERA into context
-        | Aper13  | Update context for Earth rotation
+ done   | Aper13  | Update context for Earth rotation
  done   | Apio    | Prepare for CIRS <-> observed, terrestrial, special
  done   | Apio13  | Prepare for CIRS <-> observed, terrestrial
-        | Atci13  | Catalog -> CIRS
+ done   | Atci13  | Catalog -> CIRS
  done   | Atciq   | Quick ICRS -> CIRS
         | Atciqn  | Quick ICRS -> CIRS, multiple deflections
         | Atciqz  | Quick astrometric ICRS -> CIRS
@@ -120,7 +120,7 @@ Status
  done   | Jd2cal  | Julian Date to Gregorian year, month, day, fraction
         | Jdcalf  | Julian Date to Gregorian date for formatted output
  done   | Ld      | Light deflection by a single solar-system body
-        | Ldn     | Light deflection by multiple solar-system bodies
+ done   | Ldn     | Light deflection by multiple solar-system bodies
  done   | Ldsun   | Light deflection by the Sun
         | Num00a  | Nutation matrix, IAU 2000A
         | Num00b  | Nutation matrix, IAU 2000B
@@ -146,7 +146,7 @@ Status
         | Pmat00  | Precession matrix (including frame bias), IAU 2000
         | Pmat06  | Precession bias matrix, IAU 2006
         | Pmat76  | Precession matrix, IAU 1976
-        | Pmp     | p-vector minus p-vector
+ done   | Pmp     | p-vector minus p-vector
  done   | Pmpx    | Apply proper motion and parallax
         | Pmsafe  | Apply proper motion, with zero-parallax precautions
  done   | Pn      | Normalize p-vector returning modulus
@@ -160,8 +160,8 @@ Status
  done   | Pnm06a  | Classical NPB matrix, IAU 2006/2000A
         | Pnm80   | Precession/nutation matrix, IAU 1976/1980
  done   | Pom00   | Polar-motion matrix, IAU 2000
-        | Ppp     | p-vector plus p-vector
-        | Ppsp    | p-vector plus scaled p-vector
+ done   | Ppp     | p-vector plus p-vector
+ done   | Ppsp    | p-vector plus scaled p-vector
  done   | Pr00    | Adjustments to IAU 1976 precession, IAU 2000
         | Prec76  | Precession, IAU 1976
         | Pv2p    | Discard velocity component of pv-vector

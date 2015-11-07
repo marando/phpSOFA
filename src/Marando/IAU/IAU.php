@@ -103,7 +103,16 @@ class IAU {
       iauAtioq,
       iauApio,
       iauApio13,
-      iauAtco13;
+      iauAtco13,
+  ///////
+      iauApcg13,
+      iauApcs13,
+      iauAper13,
+      iauAtci13,
+      iauPmp,
+      iauPpp,
+      iauPpsp,
+      iauLdn;
 }
 
 //------------------------------------------------------------------------------
