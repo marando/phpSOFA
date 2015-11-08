@@ -36,9 +36,9 @@ Status
  done   | Aticqn  | Quick CIRS -> ICRS, multiple deflections
         | Atio13  | CIRS -> observed
  done   | Atioq   | Quick CIRS -> observed
-        | Atoc13  | Observed -> astrometric ICRS
+ done   | Atoc13  | Observed -> astrometric ICRS
         | Atoi13  | Observed -> CIRS
-        | AtOiq   | Quick observed -> CIRS
+ done   | Atoiq   | Quick observed -> CIRS
  done   | Bi00    | Frame bias, ICRS to mean J2000, IAU 2000
  done   | Bp00    | Frame bias and precession matrices, IAU 2000
         | Bp06    | Frame bias and precession matrices, IAU 2006 precession

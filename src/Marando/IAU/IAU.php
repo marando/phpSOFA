@@ -118,7 +118,9 @@ class IAU {
       iauAticq,
       iauAticqn,
       iauS2p,
-      iauS2pv;
+      iauS2pv,
+      iauAtoiq,
+      iauAtoc13;
 }
 
 //------------------------------------------------------------------------------

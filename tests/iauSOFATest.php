@@ -2531,4 +2531,114 @@ class iauSOFATest extends PHPUnit_Framework_TestCase {
     $this->assertEquals(0.2568431853930292259e-5, $pv[1][2], "vz", 1e-16);
   }
 
+  public function test_iauAtoiq() {
+    $utc1;
+    $utc2;
+    $dut1;
+    $elong;
+    $phi;
+    $hm;
+    $xp;
+    $yp;
+    $phpa;
+    $tc;
+    $rh;
+    $wl;
+    $ob1;
+    $ob2;
+    $ri;
+    $di;
+    $astrom = new iauASTROM();
+
+    $utc1  = 2456384.5;
+    $utc2  = 0.969254051;
+    $dut1  = 0.1550675;
+    $elong = -0.527800806;
+    $phi   = -1.2345856;
+    $hm    = 2738.0;
+    $xp    = 2.47230737e-7;
+    $yp    = 1.82640464e-6;
+    $phpa  = 731.0;
+    $tc    = 12.8;
+    $rh    = 0.59;
+    $wl    = 0.55;
+    IAU::Apio13($utc1, $utc2, $dut1, $elong, $phi, $hm, $xp, $yp, $phpa, $tc,
+            $rh, $wl, $astrom);
+
+    $ob1 = 2.710085107986886201;
+    $ob2 = 0.1717653435758265198;
+    IAU::Atoiq("R", $ob1, $ob2, $astrom, $ri, $di);
+    $this->assertEquals(2.710121574449135955, $ri, "R/ri", 1e-12);
+    $this->assertEquals(0.1729371839114567725, $di, "R/di", 1e-12);
+
+    $ob1 = -0.09247619879782006106;
+    $ob2 = 0.1717653435758265198;
+    IAU::Atoiq("H", $ob1, $ob2, $astrom, $ri, $di);
+    $this->assertEquals(2.710121574449135955, $ri, "H/ri", 1e-12);
+    $this->assertEquals(0.1729371839114567725, $di, "H/di", 1e-12);
+
+    $ob1 = 0.09233952224794989993;
+    $ob2 = 1.407758704513722461;
+    IAU::Atoiq("A", $ob1, $ob2, $astrom, $ri, $di);
+    $this->assertEquals(2.710121574449135955, $ri, "A/ri", 1e-12);
+    $this->assertEquals(0.1729371839114567728, $di, "A/di", 1e-12);
+  }
+
+  public function test_iauAtoc13() {
+    $utc1;
+    $utc2;
+    $dut1;
+    $elong;
+    $phi;
+    $hm;
+    $xp;
+    $yp;
+    $phpa;
+    $tc;
+    $rh;
+    $wl;
+    $ob1;
+    $ob2;
+    $rc;
+    $dc;
+    $j;
+
+    $utc1  = 2456384.5;
+    $utc2  = 0.969254051;
+    $dut1  = 0.1550675;
+    $elong = -0.527800806;
+    $phi   = -1.2345856;
+    $hm    = 2738.0;
+    $xp    = 2.47230737e-7;
+    $yp    = 1.82640464e-6;
+    $phpa  = 731.0;
+    $tc    = 12.8;
+    $rh    = 0.59;
+    $wl    = 0.55;
+
+    $ob1 = 2.710085107986886201;
+    $ob2 = 0.1717653435758265198;
+    $j   = IAU::Atoc13("R", $ob1, $ob2, $utc1, $utc2, $dut1, $elong, $phi, $hm,
+                    $xp, $yp, $phpa, $tc, $rh, $wl, $rc, $dc);
+    $this->assertEquals(2.709956744661000609, $rc, "R/rc", 1e-12);
+    $this->assertEquals(0.1741696500895398562, $dc, "R/dc", 1e-12);
+    $this->assertEquals(0, $j, "R/j");
+
+    $ob1 = -0.09247619879782006106;
+    $ob2 = 0.1717653435758265198;
+    $j   = IAU::Atoc13("H", $ob1, $ob2, $utc1, $utc2, $dut1, $elong, $phi, $hm,
+                    $xp, $yp, $phpa, $tc, $rh, $wl, $rc, $dc);
+    $this->assertEquals(2.709956744661000609, $rc, "H/rc", 1e-12);
+    $this->assertEquals(0.1741696500895398562, $dc, "H/dc", 1e-12);
+    $this->assertEquals(0, $j, "H/j");
+
+    $ob1 = 0.09233952224794989993;
+    $ob2 = 1.407758704513722461;
+    $j   = IAU::Atoc13("A", $ob1, $ob2, $utc1, $utc2, $dut1, $elong, $phi, $hm,
+                    $xp, $yp, $phpa, $tc, $rh, $wl, $rc, $dc);
+    $this->assertEquals(2.709956744661000609, $rc, "A/rc", 1e-12);
+    $this->assertEquals(0.1741696500895398565, $dc, "A/dc", 1e-12);
+    $this->assertEquals(0, $j, "A/j");
+  }
+
 }
