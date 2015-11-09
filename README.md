@@ -34,7 +34,7 @@ Status
  done   | Atic13  | CIRS -> ICRS
  done   | Aticq   | Quick CIRS -> ICRS
  done   | Aticqn  | Quick CIRS -> ICRS, multiple deflections
-        | Atio13  | CIRS -> observed
+ done   | Atio13  | CIRS -> observed
  done   | Atioq   | Quick CIRS -> observed
  done   | Atoc13  | Observed -> astrometric ICRS
         | Atoi13  | Observed -> CIRS

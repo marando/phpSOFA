@@ -2641,4 +2641,52 @@ class iauSOFATest extends PHPUnit_Framework_TestCase {
     $this->assertEquals(0, $j, "A/j");
   }
 
+  public function test_iauAtio13() {
+    $ri;
+    $di;
+    $utc1;
+    $utc2;
+    $dut1;
+    $elong;
+    $phi;
+    $hm;
+    $xp;
+    $yp;
+    $phpa;
+    $tc;
+    $rh;
+    $wl;
+    $aob;
+    $zob;
+    $hob;
+    $dob;
+    $rob;
+    $j;
+
+    $ri    = 2.710121572969038991;
+    $di    = 0.1729371367218230438;
+    $utc1  = 2456384.5;
+    $utc2  = 0.969254051;
+    $dut1  = 0.1550675;
+    $elong = -0.527800806;
+    $phi   = -1.2345856;
+    $hm    = 2738.0;
+    $xp    = 2.47230737e-7;
+    $yp    = 1.82640464e-6;
+    $phpa  = 731.0;
+    $tc    = 12.8;
+    $rh    = 0.59;
+    $wl    = 0.55;
+
+    $j = IAU::Atio13($ri, $di, $utc1, $utc2, $dut1, $elong, $phi, $hm, $xp, $yp,
+                    $phpa, $tc, $rh, $wl, $aob, $zob, $hob, $dob, $rob);
+
+    $this->assertEquals(0.09233952224794989993, $aob, "aob", 1e-12);
+    $this->assertEquals(1.407758704513722461, $zob, "zob", 1e-12);
+    $this->assertEquals(-0.09247619879782006106, $hob, "hob", 1e-12);
+    $this->assertEquals(0.1717653435758265198, $dob, "dob", 1e-12);
+    $this->assertEquals(2.710085107986886201, $rob, "rob", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
 }
