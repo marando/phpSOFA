@@ -85,7 +85,6 @@ class IAU {
       iauTaitt,
       iauDat,
       iauUtctai,
-  ////////
       iauUtcut1,
       iauTaiut1,
       iauSp00,
@@ -120,7 +119,8 @@ class IAU {
       iauS2p,
       iauS2pv,
       iauAtoiq,
-      iauAtoc13;
+      iauAtoc13,
+      iauAtio13;
 }
 
 //------------------------------------------------------------------------------
