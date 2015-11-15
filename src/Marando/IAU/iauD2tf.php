@@ -102,7 +102,7 @@ trait iauD2tf {
     $rh = $rm * 60.0;
 
     /* Round the interval and express in resolution units. */
-    $a = intval($rs * $a);
+    $a = round($rs * $a);
 
     /* Break into fields. */
     $ah = $a / $rh;
