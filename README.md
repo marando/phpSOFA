@@ -203,10 +203,10 @@ Status
         | Sxpv    | Multiply pv-vector by scalar
  done   | Taitt   | Convert TAI to TT
  done   | Taiut1  | Convert TAI to UT1
-        | Taiutc  | Convert TAI to UTC
-        | Tcbtdb  | Convert TCB to TDB
-        | Tcgtt   | Convert TCG to TT
-        | Tdbtcb  | Convert TDB to TCB
+ done   | Taiutc  | Convert TAI to UTC
+ done   | Tcbtdb  | Convert TCB to TDB
+ done   | Tcgtt   | Convert TCG to TT
+ done   | Tdbtcb  | Convert TDB to TCB
  done   | Tdbtt   | Convert TDB to TT
         | Tf2a    | Decompose hms into radians
         | Tf2d    | Decompose hms into days

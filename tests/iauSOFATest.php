@@ -2780,4 +2780,56 @@ class iauSOFATest extends PHPUnit_Framework_TestCase {
     $this->assertEquals(0, $j, "j");
   }
 
+  public function test_Taiutc() {
+    $u1;
+    $u2;
+    $j;
+
+
+    $j = IAU::Taiutc(2453750.5, 0.892482639, $u1, $u2);
+
+    $this->assertEquals(2453750.5, $u1, "u1", 1e-6);
+    $this->assertEquals(0.8921006945555555556, $u2, "u2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauTcbtdb() {
+    $b1;
+    $b2;
+    $j;
+
+
+    $j = IAU::Tcbtdb(2453750.5, 0.893019599, $b1, $b2);
+
+    $this->assertEquals(2453750.5, $b1, "b1", 1e-6);
+    $this->assertEquals(0.8928551362746343397, $b2, "b2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauTcgtt() {
+    $t1;
+    $t2;
+    $j;
+
+
+    $j = IAU::Tcgtt(2453750.5, 0.892862531, $t1, $t2);
+
+    $this->assertEquals(2453750.5, $t1, "t1", 1e-6);
+    $this->assertEquals(0.8928551387488816828, $t2, "t2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauTdbtcb() {
+    $b1;
+    $b2;
+    $j;
+
+
+    $j = IAU::Tdbtcb(2453750.5, 0.892855137, $b1, $b2);
+
+    $this->assertEquals(2453750.5, $b1, "b1", 1e-6);
+    $this->assertEquals(0.8930195997253656716, $b2, "b2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
 }
