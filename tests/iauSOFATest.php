@@ -2689,4 +2689,95 @@ class iauSOFATest extends PHPUnit_Framework_TestCase {
     $this->assertEquals(0, $j, "j");
   }
 
+  public function test_iauTttai() {
+    $a1;
+    $a2;
+    $j;
+
+
+    $j = IAU::Tttai(2453750.5, 0.892482639, $a1, $a2);
+
+    $this->assertEquals(2453750.5, $a1, "a1", 1e-6);
+    $this->assertEquals(0.892110139, $a2, "a2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauTttcg() {
+    $g1;
+    $g2;
+    $j;
+
+
+    $j = IAU::Tttcg(2453750.5, 0.892482639, $g1, $g2);
+
+    $this->assertEquals(2453750.5, $g1, "g1", 1e-6);
+    $this->assertEquals(0.8924900312508587113, $g2, "g2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauTttdb() {
+    $b1;
+    $b2;
+    $j;
+
+
+    $j = IAU::Tttdb(2453750.5, 0.892855139, -0.000201, $b1, $b2);
+
+    $this->assertEquals(2453750.5, $b1, "b1", 1e-6);
+    $this->assertEquals(0.8928551366736111111, $b2, "b2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauTtut1() {
+    $u1;
+    $u2;
+    $j;
+
+
+    $j = IAU::Ttut1(2453750.5, 0.892855139, 64.8499, $u1, $u2);
+
+    $this->assertEquals(2453750.5, $u1, "u1", 1e-6);
+    $this->assertEquals(0.8921045614537037037, $u2, "u2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauUt1tai() {
+    $a1;
+    $a2;
+    $j;
+
+
+    $j = IAU::Ut1tai(2453750.5, 0.892104561, -32.6659, $a1, $a2);
+
+    $this->assertEquals(2453750.5, $a1, "a1", 1e-6);
+    $this->assertEquals(0.8924826385462962963, $a2, "a2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauUt1tt() {
+    $t1;
+    $t2;
+    $j;
+
+
+    $j = IAU::Ut1tt(2453750.5, 0.892104561, 64.8499, $t1, $t2);
+
+    $this->assertEquals(2453750.5, $t1, "t1", 1e-6);
+    $this->assertEquals(0.8928551385462962963, $t2, "t2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauUt1utc() {
+    $u1;
+    $u2;
+    $j;
+
+
+    $j = IAU::Ut1utc(2453750.5, 0.892104561, 0.3341, $u1, $u2);
+
+    $this->assertEquals(2453750.5, $u1, "u1", 1e-6);
+    $this->assertEquals(0.8921006941018518519, $u2, "u2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
 }

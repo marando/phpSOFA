@@ -2,6 +2,8 @@
 
 namespace Marando\IAU;
 
+use \Marando\IERS\IERS;
+
 trait iauDat {
 
   /**
@@ -130,6 +132,8 @@ trait iauDat {
    *  Copyright (C) 2015 IAU SOFA Board.  See notes at end.
    */
   public static function Dat($iy, $im, $id, $fd, &$deltat) {
+    IERS::now();
+
     /* Release year for this version of iauDat */
     $IYV = (int)date('Y');
 
@@ -258,35 +262,8 @@ trait iauDat {
   }
 
   private static function getTiaUtcFile() {
-    if (static::datFileExpired()) {
-      $url  = 'ftp://maia.usno.navy.mil/ser7/tai-utc.dat';
-      $data = file_get_contents($url);
-      file_put_contents("tai-utc.dat", $data);
-    }
-    else {
-      $data = file_get_contents("tai-utc.dat");
-    }
-
-    return explode("\n", $data);
-  }
-
-  private static function datFileExpired() {
-    if (!file_exists("tai-utc.dat"))
-      return true;
-
-    // Unix timestamp file was downloaded, and age in days
-    $downloadDate = filectime("tai-utc.dat");
-    $ageDays      = (time() - $downloadDate) / 86400;
-
-    // Re-download every 3 days
-    // ... this should really only redownload eveyr dec/jun when seconds added
-    if ($ageDays > 1)
-      return true;
-
-    //if (  past month of leap sec expected and file is older  )
-    //return true
-
-    return false;
+    IERS::now();  // Use phpIERS to download data, but use file directly
+    return explode("\n", file_get_contents(IERS::STORAGE_DIR . '/tai-utc.dat'));
   }
 
   protected static function monthToInt($month) {

@@ -4,8 +4,49 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f8b406f244b1c4cc242241e1e194664b",
-    "packages": [],
+    "hash": "9f649293e8f20df2f8d2c6088112c5d8",
+    "content-hash": "a3d4038711587d2c43c248d3fbb50f82",
+    "packages": [
+        {
+            "name": "marando/php-iers",
+            "version": "0.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marando/phpIERS.git",
+                "reference": "eb97612c0c64ede35a1dcde5338fc4575192b5cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marando/phpIERS/zipball/eb97612c0c64ede35a1dcde5338fc4575192b5cf",
+                "reference": "eb97612c0c64ede35a1dcde5338fc4575192b5cf",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Marando": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GNU2"
+            ],
+            "authors": [
+                {
+                    "name": "Ashley Marando",
+                    "email": "a.marando@me.com"
+                }
+            ],
+            "description": "A PHP package that simplifies obtaining Earth rotation values from IERS bulletins.",
+            "time": "2015-11-14 22:57:43"
+        }
+    ],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
