@@ -120,7 +120,14 @@ class IAU {
       iauS2pv,
       iauAtoiq,
       iauAtoc13,
-      iauAtio13;
+      iauAtio13,
+      iauTttai,
+      iauTttcg,
+      iauTttdb,
+      iauTtut1,
+      iauUt1tai,
+      iauUt1tt,
+      iauUt1utc;
 }
 
 //------------------------------------------------------------------------------

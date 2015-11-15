@@ -213,15 +213,15 @@ Status
  done   | Tr      | Transpose r-matrix
  done   | Trxp    | Product of transpose of r-matrix and p-vector
  done   | Trxpv   | Product of transpose of r-matrix and pv-vector
-        | Tttai   | Convert TT to TAI
-        | Tttcg   | Convert TT to TCG
-        | Tttdb   | Convert TT to TDB
-        | Ttut1   | Convert TT to UT1
+ done   | Tttai   | Convert TT to TAI
+ done   | Tttcg   | Convert TT to TCG
+ done   | Tttdb   | Convert TT to TDB
+ done   | Ttut1   | Convert TT to UT1
  done   | Utctai  | Convert UTC to TAI
  done   | Utcut1  | Convert UTC to UT1
-        | Ut1tai  | Convert UT1 to TAI
-        | Ut1tt   | Convert UT1 to TT
-        | Ut1utc  | Convert UT1 to UTC
+ done   | Ut1tai  | Convert UT1 to TAI
+ done   | Ut1tt   | Convert UT1 to TT
+ done   | Ut1utc  | Convert UT1 to UTC
         | Xy06    | CIP, IAU 2006/2000A from series
         | Xys00a  | CIP and s, IAU 2000A
         | Xys00b  | CIP and s, IAU 2000B
