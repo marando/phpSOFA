@@ -127,7 +127,21 @@ class IAU {
       iauTtut1,
       iauUt1tai,
       iauUt1tt,
-      iauUt1utc;
+      iauUt1utc,
+  ///////
+      iauTaiutc,
+      iauTcbtdb,
+      iauTcgtt,
+      iauTdbtcb,
+      iauD2dtf,
+      iauDtf2d,
+      iauEpb2jd,
+      iauEe00b,
+      iauGst00b,
+      iauGst06,
+      iauGst06a,
+      iauTf2a,
+      iauTf2d;
 }
 
 //------------------------------------------------------------------------------

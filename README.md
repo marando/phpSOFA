@@ -61,21 +61,21 @@ Status
  done   | Cp      | Copy p-vector
  done   | Cpv     | Copy pv-vector
  done   | Cr      | Copy r-matrix
-        | D2dtf   | Julian Date to Civil Date
+ done   | D2dtf   | Julian Date to Civil Date
  done   | D2tf    | Decompose days into hms
  done   | Dat     | Delta(AT) (=TAI-UTC) for a given UTC date
  done   | Dtdb    | TDB-TT
-        | Dtf2d   | Civil Date to Julian Date
+ done   | Dtf2d   | Civil Date to Julian Date
  done   | Ee00    | Equation of the equinoxes, IAU 2000
  done   | Ee00a   | Equation of the equinoxes, IAU 2000A
-        | Ee00b   | Equation of the equinoxes, IAU 2000B
+ done   | Ee00b   | Equation of the equinoxes, IAU 2000B
         | Ee06a   | Equation of the equinoxes, IAU 2006/2000A
  done   | Eect00  | Equation of the equinoxes complementary terms
  done   | Eform   | a,f for a nominated Earth reference ellipsoid
         | Eo06a   | Equation of the origins, IAU 2006/2000A
  done   | Eors    | Equation of the origins, given NPB matrix and s
         | Epb     | Julian Date to Besselian Epoch
-        | Epb2jd  | Besselian Epoch to Julian Date
+ done   | Epb2jd  | Besselian Epoch to Julian Date
  done   | Epj     | Julian Date to Julian Epoch
  done   | Epj2jd  | Julian Epoch to Julian Date
  done   | Epv00   | Earth position and velocity
@@ -109,9 +109,9 @@ Status
  done   | Gmst06  | Greenwich mean sidereal time, IAU 2006
  done   | Gmst82  | Greenwich Mean Sidereal Time, IAU 1982
  done   | Gst00a  | Greenwich Apparent Sidereal Time, IAU 2000A
-        | Gst00b  | Greenwich Apparent Sidereal Time, IAU 2000B
-        | Gst06   | Greenwich Apparent sidereal time, IAU 2006, given NPB matrix
-        | Gst06a  | Greenwich Apparent sidereal time IAU 2006/2000A
+ done   | Gst00b  | Greenwich Apparent Sidereal Time, IAU 2000B
+ done   | Gst06   | Greenwich Apparent sidereal time, IAU 2006, given NPB matrix
+ done   | Gst06a  | Greenwich Apparent sidereal time IAU 2006/2000A
         | Gst94   | Greenwich Apparent Sidereal Time, IAU 1994
         | H2fk5   | Transform Hipparcos star data into the FK5 frame
         | Hfk5z   | Hipparcos to FK5 assuming zero Hipparcos proper motion
@@ -203,13 +203,13 @@ Status
         | Sxpv    | Multiply pv-vector by scalar
  done   | Taitt   | Convert TAI to TT
  done   | Taiut1  | Convert TAI to UT1
-        | Taiutc  | Convert TAI to UTC
-        | Tcbtdb  | Convert TCB to TDB
-        | Tcgtt   | Convert TCG to TT
-        | Tdbtcb  | Convert TDB to TCB
+ done   | Taiutc  | Convert TAI to UTC
+ done   | Tcbtdb  | Convert TCB to TDB
+ done   | Tcgtt   | Convert TCG to TT
+ done   | Tdbtcb  | Convert TDB to TCB
  done   | Tdbtt   | Convert TDB to TT
-        | Tf2a    | Decompose hms into radians
-        | Tf2d    | Decompose hms into days
+ done   | Tf2a    | Decompose hms into radians
+ done   | Tf2d    | Decompose hms into days
  done   | Tr      | Transpose r-matrix
  done   | Trxp    | Product of transpose of r-matrix and p-vector
  done   | Trxpv   | Product of transpose of r-matrix and pv-vector

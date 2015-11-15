@@ -109,13 +109,13 @@ trait iauJd2cal {
     /* Express day in Gregorian calendar. */
     // Integer division parts of this block was modified in the PHP translation
     $l  = $jd + 68569;
-    $n  = intval((4 * $l) / 146097);
-    $l -= intval((146097 * $n + 3) / 4);
-    $i  = intval((4000 * ($l + 1)) / 1461001);
-    $l -= intval((1461 * $i) / 4) - 31;
-    $k  = intval((80 * $l) / 2447);
-    $id = round($l - (2447 * $k) / 80);
-    $l  = intval($k / 11);
+    $n  = floor( (int)(4 * $l) / 146097);
+    $l -= floor( (int)(146097 * $n + 3) / 4);
+    $i  = floor( (int)(4000 * ($l + 1)) / 1461001);
+    $l -= floor( (int)(1461 * $i) / 4) - 31;
+    $k  = floor( (int)(80 * $l) / 2447);
+    $id = ($l - floor((int)(2447 * $k) / 80));
+    $l  = floor((int)$k / 11);
     $im = (int)($k + 2 - 12 * $l);
     $iy = (int)(100 * ($n - 49) + $i + $l);
     $fd = $f;

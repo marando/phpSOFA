@@ -2,8 +2,8 @@
 
 use \Marando\IAU\IAU;
 use \Marando\IAU\iauASTROM;
-use \Marando\IAU\iauRefEllips;
 use \Marando\IAU\iauLDBODY;
+use \Marando\IAU\iauRefEllips;
 
 class iauSOFATest extends PHPUnit_Framework_TestCase {
 
@@ -1289,6 +1289,7 @@ class iauSOFATest extends PHPUnit_Framework_TestCase {
         [2458375.092840, 2018, 9, 13, 0.59284],
         [2453750.5 + 0.892100694, 2006, 1, 15, 0.8921006],
         [2453752, 2006, 1, 16, 0.5],
+        [2449534.5, 1994, 7, 1, 0],
     ];
 
     foreach ($tests as $test) {
@@ -2777,6 +2778,174 @@ class iauSOFATest extends PHPUnit_Framework_TestCase {
 
     $this->assertEquals(2453750.5, $u1, "u1", 1e-6);
     $this->assertEquals(0.8921006941018518519, $u2, "u2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_Taiutc() {
+    $u1;
+    $u2;
+    $j;
+
+
+    $j = IAU::Taiutc(2453750.5, 0.892482639, $u1, $u2);
+
+    $this->assertEquals(2453750.5, $u1, "u1", 1e-6);
+    $this->assertEquals(0.8921006945555555556, $u2, "u2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauTcbtdb() {
+    $b1;
+    $b2;
+    $j;
+
+
+    $j = IAU::Tcbtdb(2453750.5, 0.893019599, $b1, $b2);
+
+    $this->assertEquals(2453750.5, $b1, "b1", 1e-6);
+    $this->assertEquals(0.8928551362746343397, $b2, "b2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauTcgtt() {
+    $t1;
+    $t2;
+    $j;
+
+
+    $j = IAU::Tcgtt(2453750.5, 0.892862531, $t1, $t2);
+
+    $this->assertEquals(2453750.5, $t1, "t1", 1e-6);
+    $this->assertEquals(0.8928551387488816828, $t2, "t2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauTdbtcb() {
+    $b1;
+    $b2;
+    $j;
+
+
+    $j = IAU::Tdbtcb(2453750.5, 0.892855137, $b1, $b2);
+
+    $this->assertEquals(2453750.5, $b1, "b1", 1e-6);
+    $this->assertEquals(0.8930195997253656716, $b2, "b2", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauD2dtf() {
+    $j;
+    $iy;
+    $im;
+    $id;
+    $ihmsf = [];
+
+    $j = IAU::D2dtf("UTC", 5, 2400000.5, 49533.99999, $iy, $im, $id, $ihmsf);
+
+    $this->assertEquals(1994, $iy, "y");
+    $this->assertEquals(6, $im, "mo");
+    $this->assertEquals(30, $id, "d");
+    $this->assertEquals(23, $ihmsf[0], "h");
+    $this->assertEquals(59, $ihmsf[1], "m");
+    $this->assertEquals(60, $ihmsf[2], "s");
+    $this->assertEquals(13599, $ihmsf[3], "f");
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauDtf2d() {
+    $u1;
+    $u2;
+    $j;
+
+
+    $j = IAU::Dtf2d("UTC", 1994, 6, 30, 23, 59, 60.13599, $u1, $u2);
+
+    $this->assertEquals(2449534.49999, $u1 + $u2, "u", 1e-6);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauEpb2jd() {
+    $epb;
+    $djm0;
+    $djm;
+
+
+    $epb = 1957.3;
+
+    IAU::Epb2jd($epb, $djm0, $djm);
+
+    $this->assertEquals(2400000.5, $djm0, "djm0", 1e-9);
+    $this->assertEquals(35948.1915101513, $djm, "mjd", 1e-9);
+  }
+
+  public function test_iauEe00b() {
+    $ee;
+
+
+    $ee = IAU::Ee00b(2400000.5, 53736.0);
+
+    $this->assertEquals(-0.8835700060003032831e-5, $ee, 1e-18);
+  }
+
+  public function test_iauGst00b() {
+    $theta;
+
+
+    $theta = IAU::Gst00b(2400000.5, 53736.0);
+
+    $this->assertEquals(1.754166136510680589, $theta, 1e-12);
+  }
+
+  public function test_iauGst06() {
+    $rnpb = [];
+    $theta;
+
+
+    $rnpb[0][0] = 0.9999989440476103608;
+    $rnpb[0][1] = -0.1332881761240011518e-2;
+    $rnpb[0][2] = -0.5790767434730085097e-3;
+
+    $rnpb[1][0] = 0.1332858254308954453e-2;
+    $rnpb[1][1] = 0.9999991109044505944;
+    $rnpb[1][2] = -0.4097782710401555759e-4;
+
+    $rnpb[2][0] = 0.5791308472168153320e-3;
+    $rnpb[2][1] = 0.4020595661593994396e-4;
+    $rnpb[2][2] = 0.9999998314954572365;
+
+    $theta = IAU::Gst06(2400000.5, 53736.0, 2400000.5, 53736.0, $rnpb);
+
+    $this->assertEquals(1.754166138018167568, $theta, 1e-12);
+  }
+
+  public function test_iauGst06a() {
+    $theta;
+
+
+    $theta = IAU::Gst06a(2400000.5, 53736.0, 2400000.5, 53736.0);
+
+    $this->assertEquals(1.754166137675019159, $theta, 1e-12);
+  }
+
+  public function test_Tf2a() {
+    $a;
+    $j;
+
+
+    $j = IAU::Tf2a('+', 4, 58, 20.2, $a);
+
+    $this->assertEquals(1.301739278189537429, $a, "a", 1e-12);
+    $this->assertEquals(0, $j, "j");
+  }
+
+  public function test_iauTf2d() {
+    $d;
+    $j;
+
+
+    $j = IAU::Tf2d(' ', 23, 55, 10.9, $d);
+
+    $this->assertEquals(0.9966539351851851852, $d, "d", 1e-12);
     $this->assertEquals(0, $j, "j");
   }
 
