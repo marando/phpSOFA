@@ -262,8 +262,13 @@ trait iauDat {
   }
 
   private static function getTiaUtcFile() {
-    IERS::now();  // Use phpIERS to download data, but use file directly
-    return explode("\n", file_get_contents(IERS::STORAGE_DIR . '/tai-utc.dat'));
+    // Use phpIERS to download data, but use file directly
+    IERS::now();
+
+    $phpIERS = '/../../../vendor/marando/php-iers/';
+    $path    = realpath(__DIR__ . $phpIERS . IERS::STORAGE_DIR);
+    
+    return explode("\n", file_get_contents($path . '/tai-utc.dat'));
   }
 
   protected static function monthToInt($month) {
