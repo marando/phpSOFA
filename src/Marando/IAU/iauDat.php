@@ -264,10 +264,8 @@ trait iauDat {
   private static function getTiaUtcFile() {
     // Use phpIERS to download data, but use file directly
     IERS::now();
+    $path = getcwd() . "/vendor/marando/php-iers/" . IERS::STORAGE_DIR;
 
-    $phpIERS = '/../../../vendor/marando/php-iers/';
-    $path    = realpath(__DIR__ . $phpIERS . IERS::STORAGE_DIR);
-    
     return explode("\n", file_get_contents($path . '/tai-utc.dat'));
   }
 
