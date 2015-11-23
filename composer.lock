@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9f649293e8f20df2f8d2c6088112c5d8",
-    "content-hash": "a3d4038711587d2c43c248d3fbb50f82",
+    "hash": "d3cc040abb4a8137103563b5b82250c8",
+    "content-hash": "9c2ac4f3e80eec991bbc5c0e46e0b9cf",
     "packages": [
         {
             "name": "marando/php-iers",
-            "version": "0.1.4",
+            "version": "0.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marando/phpIERS.git",
-                "reference": "196a58873e7b85ac8625d71b7742cea2143293b5"
+                "reference": "8f30da62c233c6541cbb7af41c9c5e0bf3769125"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marando/phpIERS/zipball/196a58873e7b85ac8625d71b7742cea2143293b5",
-                "reference": "196a58873e7b85ac8625d71b7742cea2143293b5",
+                "url": "https://api.github.com/repos/marando/phpIERS/zipball/8f30da62c233c6541cbb7af41c9c5e0bf3769125",
+                "reference": "8f30da62c233c6541cbb7af41c9c5e0bf3769125",
                 "shasum": ""
             },
             "require": {
@@ -44,7 +44,7 @@
                 }
             ],
             "description": "A PHP package that simplifies obtaining Earth rotation values from IERS bulletins.",
-            "time": "2015-11-22 20:39:32"
+            "time": "2015-11-23 00:06:56"
         }
     ],
     "packages-dev": [

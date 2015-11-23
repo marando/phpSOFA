@@ -3,6 +3,7 @@
 namespace Marando\IAU;
 
 use \Marando\IERS\IERS;
+use \Marando\IERS\IERSFile;
 
 trait iauDat {
 
@@ -263,10 +264,8 @@ trait iauDat {
 
   private static function getTiaUtcFile() {
     // Use phpIERS to download data, but use file directly
-    IERS::now();
-    $path = getcwd() . "/vendor/marando/php-iers/" . IERS::STORAGE_DIR;
-
-    return explode("\n", file_get_contents($path . '/tai-utc.dat'));
+    $path = IERSFile::taiUTC();
+    return explode("\n", file_get_contents($path));
   }
 
   protected static function monthToInt($month) {
